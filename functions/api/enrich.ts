@@ -306,7 +306,7 @@ async function enrichWithLLM(
           content: `Article:\n\n${articleText}\n\nAvailable data points:\n\n${dataPointsFormatted}`,
         },
       ],
-      max_tokens: 2048,
+      max_tokens: 3072,
       temperature: 0.3,
     }),
   });
@@ -320,7 +320,14 @@ async function enrichWithLLM(
     choices: [{ message: { content: string } }];
   };
 
-  return data.choices[0].message.content;
+  const raw = data.choices[0].message.content;
+
+  // Strip any unclosed/dangling IG markers (from truncated responses)
+  const cleaned = raw
+    .replace(/\[IG\s+src="[^"]*"\]/g, "")  // unclosed opening tags
+    .replace(/\[\/IG\]/g, "");               // orphan closing tags
+
+  return cleaned;
 }
 
 function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[] {

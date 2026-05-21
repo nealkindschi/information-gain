@@ -30,8 +30,8 @@ type RateLimitStore = Map<string, { count: number; resetAt: number }>;
 const rateLimitStore: RateLimitStore = new Map();
 const RATE_LIMIT = 10;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
-const MAX_WORDS = 8000;
-const MAX_TOKENS = 10000;
+const MAX_WORDS = 20000;
+const MAX_TOKENS = 30000;
 const FETCH_TIMEOUT_MS = 10000;
 
 function getIP(request: Request): string {
@@ -292,7 +292,7 @@ async function enrichWithLLM(
           content: `Article:\n\n${articleText}\n\nAvailable data points:\n\n${dataPointsFormatted}`,
         },
       ],
-      max_tokens: 4096,
+      max_tokens: 8196,
       temperature: 0.3,
     }),
   });

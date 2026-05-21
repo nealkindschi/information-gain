@@ -178,3 +178,107 @@ mark {
   .dark\\:hover\\:bg-amber-bright\\/90:hover { background: rgba(251, 191, 36, 0.9); }
   .dark\\:focus\\:ring-amber-bright:focus { box-shadow: 0 0 0 2px var(--amber-bright); }
 }
+
+/* Change cards */
+.changes-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--cream-300);
+}
+
+.change-card {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--cream-400);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--cream-100);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.change-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--cream-200);
+  border-bottom: 1px solid var(--cream-400);
+}
+.change-card-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--amber);
+}
+.change-card-num {
+  font-size: 0.75rem;
+  color: var(--cream-500);
+}
+.change-card-col {
+  padding: 1rem;
+}
+.change-card-original {
+  border-right: 1px solid var(--cream-300);
+}
+.change-card-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cream-500);
+  margin-bottom: 0.5rem;
+}
+.change-card-text {
+  font-size: 0.875rem;
+  color: var(--warm-800);
+  line-height: 1.625;
+}
+.change-card-source-wrap {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--cream-400);
+}
+.change-card-source {
+  font-size: 0.75rem;
+  color: var(--amber);
+  text-decoration: underline;
+}
+.change-card-source:hover {
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .change-card {
+    background: var(--warm-850);
+    border-color: var(--warm-800);
+  }
+  .change-card-header {
+    background: var(--warm-900);
+    border-color: var(--warm-800);
+  }
+  .change-card-original {
+    border-color: var(--warm-800);
+  }
+  .change-card-text {
+    color: var(--cream-200);
+  }
+  .change-card-source {
+    color: var(--amber-bright);
+  }
+  .change-card-source-wrap {
+    border-color: var(--warm-700);
+  }
+  .changes-header {
+    border-color: var(--warm-800);
+  }
+}
+
+@media (max-width: 767px) {
+  .change-card-original {
+    border-right: none;
+    border-bottom: 1px solid var(--cream-300);
+    padding-bottom: 0.75rem;
+  }
+  .change-card-enriched {
+    padding-top: 0.75rem;
+  }
+}

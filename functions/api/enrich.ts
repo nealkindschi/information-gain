@@ -21,8 +21,9 @@ interface EnrichResponse {
 
 interface ErrorResponse {
   error: string;
+  detail?: string;
   wordCount?: number;
-  retryAfter?: string;
+  retryAfter?: number | string;
 }
 
 type RateLimitStore = Map<string, { count: number; resetAt: number }>;
@@ -108,8 +109,11 @@ async function fetchArticle(url: string): Promise<string> {
       signal: controller.signal,
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; InformationGainBot/1.0; +https://seoplus.dev/tools/information-gain)",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
       },
+      redirect: "follow",
     });
 
     if (!response.ok) {
@@ -117,6 +121,18 @@ async function fetchArticle(url: string): Promise<string> {
     }
 
     const html = await response.text();
+
+    // Detect bot-protection/challenge pages
+    if (
+      html.includes("cf-browser-verify") ||
+      html.includes("cf_challenge") ||
+      html.includes("_cf_chl_opt") ||
+      html.includes("Cloudflare") && html.includes("checking your browser") ||
+      html.includes("Just a moment") && html.includes("security")
+    ) {
+      throw new Error("CF_CHALLENGE");
+    }
+
     const text = extractTextFromHTML(html);
     return text;
   } finally {
@@ -375,6 +391,12 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   try {
     articleText = await fetchArticle(body.url);
   } catch (err) {
+    if (err instanceof Error && err.message === "CF_CHALLENGE") {
+      return buildError(502, { error: "FETCH_CF_BLOCKED", detail: "Target site uses bot protection. Try a different article URL." });
+    }
+    if (err instanceof Error && err.message.startsWith("HTTP")) {
+      return buildError(502, { error: "FETCH_BAD_STATUS", detail: err.message });
+    }
     if (err instanceof Error && err.name === "AbortError") {
       return buildError(502, { error: "FETCH_TIMEOUT" });
     }

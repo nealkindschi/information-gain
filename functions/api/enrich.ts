@@ -248,14 +248,16 @@ Step 1 — Analyze voice and tone:
 Read the article carefully. Identify its voice, tone, and writing style. Note sentence structure, vocabulary level, and cadence. Is it formal or conversational? Technical or accessible? Journalistic or marketing?
 
 Step 2 — Inject data points:
-Using the voice you identified in Step 1, insert data points from the provided list where they naturally support the content. Write injections in the same voice as the original article — they should sound like the same author wrote them.
+Using the voice you identified in Step 1, insert data points from the provided list where they naturally support the content. For each injection, first try to incorporate the data point into an existing sentence near where it fits — weave it in rather than adding a new sentence. Only add a brand new sentence if the data point cannot be woven into an existing sentence. Every injection must be exactly one sentence long — state the data point, mention the source, and briefly connect it to the topic. Never add multiple sentences, paragraphs, long passages, background explanations, or editorial commentary.
+
+After each injection, re-read the surrounding text to verify: the copy flows logically around the injection, the tone and vocabulary match the original, and the injection feels indistinguishable from the author's own writing.
 
 Rules:
 1. Only use data points from the provided list. Never fabricate data.
-2. Insert each data point where it naturally supports or enhances the existing content.
+2. Each injection must be exactly one sentence. Try to weave the data point into an existing sentence first. Only add a standalone sentence if inline integration is impossible. Never add multiple sentences, paragraphs, or extended commentary.
 3. Wrap each injection with markers in this exact format: [IG src="SOURCE_FILE"]injected text[/IG]. Replace SOURCE_FILE with the path from the data point (e.g. [IG src="/reports/nist-ai-100.pdf"]Only 12% of orgs lack formal AI security policies[/IG]). Do NOT use square brackets [ ] anywhere inside the injected text — this breaks parsing.
 4. Do not remove or modify any original text outside of the injection areas.
-5. Match the article's tone, voice, sentence length, and vocabulary level exactly.
+5. Match the article's tone, voice, sentence length, and vocabulary level exactly. After each insertion, re-read the surrounding text to confirm the copy remains logical, the transition is natural, and the style is indistinguishable from the original.
 6. If a data point is widely known, generic, or common knowledge (e.g. "AI is growing rapidly"), skip it. Only inject novel, specific, research-backed facts that add real information gain.
 7. Preserve the original article's paragraph structure exactly. Maintain all paragraph separations (double newlines between paragraphs) as they appear in the input. Return the FULL enriched article text, including all unchanged portions.
 

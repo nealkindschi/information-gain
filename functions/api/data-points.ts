@@ -5884,7 +5884,7 @@ const dataPoints =
   {
     "fact": "Only 12% of content achieves an IGS above 0.7",
     "source": "searchbloom.com",
-    "sourceFile": "/reports/nist-ai-100.pdf",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
     "reportTitle": "International AI Safety Report 2026",
     "category": "statistic",
     "context": "Example placeholder fact"
@@ -7724,7 +7724,7 @@ const dataPoints =
   {
     "fact": "Generative agent simulations can model 1,000 people",
     "source": "arxiv.org",
-    "sourceFile": "/reports/International_AI Safety_Report_2026.pdf",
+    "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
     "category": "benchmark",
     "context": "Large-scale agent simulation"

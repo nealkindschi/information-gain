@@ -400,7 +400,7 @@
     "context": "North Korean IT worker dependency on AI for employment"
   },
   {
-    "fact": "FBI assessments indicate these operations generate hundreds of millions annually for North Korea’s weapons programs",
+    "fact": "FBI assessments indicate these operations generate hundreds of millions annually for North Korea\u2019s weapons programs",
     "source": "Anthropic",
     "sourceFile": "/reports/Anthropic_AI_Threat_Intelligence_Report_2025.pdf",
     "reportTitle": "Anthropic AI Threat Intelligence Report 2025",
@@ -624,7 +624,7 @@
     "context": "U.S.-China model performance gap closing"
   },
   {
-    "fact": "In 2024, U.S. private AI investment grew to $109.1 billion—nearly 12 times China's $9.3 billion and 24 times the U.K.'s $4.5 billion.",
+    "fact": "In 2024, U.S. private AI investment grew to $109.1 billion\u2014nearly 12 times China's $9.3 billion and 24 times the U.K.'s $4.5 billion.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -664,7 +664,7 @@
     "context": "Autonomous vehicle deployment"
   },
   {
-    "fact": "In 2024, U.S. federal agencies introduced 59 AI-related regulations—more than double the number in 2023.",
+    "fact": "In 2024, U.S. federal agencies introduced 59 AI-related regulations\u2014more than double the number in 2023.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -680,7 +680,7 @@
     "context": "Global legislative attention to AI"
   },
   {
-    "fact": "Canada pledged $2.4 billion for AI investment; China launched a $47.5 billion semiconductor fund; France committed €109 billion; India pledged $1.25 billion; Saudi Arabia's Project Transcendence represents a $100 billion initiative.",
+    "fact": "Canada pledged $2.4 billion for AI investment; China launched a $47.5 billion semiconductor fund; France committed \u20ac109 billion; India pledged $1.25 billion; Saudi Arabia's Project Transcendence represents a $100 billion initiative.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -688,7 +688,7 @@
     "context": "Government AI investment initiatives"
   },
   {
-    "fact": "Two-thirds of countries now offer or plan to offer K–12 CS education—twice as many as in 2019.",
+    "fact": "Two-thirds of countries now offer or plan to offer K\u201312 CS education\u2014twice as many as in 2019.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -704,7 +704,7 @@
     "context": "Computing graduate trends in U.S."
   },
   {
-    "fact": "81% of K–12 CS teachers in the U.S. say AI should be part of foundational CS education, but less than half feel equipped to teach it.",
+    "fact": "81% of K\u201312 CS teachers in the U.S. say AI should be part of foundational CS education, but less than half feel equipped to teach it.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -768,7 +768,7 @@
     "context": "Open-weight model improvement"
   },
   {
-    "fact": "The number of AI-related incidents rose to 233 in 2024—a record high and a 56.4% increase over 2023.",
+    "fact": "The number of AI-related incidents rose to 233 in 2024\u2014a record high and a 56.4% increase over 2023.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -784,7 +784,7 @@
     "context": "RAI risks"
   },
   {
-    "fact": "The proportion of restricted tokens in actively maintained domains in C4 jumped from 5–7% to 20–33%.",
+    "fact": "The proportion of restricted tokens in actively maintained domains in C4 jumped from 5\u20137% to 20\u201333%.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -824,7 +824,7 @@
     "context": "Generative AI investment"
   },
   {
-    "fact": "U.S. private AI investment hit $109.1 billion in 2024, nearly 12 times higher than China’s $9.3 billion and 24 times the U.K.’s $4.5 billion.",
+    "fact": "U.S. private AI investment hit $109.1 billion in 2024, nearly 12 times higher than China\u2019s $9.3 billion and 24 times the U.K.\u2019s $4.5 billion.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -872,7 +872,7 @@
     "context": "AI and energy"
   },
   {
-    "fact": "OpenAI’s o1 scored 96.0% on the MedQA benchmark—a 5.8 percentage point gain over the best score posted in 2023.",
+    "fact": "OpenAI\u2019s o1 scored 96.0% on the MedQA benchmark\u2014a 5.8 percentage point gain over the best score posted in 2023.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -888,7 +888,7 @@
     "context": "Medical AI ethics"
   },
   {
-    "fact": "In 2024, 59 AI-related regulations were introduced—more than double the 25 recorded in 2023.",
+    "fact": "In 2024, 59 AI-related regulations were introduced\u2014more than double the 25 recorded in 2023.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -976,7 +976,7 @@
     "context": "Scaling trends in AI models"
   },
   {
-    "fact": "The cost of querying an AI model that scores 64.8 on MMLU dropped from $20.00 per million tokens in November 2022 to $0.07 per million tokens by October 2024 (Gemini-1.5-Flash-8B)—a more than 280-fold reduction in approximately 18 months.",
+    "fact": "The cost of querying an AI model that scores 64.8 on MMLU dropped from $20.00 per million tokens in November 2022 to $0.07 per million tokens by October 2024 (Gemini-1.5-Flash-8B)\u2014a more than 280-fold reduction in approximately 18 months.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1128,7 +1128,7 @@
     "context": "Geographic distribution of AI patents in 2023"
   },
   {
-    "fact": "As of 2023, the bulk of the world’s granted AI patents (82.4%) originated from East Asia and the Pacific, with North America being the next largest contributor at 14.2%.",
+    "fact": "As of 2023, the bulk of the world\u2019s granted AI patents (82.4%) originated from East Asia and the Pacific, with North America being the next largest contributor at 14.2%.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1136,7 +1136,7 @@
     "context": "AI patents by region"
   },
   {
-    "fact": "Disaggregated by geographic area, the majority of the world’s granted AI patents are from China (69.7%) and the United States (14.2%).",
+    "fact": "Disaggregated by geographic area, the majority of the world\u2019s granted AI patents are from China (69.7%) and the United States (14.2%).",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1216,7 +1216,7 @@
     "context": "API access trend"
   },
   {
-    "fact": "In 2024, the majority—60.7%—were launched without corresponding training code.",
+    "fact": "In 2024, the majority\u201460.7%\u2014were launched without corresponding training code.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1240,7 +1240,7 @@
     "context": "Training dataset size"
   },
   {
-    "fact": "Meta’s flagship LLM, Llama 3.3, released in the summer of 2024, was trained on roughly 15 trillion tokens.",
+    "fact": "Meta\u2019s flagship LLM, Llama 3.3, released in the summer of 2024, was trained on roughly 15 trillion tokens.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1264,7 +1264,7 @@
     "context": "Training length"
   },
   {
-    "fact": "Google’s Gemini 1.0 Ultra, released in late 2023, took around 100 days to train.",
+    "fact": "Google\u2019s Gemini 1.0 Ultra, released in late 2023, took around 100 days to train.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1304,7 +1304,7 @@
     "context": "Training compute"
   },
   {
-    "fact": "OpenAI’s GPT-4o required 38 billion petaFLOP for training.",
+    "fact": "OpenAI\u2019s GPT-4o required 38 billion petaFLOP for training.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1448,7 +1448,7 @@
     "context": "Training cost of Llama 3.1-405B"
   },
   {
-    "fact": "Machine learning hardware performance has grown over the period 2008–2024 at an annual rate of approximately 43%, doubling every 1.9 years.",
+    "fact": "Machine learning hardware performance has grown over the period 2008\u20132024 at an annual rate of approximately 43%, doubling every 1.9 years.",
     "source": "Epoch AI, 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1480,7 +1480,7 @@
     "context": "Hardware usage for training notable AI models"
   },
   {
-    "fact": "Some model architectures lead to enhanced performance on classification and prediction tasks by training on synthetically augmented datasets, increasing F1 scores or AUROC by 5%–10% on minority classes.",
+    "fact": "Some model architectures lead to enhanced performance on classification and prediction tasks by training on synthetically augmented datasets, increasing F1 scores or AUROC by 5%\u201310% on minority classes.",
     "source": "Epoch AI, 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1536,7 +1536,7 @@
     "context": "Power draw of AI models"
   },
   {
-    "fact": "PaLM had a power draw of 2.6 million watts—almost 600 times that of the Transformer.",
+    "fact": "PaLM had a power draw of 2.6 million watts\u2014almost 600 times that of the Transformer.",
     "source": "epochai.org",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1672,7 +1672,7 @@
     "context": "Improvement on new benchmarks"
   },
   {
-    "fact": "On SWE-bench, AI systems could solve just 4.4% of coding problems in 2023—a figure that jumped to 71.7% in 2024.",
+    "fact": "On SWE-bench, AI systems could solve just 4.4% of coding problems in 2023\u2014a figure that jumped to 71.7% in 2024.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1728,7 +1728,7 @@
     "context": "US vs China model performance gap in 2024"
   },
   {
-    "fact": "o1 scored 74.4% on an International Mathematical Olympiad qualifying exam, compared to GPT-4o’s 9.3%.",
+    "fact": "o1 scored 74.4% on an International Mathematical Olympiad qualifying exam, compared to GPT-4o\u2019s 9.3%.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1744,7 +1744,7 @@
     "context": "Cost and speed trade-off of o1"
   },
   {
-    "fact": "On Humanity’s Last Exam, the top system scores just 8.80%.",
+    "fact": "On Humanity\u2019s Last Exam, the top system scores just 8.80%.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1760,7 +1760,7 @@
     "context": "Performance on complex math benchmark"
   },
   {
-    "fact": "On BigCodeBench, AI systems achieve a 35.5% success rate—well below the human standard of 97%.",
+    "fact": "On BigCodeBench, AI systems achieve a 35.5% success rate\u2014well below the human standard of 97%.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1776,7 +1776,7 @@
     "context": "Model size for MMLU threshold"
   },
   {
-    "fact": "By 2024, Microsoft’s Phi-3-mini, with just 3.8 billion parameters, achieved the same threshold.",
+    "fact": "By 2024, Microsoft\u2019s Phi-3-mini, with just 3.8 billion parameters, achieved the same threshold.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1792,7 +1792,7 @@
     "context": "AI agent performance vs human"
   },
   {
-    "fact": "As the time budget increases, human performance surpasses AI—outscoring it two to one at 32 hours.",
+    "fact": "As the time budget increases, human performance surpasses AI\u2014outscoring it two to one at 32 hours.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1824,7 +1824,7 @@
     "context": "Fast text-to-image generation"
   },
   {
-    "fact": "Inflection-2.5 featured an exceptional model with GPT-4–level performance while using only 40% of its computing resources.",
+    "fact": "Inflection-2.5 featured an exceptional model with GPT-4\u2013level performance while using only 40% of its computing resources.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -1840,7 +1840,7 @@
     "context": "Overview of AI in 2024 - Notable model releases"
   },
   {
-    "fact": "Salesforce unveiled Moirai, a foundation model for universal forecasting, alongside LOTSA—a diverse, large-scale time series dataset with 27 billion observations spanning nine domains.",
+    "fact": "Salesforce unveiled Moirai, a foundation model for universal forecasting, alongside LOTSA\u2014a diverse, large-scale time series dataset with 27 billion observations spanning nine domains.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2024,7 +2024,7 @@
     "context": "Benchmarking AI - Issues with nonstandard prompting"
   },
   {
-    "fact": "The highest recorded score on MMLU, 92.3%, was achieved by OpenAI’s o1-preview model in September 2024.",
+    "fact": "The highest recorded score on MMLU, 92.3%, was achieved by OpenAI\u2019s o1-preview model in September 2024.",
     "source": "Papers With Code, 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2064,7 +2064,7 @@
     "context": "MMLU-Pro benchmark performance"
   },
   {
-    "fact": "By early 2025, the Chatbot Arena Leaderboard had accumulated over 1 million votes, with users ranking one of Google’s Gemini models as the community’s most preferred choice.",
+    "fact": "By early 2025, the Chatbot Arena Leaderboard had accumulated over 1 million votes, with users ranking one of Google\u2019s Gemini models as the community\u2019s most preferred choice.",
     "source": "LMSYS, 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2096,7 +2096,7 @@
     "context": "Arena-Hard-Auto question distribution"
   },
   {
-    "fact": "The top model on the Arena-Hard-Auto style leaderboard is the November variant of Anthropic’s Claude Sonnet 3.5 with a score of 86.4.",
+    "fact": "The top model on the Arena-Hard-Auto style leaderboard is the November variant of Anthropic\u2019s Claude Sonnet 3.5 with a score of 86.4.",
     "source": "LMSYS, 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2136,7 +2136,7 @@
     "context": "GPT-4o vs o1 pricing"
   },
   {
-    "fact": "o1 is approximately 40 times slower than GPT-4o, with 29.7 seconds to first token as opposed to GPT-4o’s 0.72.",
+    "fact": "o1 is approximately 40 times slower than GPT-4o, with 29.7 seconds to first token as opposed to GPT-4o\u2019s 0.72.",
     "source": "OpenAI, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2144,7 +2144,7 @@
     "context": "o1 vs GPT-4o latency"
   },
   {
-    "fact": "The highest-scoring model on the MixEval-Hard benchmark is OpenAI’s o1-preview, with a score of 72.0.",
+    "fact": "The highest-scoring model on the MixEval-Hard benchmark is OpenAI\u2019s o1-preview, with a score of 72.0.",
     "source": "MixEval Leaderboard, 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2176,7 +2176,7 @@
     "context": "Benchmark contamination"
   },
   {
-    "fact": "Evidence suggests that publicly reported scores by developers can differ—sometimes by as much as five percentage points—from those later evaluated by academic researchers.",
+    "fact": "Evidence suggests that publicly reported scores by developers can differ\u2014sometimes by as much as five percentage points\u2014from those later evaluated by academic researchers.",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2568,7 +2568,7 @@
     "context": "Waymo-Swiss Re liability study"
   },
   {
-    "fact": "The number of reported AI-related incidents rose to 233 in 2024—a record high and a 56.4% increase over 2023.",
+    "fact": "The number of reported AI-related incidents rose to 233 in 2024\u2014a record high and a 56.4% increase over 2023.",
     "source": "AI Incident Database (AIID)",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2576,7 +2576,7 @@
     "context": "AI Incidents"
   },
   {
-    "fact": "In actively maintained domains in the C4 common crawl dataset, the proportion of restricted tokens jumped from 5–7% to 20–33%.",
+    "fact": "In actively maintained domains in the C4 common crawl dataset, the proportion of restricted tokens jumped from 5\u20137% to 20\u201333%.",
     "source": "AI Index",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2672,7 +2672,7 @@
     "context": "RAI in organizations: dedicated AI governance roles"
   },
   {
-    "fact": "27% of organizations with $10 billion–$30 billion in revenue invest $10 million–$25 million in RAI.",
+    "fact": "27% of organizations with $10 billion\u2013$30 billion in revenue invest $10 million\u2013$25 million in RAI.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2680,7 +2680,7 @@
     "context": "RAI investment by revenue"
   },
   {
-    "fact": "21% of organizations exceeding $30 billion invest $10 million–$25 million in RAI.",
+    "fact": "21% of organizations exceeding $30 billion invest $10 million\u2013$25 million in RAI.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2720,7 +2720,7 @@
     "context": "AI incidents reported"
   },
   {
-    "fact": "Among organizations that experienced incidents, 42% reported encountering 1–2 incidents.",
+    "fact": "Among organizations that experienced incidents, 42% reported encountering 1\u20132 incidents.",
     "source": "hai.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2928,7 +2928,7 @@
     "context": "AI transparency and explainability papers at conferences"
   },
   {
-    "fact": "In 2024, there were 355 transparency and explainability–related submissions at academic conferences including AAAI, FAccT, AIES, ICML, ICLR, and NeurIPS.",
+    "fact": "In 2024, there were 355 transparency and explainability\u2013related submissions at academic conferences including AAAI, FAccT, AIES, ICML, ICLR, and NeurIPS.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -2936,7 +2936,7 @@
     "context": "AI transparency and explainability papers count in 2024"
   },
   {
-    "fact": "The number of security and safety submissions to select AI conferences has sharply increased, almost doubling in the past year—from 276 to 521.",
+    "fact": "The number of security and safety submissions to select AI conferences has sharply increased, almost doubling in the past year\u2014from 276 to 521.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3056,7 +3056,7 @@
     "context": "UN AI governance report"
   },
   {
-    "fact": "In October 2024, the G7 Digital Competition Communiqué reaffirmed commitments to fair and open AI markets, stressing the need for coordinated regulatory approaches.",
+    "fact": "In October 2024, the G7 Digital Competition Communiqu\u00e9 reaffirmed commitments to fair and open AI markets, stressing the need for coordinated regulatory approaches.",
     "source": "aiindex.stanford.edu",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3096,7 +3096,7 @@
     "context": "HELM Safety benchmark"
   },
   {
-    "fact": "GPT-3.5 Turbo (0613), released in 2022, scored 0.853–0.123 points lower than OpenAI’s best-performing model today.",
+    "fact": "GPT-3.5 Turbo (0613), released in 2022, scored 0.853\u20130.123 points lower than OpenAI\u2019s best-performing model today.",
     "source": "HELM",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3120,7 +3120,7 @@
     "context": "AIR-Bench regulatory alignment"
   },
   {
-    "fact": "Assessments of 22 leading models revealed significant variability, with refusal rates ranging from 91% (Anthropic’s Claude series) to 25% (DBRX Instruct).",
+    "fact": "Assessments of 22 leading models revealed significant variability, with refusal rates ranging from 91% (Anthropic\u2019s Claude series) to 25% (DBRX Instruct).",
     "source": "Zeng et al., 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3128,7 +3128,7 @@
     "context": "AIR-Bench refusal rates"
   },
   {
-    "fact": "Simply prefilling a model’s response with nonstandard text or applying minimal fine-tuning increased harmful output rates from 1.5% to 87.9% after just six fine-tuning steps.",
+    "fact": "Simply prefilling a model\u2019s response with nonstandard text or applying minimal fine-tuning increased harmful output rates from 1.5% to 87.9% after just six fine-tuning steps.",
     "source": "Qi et al., 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3240,7 +3240,7 @@
     "context": "Chapter 4 highlights on AI adoption"
   },
   {
-    "fact": "The number of respondents who reported using generative AI in at least one business function more than doubled—from 33% in 2023 to 71% last year.",
+    "fact": "The number of respondents who reported using generative AI in at least one business function more than doubled\u2014from 33% in 2023 to 71% last year.",
     "source": "HAI_AI_Index_Report_2025.pdf",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3624,7 +3624,7 @@
     "context": "Global AI usage by organizations"
   },
   {
-    "fact": "One of the most significant year-over-year growth rates in AI use was seen in Greater China, where organizations’ reported use grew by 27 percentage points.",
+    "fact": "One of the most significant year-over-year growth rates in AI use was seen in Greater China, where organizations\u2019 reported use grew by 27 percentage points.",
     "source": "McKinsey & Company Survey",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3696,7 +3696,7 @@
     "context": "Gap between overall AI and generative AI usage"
   },
   {
-    "fact": "North America (74%), Europe (73%), and Greater China (73%) lead in organizations’ use of generative AI.",
+    "fact": "North America (74%), Europe (73%), and Greater China (73%) lead in organizations\u2019 use of generative AI.",
     "source": "McKinsey & Company Survey",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3712,7 +3712,7 @@
     "context": "AI impact on customer support productivity"
   },
   {
-    "fact": "A Microsoft workplace study established baseline productivity improvements in common workplace tasks, with document editing increasing by 10–13% and email processing time decreasing by 11%.",
+    "fact": "A Microsoft workplace study established baseline productivity improvements in common workplace tasks, with document editing increasing by 10\u201313% and email processing time decreasing by 11%.",
     "source": "Microsoft",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3752,7 +3752,7 @@
     "context": "AI impact on coding vs. project management"
   },
   {
-    "fact": "In software development contexts, new research has found that junior developers experienced productivity increases of 21–40%, while senior developers saw more modest gains of 7–16%.",
+    "fact": "In software development contexts, new research has found that junior developers experienced productivity increases of 21\u201340%, while senior developers saw more modest gains of 7\u201316%.",
     "source": "Cui et al.",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3760,7 +3760,7 @@
     "context": "AI productivity equalizing effects in software engineering"
   },
   {
-    "fact": "Other studies found coding productivity increases of 14–27% for low-ability workers compared to 5–10% for high-ability workers.",
+    "fact": "Other studies found coding productivity increases of 14\u201327% for low-ability workers compared to 5\u201310% for high-ability workers.",
     "source": "Hoffman et al.",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3784,8 +3784,8 @@
     "context": "AI productivity equalizing effects in customer support"
   },
   {
-    "fact": "Dell’Acqua et al., 2023: low-skill worker productivity gain 42.96%, high-skill worker productivity gain 16.5%.",
-    "source": "Dell’Acqua et al.",
+    "fact": "Dell\u2019Acqua et al., 2023: low-skill worker productivity gain 42.96%, high-skill worker productivity gain 16.5%.",
+    "source": "Dell\u2019Acqua et al.",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
@@ -3800,7 +3800,7 @@
     "context": "AI integration and productivity gains"
   },
   {
-    "fact": "46.8% of respondents reporting gains of 0–20%, 26.2% seeing gains of 20–40%, and 18.4% achieving improvements of 40–60%.",
+    "fact": "46.8% of respondents reporting gains of 0\u201320%, 26.2% seeing gains of 20\u201340%, and 18.4% achieving improvements of 40\u201360%.",
     "source": "Necula et al.",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3808,7 +3808,7 @@
     "context": "Distribution of productivity gains from AI"
   },
   {
-    "fact": "7.7% reported increases of 60–80% and 0.9% achieved improvements of 80–100%.",
+    "fact": "7.7% reported increases of 60\u201380% and 0.9% achieved improvements of 80\u2013100%.",
     "source": "Necula et al.",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3896,7 +3896,7 @@
     "context": "Collaborative robot installations share"
   },
   {
-    "fact": "In 2023, China led the world with 276,300 industrial robot installations, six times more than Japan’s 46,100 and 7.3 times more than the United States’ 37,600.",
+    "fact": "In 2023, China led the world with 276,300 industrial robot installations, six times more than Japan\u2019s 46,100 and 7.3 times more than the United States\u2019 37,600.",
     "source": "International Federation of Robotics (IFR)",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -3936,7 +3936,7 @@
     "context": "Robot Deployments"
   },
   {
-    "fact": "OpenAI's o1 set a new state-of-the-art 96.0% on the MedQA benchmark—a 5.8 percentage point gain over the best score posted in 2023.",
+    "fact": "OpenAI's o1 set a new state-of-the-art 96.0% on the MedQA benchmark\u2014a 5.8 percentage point gain over the best score posted in 2023.",
     "source": "RAISE Health/AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4056,7 +4056,7 @@
     "context": "ESM3 Performance Scaling"
   },
   {
-    "fact": "AlphaFold 3 achieves 84.4% RMSD < 2Å for protein-ligand docking without pocket specification, and 93.2% with pocket specification.",
+    "fact": "AlphaFold 3 achieves 84.4% RMSD < 2\u00c5 for protein-ligand docking without pocket specification, and 93.2% with pocket specification.",
     "source": "ESM3 (as cited), 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4088,7 +4088,7 @@
     "context": "Clinical care imaging, FDA-cleared ML software"
   },
   {
-    "fact": "Publicly available histopathology cohorts rarely exceed 10,000 patient samples, with The Cancer Genome Atlas (TCGA) providing one of the most comprehensive collections—comprising 11,125 patient samples with matched clinical annotations, genomic sequencing, and protein expression data across 32 cancer types.",
+    "fact": "Publicly available histopathology cohorts rarely exceed 10,000 patient samples, with The Cancer Genome Atlas (TCGA) providing one of the most comprehensive collections\u2014comprising 11,125 patient samples with matched clinical annotations, genomic sequencing, and protein expression data across 32 cancer types.",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4096,7 +4096,7 @@
     "context": "Histopathology dataset sizes"
   },
   {
-    "fact": "GatorTron, a large clinical LLM designed to extract patient information from unstructured electronic health records, was trained on 82 billion tokens. In contrast, Llama 3 was trained on 15 trillion tokens—nearly 182 times more.",
+    "fact": "GatorTron, a large clinical LLM designed to extract patient information from unstructured electronic health records, was trained on 82 billion tokens. In contrast, Llama 3 was trained on 15 trillion tokens\u2014nearly 182 times more.",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4104,7 +4104,7 @@
     "context": "Training dataset token volumes: medical vs. nonmedical language models"
   },
   {
-    "fact": "RadImageNet, an open radiologic deep learning research dataset, contains 16 million image-equivalent tokens, while DALL-E, an early OpenAI image generator, was trained on approximately 6 billion—roughly 375 times more.",
+    "fact": "RadImageNet, an open radiologic deep learning research dataset, contains 16 million image-equivalent tokens, while DALL-E, an early OpenAI image generator, was trained on approximately 6 billion\u2014roughly 375 times more.",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4112,7 +4112,7 @@
     "context": "Training dataset token volumes: medical vs. nonmedical imaging models"
   },
   {
-    "fact": "A team of Microsoft and OpenAI researchers recently tested o1, which achieved a new state-of-the-art score of 96.0% on MedQA—a substantial 5.8 percentage point improvement over the record set in 2023.",
+    "fact": "A team of Microsoft and OpenAI researchers recently tested o1, which achieved a new state-of-the-art score of 96.0% on MedQA\u2014a substantial 5.8 percentage point improvement over the record set in 2023.",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4160,7 +4160,7 @@
     "context": "LLM influence on diagnostic reasoning"
   },
   {
-    "fact": "A 2024–25 prospective, randomized, controlled trial evaluated GPT-4 assistance on clinical management decisions: physicians assisted by GPT-4 outperformed the control group by approximately 6.5 percentage points.",
+    "fact": "A 2024\u201325 prospective, randomized, controlled trial evaluated GPT-4 assistance on clinical management decisions: physicians assisted by GPT-4 outperformed the control group by approximately 6.5 percentage points.",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4296,7 +4296,7 @@
     "context": "NIH grants for medical AI ethics"
   },
   {
-    "fact": "Total NIH funding for medical AI ethics soared from $16 million in 2023 to $276 million in 2024—an almost 17-fold increase.",
+    "fact": "Total NIH funding for medical AI ethics soared from $16 million in 2023 to $276 million in 2024\u2014an almost 17-fold increase.",
     "source": "RAISE Health, 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4320,7 +4320,7 @@
     "context": "LlaSMol model performance"
   },
   {
-    "fact": "ORBIT is a 113B-parameter vision transformer and the largest AI model ever built for climate science—1,000 times larger than prior models.",
+    "fact": "ORBIT is a 113B-parameter vision transformer and the largest AI model ever built for climate science\u20141,000 times larger than prior models.",
     "source": "Wang et al., 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4384,7 +4384,7 @@
     "context": "Global AI mentions in legislative proceedings"
   },
   {
-    "fact": "Before 2024, only five states—California, Michigan, Washington, Texas, and Minnesota—had enacted laws regulating deepfakes in elections. In 2024, 15 more states, including Oregon, New Mexico, and New York, introduced similar measures. Additionally, by 2024, 24 states had passed regulations targeting deepfakes.",
+    "fact": "Before 2024, only five states\u2014California, Michigan, Washington, Texas, and Minnesota\u2014had enacted laws regulating deepfakes in elections. In 2024, 15 more states, including Oregon, New Mexico, and New York, introduced similar measures. Additionally, by 2024, 24 states had passed regulations targeting deepfakes.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4408,7 +4408,7 @@
     "context": "Government investments in AI infrastructure"
   },
   {
-    "fact": "France committed €109 billion to AI infrastructure.",
+    "fact": "France committed \u20ac109 billion to AI infrastructure.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4424,7 +4424,7 @@
     "context": "Government investments in AI infrastructure"
   },
   {
-    "fact": "Saudi Arabia’s Project Transcendence represents a $100 billion AI investment initiative.",
+    "fact": "Saudi Arabia\u2019s Project Transcendence represents a $100 billion AI investment initiative.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4472,7 +4472,7 @@
     "context": "EU AI Act passage"
   },
   {
-    "fact": "India’s $1.25 billion IndiaAI Mission aims to build 10,000-plus GPUs via public-private partnerships, develop a national nonpersonal data platform, and support homegrown AI models and deep-tech startups.",
+    "fact": "India\u2019s $1.25 billion IndiaAI Mission aims to build 10,000-plus GPUs via public-private partnerships, develop a national nonpersonal data platform, and support homegrown AI models and deep-tech startups.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4496,7 +4496,7 @@
     "context": "UN AI resolution"
   },
   {
-    "fact": "Canada pledged CA$2.4 billion in its 2024 Federal Budget to 'secure Canada’s AI advantage'.",
+    "fact": "Canada pledged CA$2.4 billion in its 2024 Federal Budget to 'secure Canada\u2019s AI advantage'.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4528,7 +4528,7 @@
     "context": "EU AI Office"
   },
   {
-    "fact": "The U.K. Labour government canceled £1.3 billion in funding promised for technology and AI projects, including £500 million for the AI Research Resource and £800 million for the University of Edinburgh’s exascale supercomputer.",
+    "fact": "The U.K. Labour government canceled \u00a31.3 billion in funding promised for technology and AI projects, including \u00a3500 million for the AI Research Resource and \u00a3800 million for the University of Edinburgh\u2019s exascale supercomputer.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4560,7 +4560,7 @@
     "context": "UN Global Digital Compact"
   },
   {
-    "fact": "California Governor Gavin Newsom vetoed California’s AI safety bill (SB 1047) on September 29, 2024.",
+    "fact": "California Governor Gavin Newsom vetoed California\u2019s AI safety bill (SB 1047) on September 29, 2024.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4568,7 +4568,7 @@
     "context": "California AI safety bill veto"
   },
   {
-    "fact": "A federal judge in California issued a temporary injunction on one of the state’s new AI laws (AB 2839) on October 2, 2024.",
+    "fact": "A federal judge in California issued a temporary injunction on one of the state\u2019s new AI laws (AB 2839) on October 2, 2024.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4592,7 +4592,7 @@
     "context": "EU AI Code of Practice draft"
   },
   {
-    "fact": "On December 2, 2024, the U.S. Department of Commerce further limited China’s ability to produce advanced semiconductors by announcing new export controls, including restrictions on 24 types of semiconductor manufacturing equipment and three types of software tools.",
+    "fact": "On December 2, 2024, the U.S. Department of Commerce further limited China\u2019s ability to produce advanced semiconductors by announcing new export controls, including restrictions on 24 types of semiconductor manufacturing equipment and three types of software tools.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4712,7 +4712,7 @@
     "context": "State-level AI laws in 2024"
   },
   {
-    "fact": "Before 2024, five states—California, Washington, Texas, Michigan, and Minnesota—had passed laws regulating AI deepfakes in elections.",
+    "fact": "Before 2024, five states\u2014California, Washington, Texas, Michigan, and Minnesota\u2014had passed laws regulating AI deepfakes in elections.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4784,7 +4784,7 @@
     "context": "Total AI mentions 2016-2024 by country"
   },
   {
-    "fact": "The 118th session recorded the highest count to date of AI mentions in U.S. committee reports, with 136 mentions—up 83.8% from the 117th session.",
+    "fact": "The 118th session recorded the highest count to date of AI mentions in U.S. committee reports, with 136 mentions\u2014up 83.8% from the 117th session.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4904,7 +4904,7 @@
     "context": "US AI grant growth rate"
   },
   {
-    "fact": "The greatest share of AI-related grants (2013–2023) was allocated to the Department of Health and Human Services (43.57%), followed by the National Science Foundation (27.91%) and the Department of Commerce (5.38%).",
+    "fact": "The greatest share of AI-related grants (2013\u20132023) was allocated to the Department of Health and Human Services (43.57%), followed by the National Science Foundation (27.91%) and the Department of Commerce (5.38%).",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4936,7 +4936,7 @@
     "context": "CS teacher readiness for AI"
   },
   {
-    "fact": "Two-thirds of countries worldwide offer or plan to offer K–12 CS education, doubling since 2019.",
+    "fact": "Two-thirds of countries worldwide offer or plan to offer K\u201312 CS education, doubling since 2019.",
     "source": "AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4944,7 +4944,7 @@
     "context": "Global K-12 CS education"
   },
   {
-    "fact": "35% of U.S. high schools offered CS in 2017–18, which increased to 60% in 2023–24.",
+    "fact": "35% of U.S. high schools offered CS in 2017\u201318, which increased to 60% in 2023\u201324.",
     "source": "Code.org, CSTA, and ECEP Alliance, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4960,7 +4960,7 @@
     "context": "Variation in CS access by U.S. state"
   },
   {
-    "fact": "In the 2020–21 academic year, only 5.1% of high school students participated in CS, with a marginal increase to 6.4% in 2023–24.",
+    "fact": "In the 2020\u201321 academic year, only 5.1% of high school students participated in CS, with a marginal increase to 6.4% in 2023\u201324.",
     "source": "Code.org, CSTA, and ECEP Alliance, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -4984,7 +4984,7 @@
     "context": "CS enrollment representation by race/ethnicity"
   },
   {
-    "fact": "Girls are underrepresented relative to their share of the K–12 population.",
+    "fact": "Girls are underrepresented relative to their share of the K\u201312 population.",
     "source": "Code.org, CSTA, and ECEP Alliance, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5000,15 +5000,15 @@
     "context": "Underrepresented groups in CS enrollment"
   },
   {
-    "fact": "Among the 44 states that have adopted K–12 CS standards, 33 have AI-specific standards.",
+    "fact": "Among the 44 states that have adopted K\u201312 CS standards, 33 have AI-specific standards.",
     "source": "CSTA and IACE, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
-    "context": "Adoption of AI-specific K–12 CS standards"
+    "context": "Adoption of AI-specific K\u201312 CS standards"
   },
   {
-    "fact": "The Computer Science Teachers Association (CSTA) K–12 standards, last published in 2017, contain only two standards at the advanced high school level that specifically require AI knowledge.",
+    "fact": "The Computer Science Teachers Association (CSTA) K\u201312 standards, last published in 2017, contain only two standards at the advanced high school level that specifically require AI knowledge.",
     "source": "CSTA and IACE, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5016,7 +5016,7 @@
     "context": "AI content in CSTA standards"
   },
   {
-    "fact": "The U.S. state-adopted K–12 CS standards averaged 97% coverage of the same subconcepts as the CSTA standards.",
+    "fact": "The U.S. state-adopted K\u201312 CS standards averaged 97% coverage of the same subconcepts as the CSTA standards.",
     "source": "CSTA and IACE, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5040,7 +5040,7 @@
     "context": "Teacher beliefs on AI inclusion"
   },
   {
-    "fact": "Less than half of CS teachers feel equipped to teach AI—46% in high school, 44% in middle school, and just 34% in elementary school.",
+    "fact": "Less than half of CS teachers feel equipped to teach AI\u201446% in high school, 44% in middle school, and just 34% in elementary school.",
     "source": "Computer Science Teacher Landscape Survey, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5072,7 +5072,7 @@
     "context": "Time spent teaching AI in CS classrooms"
   },
   {
-    "fact": "In 2024, approximately two-thirds of the world’s countries offered or planned to offer CS education.",
+    "fact": "In 2024, approximately two-thirds of the world\u2019s countries offered or planned to offer CS education.",
     "source": "Raspberry Pi Computing Education Research Centre, 2024",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5096,7 +5096,7 @@
     "context": "Infrastructure challenges in Africa"
   },
   {
-    "fact": "The number of graduates with bachelor’s degrees in computing has increased 22% over the last 10 years.",
+    "fact": "The number of graduates with bachelor\u2019s degrees in computing has increased 22% over the last 10 years.",
     "source": "National Center for Education Statistics (NCES)",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5112,32 +5112,32 @@
     "context": "Master's degrees in CS"
   },
   {
-    "fact": "In 2023, nonresidents accounted for 67% of master’s degree graduates and 60% of PhD graduates in computing.",
-    "source": "National Center for Education Statistics’ Integrated Postsecondary Education Data System",
+    "fact": "In 2023, nonresidents accounted for 67% of master\u2019s degree graduates and 60% of PhD graduates in computing.",
+    "source": "National Center for Education Statistics\u2019 Integrated Postsecondary Education Data System",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
     "context": "Postsecondary CS and AI Education"
   },
   {
-    "fact": "Between 2022 and 2023, international CS master’s students increased more than twofold, growing from 15,811 to 34,850.",
-    "source": "National Center for Education Statistics’ Integrated Postsecondary Education Data System",
+    "fact": "Between 2022 and 2023, international CS master\u2019s students increased more than twofold, growing from 15,811 to 34,850.",
+    "source": "National Center for Education Statistics\u2019 Integrated Postsecondary Education Data System",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
     "context": "Postsecondary CS and AI Education"
   },
   {
-    "fact": "Students from India and China make up the vast majority of this graduate student body (93% of the 95,130 international master’s students and 60% of the 13,070 international PhD students).",
-    "source": "National Center for Education Statistics’ Integrated Postsecondary Education Data System",
+    "fact": "Students from India and China make up the vast majority of this graduate student body (93% of the 95,130 international master\u2019s students and 60% of the 13,070 international PhD students).",
+    "source": "National Center for Education Statistics\u2019 Integrated Postsecondary Education Data System",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
     "context": "Postsecondary CS and AI Education"
   },
   {
-    "fact": "The number of institutions in the U.S. that offer an AI-specific bachelor’s degree nearly doubled between 2022 and 2023.",
-    "source": "National Center for Education Statistics’ Integrated Postsecondary Education Data System",
+    "fact": "The number of institutions in the U.S. that offer an AI-specific bachelor\u2019s degree nearly doubled between 2022 and 2023.",
+    "source": "National Center for Education Statistics\u2019 Integrated Postsecondary Education Data System",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
@@ -5145,7 +5145,7 @@
   },
   {
     "fact": "86% of students use AI in their studies, and 61% of faculty use AI in their teaching.",
-    "source": "National Center for Education Statistics’ Integrated Postsecondary Education Data System",
+    "source": "National Center for Education Statistics\u2019 Integrated Postsecondary Education Data System",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
@@ -5153,14 +5153,14 @@
   },
   {
     "fact": "As of early 2025, 39% of institutions have an AI-related acceptable use policy, an increase of 16 percentage points from 2024.",
-    "source": "National Center for Education Statistics’ Integrated Postsecondary Education Data System",
+    "source": "National Center for Education Statistics\u2019 Integrated Postsecondary Education Data System",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
     "category": "statistic",
     "context": "Guidance on AI in higher education"
   },
   {
-    "fact": "Around the world, two thirds of people now believe that AI-powered products and services will significantly impact daily life within the next three to five years—an increase of six percentage points since 2022.",
+    "fact": "Around the world, two thirds of people now believe that AI-powered products and services will significantly impact daily life within the next three to five years\u2014an increase of six percentage points since 2022.",
     "source": "Ipsos",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5168,7 +5168,7 @@
     "context": "Global public opinion on AI"
   },
   {
-    "fact": "In 2023, 73.7% of local U.S. policymakers—spanning township, municipal, and county levels—agreed that AI should be regulated, up significantly from 55.7% in 2022.",
+    "fact": "In 2023, 73.7% of local U.S. policymakers\u2014spanning township, municipal, and county levels\u2014agreed that AI should be regulated, up significantly from 55.7% in 2022.",
     "source": "Survey of local U.S. policymakers",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5576,7 +5576,7 @@
     "context": "Training cost analysis methodology"
   },
   {
-    "fact": "The study evaluated 50 models in total: 34 industry language models (2018–24), eight industry vision models (2019–23), four academic language models (2020–23), and four academic vision models (2011–22), selecting particularly influential models in their respective domains.",
+    "fact": "The study evaluated 50 models in total: 34 industry language models (2018\u201324), eight industry vision models (2019\u201323), four academic language models (2020\u201323), and four academic vision models (2011\u201322), selecting particularly influential models in their respective domains.",
     "source": "HAI AI Index Report 2025",
     "sourceFile": "/reports/HAI_AI_Index_Report_2025.pdf",
     "reportTitle": "Artificial Intelligence Index Report 2025",
@@ -5752,7 +5752,7 @@
     "context": "Section 3.1: Technical and institutional challenges"
   },
   {
-    "fact": "In 2025, 12 companies published or updated Frontier AI Safety Frameworks – documents that describe how they plan to manage risks as they build more capable models.",
+    "fact": "In 2025, 12 companies published or updated Frontier AI Safety Frameworks \u2013 documents that describe how they plan to manage risks as they build more capable models.",
     "source": "internationalaisafetyreport.org",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -5872,7 +5872,7 @@
     "context": "Current capabilities"
   },
   {
-    "fact": "Developers using AI assistants complete certain tasks 20–30% faster on average than those without.",
+    "fact": "Developers using AI assistants complete certain tasks 20\u201330% faster on average than those without.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -5882,7 +5882,7 @@
   {
     "fact": "Only 12% of content achieves an IGS above 0.7",
     "source": "searchbloom.com",
-    "sourceFile": "/reports/nist-ai-100.pdf",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
     "reportTitle": "International AI Safety Report 2026",
     "category": "statistic",
     "context": "Example placeholder fact"
@@ -5944,7 +5944,7 @@
     "context": "Investments in AI compute"
   },
   {
-    "fact": "Current frontier AI training runs already cost approximately $500 million in computational resources alone, with next-generation models projected to require $1–10 billion.",
+    "fact": "Current frontier AI training runs already cost approximately $500 million in computational resources alone, with next-generation models projected to require $1\u201310 billion.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6040,7 +6040,7 @@
     "context": "Compute scaling forecast"
   },
   {
-    "fact": "AI forecasting experts gave a median 20% probability that progress in the next few years could compress six years of advancement (2018–2024) into just two years.",
+    "fact": "AI forecasting experts gave a median 20% probability that progress in the next few years could compress six years of advancement (2018\u20132024) into just two years.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6056,7 +6056,7 @@
     "context": "Expert forecasts on AI R&D acceleration"
   },
   {
-    "fact": "Forecasters’ estimates increased to 18% in scenarios where AI systems perform better than human researchers on month-long research projects.",
+    "fact": "Forecasters\u2019 estimates increased to 18% in scenarios where AI systems perform better than human researchers on month-long research projects.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6104,7 +6104,7 @@
     "context": "Task length growth for AI models"
   },
   {
-    "fact": "At 80% success rate task lengths are currently around 20–30 minutes.",
+    "fact": "At 80% success rate task lengths are currently around 20\u201330 minutes.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6136,7 +6136,7 @@
     "context": "Initial AI performance on FrontierMath"
   },
   {
-    "fact": "OpenAI’s GPT-5 reached ~25% on FrontierMath, and the new o4-mini achieved roughly 20%.",
+    "fact": "OpenAI\u2019s GPT-5 reached ~25% on FrontierMath, and the new o4-mini achieved roughly 20%.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6152,7 +6152,7 @@
     "context": "AI energy consumption projection"
   },
   {
-    "fact": "Based on current growth rates in power consumption for AI training, the largest AI training runs in 2030 will need 4–16 gigawatts (GW) of power.",
+    "fact": "Based on current growth rates in power consumption for AI training, the largest AI training runs in 2030 will need 4\u201316 gigawatts (GW) of power.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6160,7 +6160,7 @@
     "context": "Future AI power requirements"
   },
   {
-    "fact": "OpenAI’s planned Stargate data centre reaches 1.2 GW scales, and Meta’s planned Louisiana data centre is projected to exceed 2 GW.",
+    "fact": "OpenAI\u2019s planned Stargate data centre reaches 1.2 GW scales, and Meta\u2019s planned Louisiana data centre is projected to exceed 2 GW.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6184,7 +6184,7 @@
     "context": "Chip fabrication plant construction time"
   },
   {
-    "fact": "One study estimates that the share of the world’s data centre AI chips owned by a single AI company at any point in time is somewhere between 10% and 40%.",
+    "fact": "One study estimates that the share of the world\u2019s data centre AI chips owned by a single AI company at any point in time is somewhere between 10% and 40%.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6208,7 +6208,7 @@
     "context": "Available high-quality text data"
   },
   {
-    "fact": "Image data provides 10^4–10^15 tokens of additional training signal, video data adds 10^15–10^16 tokens, and sensor data from internet of things devices could contribute 10^17 tokens annually.",
+    "fact": "Image data provides 10^4\u201310^15 tokens of additional training signal, video data adds 10^15\u201310^16 tokens, and sensor data from internet of things devices could contribute 10^17 tokens annually.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6216,7 +6216,7 @@
     "context": "Multimodal data availability"
   },
   {
-    "fact": "Studies of algorithmic efficiency in language models suggest efficiency improvements of 3x per year, but they are unable to rule out rates ranging from 2–6x per year.",
+    "fact": "Studies of algorithmic efficiency in language models suggest efficiency improvements of 3x per year, but they are unable to rule out rates ranging from 2\u20136x per year.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6224,7 +6224,7 @@
     "context": "Algorithmic efficiency improvement rates"
   },
   {
-    "fact": "If algorithmic progress continues at the upper bound of current estimates, models could achieve equivalent capabilities with 10–100x less compute by 2030.",
+    "fact": "If algorithmic progress continues at the upper bound of current estimates, models could achieve equivalent capabilities with 10\u2013100x less compute by 2030.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6408,7 +6408,7 @@
     "context": "Cyberattack capabilities"
   },
   {
-    "fact": "In November 2025, one AI developer reported that a threat actor used their models to automate 80–90% of the effort involved in an intrusion, with human involvement limited to critical decision points.",
+    "fact": "In November 2025, one AI developer reported that a threat actor used their models to automate 80\u201390% of the effort involved in an intrusion, with human involvement limited to critical decision points.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6608,7 +6608,7 @@
     "context": "AI adoption by sector"
   },
   {
-    "fact": "Productivity gains usually range from 20–60% in controlled studies, and 15–30% in most experiments within real-world work settings.",
+    "fact": "Productivity gains usually range from 20\u201360% in controlled studies, and 15\u201330% in most experiments within real-world work settings.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6640,7 +6640,7 @@
     "context": "Autonomous operation"
   },
   {
-    "fact": "In at least one laboratory study, a model copied code and weights – represented to it as its own – to new servers when given the opportunity.",
+    "fact": "In at least one laboratory study, a model copied code and weights \u2013 represented to it as its own \u2013 to new servers when given the opportunity.",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -6768,7 +6768,7 @@
     "context": "AI use and critical thinking"
   },
   {
-    "fact": "Most (64.5%) ‘notable’ AI models developed in 2024 originated from the US, with China the second most common origin (24.2%). The rest of the world produced just 12.3%.",
+    "fact": "Most (64.5%) \u2018notable\u2019 AI models developed in 2024 originated from the US, with China the second most common origin (24.2%). The rest of the world produced just 12.3%.",
     "source": "Maslej et al., 2025",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7072,7 +7072,7 @@
     "context": "Evidence gaps"
   },
   {
-    "fact": "“Some researchers have proposed larger-scale adversarial training (1264, 1265*) or new algorithms (675, 676, 1263, 1266, 1267) to improve robustness, but modern AI systems remain persistently vulnerable.”",
+    "fact": "\u201cSome researchers have proposed larger-scale adversarial training (1264, 1265*) or new algorithms (675, 676, 1263, 1266, 1267) to improve robustness, but modern AI systems remain persistently vulnerable.\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7080,7 +7080,7 @@
     "context": "Adversarial robustness"
   },
   {
-    "fact": "“Many current state-of-the-art AI models now resist most of these methods, but new jailbreaking techniques continue to be found.”",
+    "fact": "\u201cMany current state-of-the-art AI models now resist most of these methods, but new jailbreaking techniques continue to be found.\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7088,7 +7088,7 @@
     "context": "Jailbreaking techniques"
   },
   {
-    "fact": "“Researchers are working to develop ‘machine unlearning’ algorithms that can specifically suppress abilities related to biothreats or to generating photorealistic images of nude human bodies (903, 1272, 1273).”",
+    "fact": "\u201cResearchers are working to develop \u2018machine unlearning\u2019 algorithms that can specifically suppress abilities related to biothreats or to generating photorealistic images of nude human bodies (903, 1272, 1273).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7096,7 +7096,7 @@
     "context": "Unlearning techniques"
   },
   {
-    "fact": "“Limiting AI models’ knowledge in harmful domains has also been proposed as a way of designing ‘tamper-resistant’ open-weight models that can resist harmful fine-tuning (1274, 1275, 1276, 1277, 1278). Thus far, however, this has been challenging to do robustly (1158, 1160, 1161, 1195, 1206*, 1279*, 1280, 1281*, 1282, 1283, 1284).”",
+    "fact": "\u201cLimiting AI models\u2019 knowledge in harmful domains has also been proposed as a way of designing \u2018tamper-resistant\u2019 open-weight models that can resist harmful fine-tuning (1274, 1275, 1276, 1277, 1278). Thus far, however, this has been challenging to do robustly (1158, 1160, 1161, 1195, 1206*, 1279*, 1280, 1281*, 1282, 1283, 1284).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7104,7 +7104,7 @@
     "context": "Tamper-resistant models"
   },
   {
-    "fact": "“In a proof of concept, researchers showed that tools for analysing the internal computation of a language model could help evaluators identify harmful behaviours (1287*).”",
+    "fact": "\u201cIn a proof of concept, researchers showed that tools for analysing the internal computation of a language model could help evaluators identify harmful behaviours (1287*).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7112,7 +7112,7 @@
     "context": "Interpretability for safety evaluation"
   },
   {
-    "fact": "“In 2025, Anthropic also began analysing model internals as a way of studying model situational awareness and ‘intent’ (2*).”",
+    "fact": "\u201cIn 2025, Anthropic also began analysing model internals as a way of studying model situational awareness and \u2018intent\u2019 (2*).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7120,7 +7120,7 @@
     "context": "Model internals analysis by Anthropic"
   },
   {
-    "fact": "“A different approach for making stronger assurances of safety involves constructing mathematical proofs that a model will satisfy certain safety conditions (1177, 1282, 1288). However, these proofs assume that the testing context matches the deployment context, and are untested against many types of adversaries. They also cannot currently be scaled to large models.”",
+    "fact": "\u201cA different approach for making stronger assurances of safety involves constructing mathematical proofs that a model will satisfy certain safety conditions (1177, 1282, 1288). However, these proofs assume that the testing context matches the deployment context, and are untested against many types of adversaries. They also cannot currently be scaled to large models.\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7128,7 +7128,7 @@
     "context": "Formal verification methods"
   },
   {
-    "fact": "“Points where deployers can monitor and intervene on how people are using their systems include hardware (1180, 1181), user interactions (1154, 1166), inputs and outputs (65*, 725, 1182*), internal computations (744, 1183, 1184), and chain of thought (430*, 435*).”",
+    "fact": "\u201cPoints where deployers can monitor and intervene on how people are using their systems include hardware (1180, 1181), user interactions (1154, 1166), inputs and outputs (65*, 725, 1182*), internal computations (744, 1183, 1184), and chain of thought (430*, 435*).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7136,7 +7136,7 @@
     "context": "Deployment-time monitoring points"
   },
   {
-    "fact": "“Humans in the loop also tend to exhibit ‘automation bias’, meaning that they often place more trust in the AI system than is warranted (1190, 1191).”",
+    "fact": "\u201cHumans in the loop also tend to exhibit \u2018automation bias\u2019, meaning that they often place more trust in the AI system than is warranted (1190, 1191).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7144,7 +7144,7 @@
     "context": "Human oversight limitations"
   },
   {
-    "fact": "“The reported success rate of prompt injection attacks has been falling over time, but remains relatively high.”",
+    "fact": "\u201cThe reported success rate of prompt injection attacks has been falling over time, but remains relatively high.\u201d",
     "source": "International AI Safety Report 2026 citing Zou et al. 2025 (1149*) and Anthropic 2025 (2*)",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7152,7 +7152,7 @@
     "context": "Prompt injection attack success rates"
   },
   {
-    "fact": "“Adversarial training is almost ubiquitously used on state-of-the-art models (64*, 677), while model interpretability and formal verification techniques have seen little use to date in production systems (1177, 1285).”",
+    "fact": "\u201cAdversarial training is almost ubiquitously used on state-of-the-art models (64*, 677), while model interpretability and formal verification techniques have seen little use to date in production systems (1177, 1285).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7160,7 +7160,7 @@
     "context": "Adversarial training prevalence"
   },
   {
-    "fact": "“The capabilities of leading closed models are now estimated to be less than one year ahead of leading open-weight models on prominent AI benchmarks.”",
+    "fact": "\u201cThe capabilities of leading closed models are now estimated to be less than one year ahead of leading open-weight models on prominent AI benchmarks.\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7168,7 +7168,7 @@
     "context": "Capability gap between closed and open-weight models"
   },
   {
-    "fact": "“Open-weight model releases are irreversible. Once released, model weights cannot be recalled.”",
+    "fact": "\u201cOpen-weight model releases are irreversible. Once released, model weights cannot be recalled.\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7176,7 +7176,7 @@
     "context": "Irreversibility of open-weight releases"
   },
   {
-    "fact": "“Malicious actors can fine-tune a model to optimise its performance for harmful applications, remove parts of the code designed to prevent harmful uses, or undo previous safety fine-tuning (1156, 1160, 1161, 1333, 1334, 1335, 1336, 1337, 1338).”",
+    "fact": "\u201cMalicious actors can fine-tune a model to optimise its performance for harmful applications, remove parts of the code designed to prevent harmful uses, or undo previous safety fine-tuning (1156, 1160, 1161, 1333, 1334, 1335, 1336, 1337, 1338).\u201d",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7360,7 +7360,7 @@
     "context": "Funding for resilience"
   },
   {
-    "fact": "The UK AI Security Institute awarded seed grants of up to £200,000 for projects focused on safeguarding societal systems, totalling up to £4 million",
+    "fact": "The UK AI Security Institute awarded seed grants of up to \u00a3200,000 for projects focused on safeguarding societal systems, totalling up to \u00a34 million",
     "source": "International AI Safety Report 2026",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -7722,7 +7722,7 @@
   {
     "fact": "Generative agent simulations can model 1,000 people",
     "source": "arxiv.org",
-    "sourceFile": "/reports/International_AI Safety_Report_2026.pdf",
+    "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
     "category": "benchmark",
     "context": "Large-scale agent simulation"
@@ -7864,7 +7864,7 @@
     "context": "Agent time horizon"
   },
   {
-    "fact": "π0.5 is a vision-language-action model with open-world generalization",
+    "fact": "\u03c00.5 is a vision-language-action model with open-world generalization",
     "source": "arxiv.org",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -8200,7 +8200,7 @@
     "context": "AI infrastructure"
   },
   {
-    "fact": "Grok 3 Beta – The Age of Reasoning Agents (xAI, 2025).",
+    "fact": "Grok 3 Beta \u2013 The Age of Reasoning Agents (xAI, 2025).",
     "source": "x.ai",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -8264,7 +8264,7 @@
     "context": "Data scaling limits"
   },
   {
-    "fact": "FrontierMath – Benchmarking AI against advanced mathematical research (Epoch AI, 2025).",
+    "fact": "FrontierMath \u2013 Benchmarking AI against advanced mathematical research (Epoch AI, 2025).",
     "source": "epoch.ai",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -8384,7 +8384,7 @@
     "context": "AI scheming capabilities"
   },
   {
-    "fact": "\"Evaluating Large Language Models’ Capability to Launch Fully Automated Spear Phishing Campaigns: Validated on Human Subjects\"",
+    "fact": "\"Evaluating Large Language Models\u2019 Capability to Launch Fully Automated Spear Phishing Campaigns: Validated on Human Subjects\"",
     "source": "arxiv.org",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -8448,7 +8448,7 @@
     "context": "Sabotage evaluation for AI models"
   },
   {
-    "fact": "\"Generative Propaganda: Evidence of AI’s Impact from a State-Backed Disinformation Campaign\"",
+    "fact": "\"Generative Propaganda: Evidence of AI\u2019s Impact from a State-Backed Disinformation Campaign\"",
     "source": "oup.com",
     "sourceFile": "/reports/International_AI_Safety_Report_2026.pdf",
     "reportTitle": "International AI Safety Report 2026",
@@ -9088,7 +9088,7 @@
     "context": "ChatGPT dominance among AI apps"
   },
   {
-    "fact": "Google Gemini has 15% adoption, Claude 5%, and Copilot ~2–3%",
+    "fact": "Google Gemini has 15% adoption, Claude 5%, and Copilot ~2\u20133%",
     "source": "layerxsecurity.com",
     "sourceFile": "/reports/LayerX_Enterprise_AI_and_SaaS_Data_Security_Report.pdf",
     "reportTitle": "Enterprise AI and SaaS Data Security Report 2025",
@@ -9240,7 +9240,7 @@
     "context": "Personal account uploads to GenAI"
   },
   {
-    "fact": "On average, non-corporate accounts leak 3–5 sensitive files per day per user",
+    "fact": "On average, non-corporate accounts leak 3\u20135 sensitive files per day per user",
     "source": "layerxsecurity.com",
     "sourceFile": "/reports/LayerX_Enterprise_AI_and_SaaS_Data_Security_Report.pdf",
     "reportTitle": "Enterprise AI and SaaS Data Security Report 2025",
@@ -9392,7 +9392,7 @@
     "context": "RAG architecture"
   },
   {
-    "fact": "Vulnerabilities in GenAI systems may expose a broad attack surface for threats to the privacy of sensitive user data or proprietary information about models’ architecture or training data, and create risks to the integrity and availability of widely used systems.",
+    "fact": "Vulnerabilities in GenAI systems may expose a broad attack surface for threats to the privacy of sensitive user data or proprietary information about models\u2019 architecture or training data, and create risks to the integrity and availability of widely used systems.",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
     "reportTitle": "Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations",
@@ -9400,7 +9400,7 @@
     "context": "GenAI attack surface"
   },
   {
-    "fact": "Spectrum of effective attacks against ML is wide, rapidly evolving, and covers all phases of the ML lifecycle — from design and implementation to training, testing, and deployment in the real world.",
+    "fact": "Spectrum of effective attacks against ML is wide, rapidly evolving, and covers all phases of the ML lifecycle \u2014 from design and implementation to training, testing, and deployment in the real world.",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
     "reportTitle": "Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations",
@@ -9576,7 +9576,7 @@
     "context": "Real-world evasion attacks on face recognition systems"
   },
   {
-    "fact": "In 2022, a New Jersey man was able to verify fake driver’s licenses through ID.me as part of a US$ 2.5M unemployment-fraud scheme, using various wigs to evade the face recognition system.",
+    "fact": "In 2022, a New Jersey man was able to verify fake driver\u2019s licenses through ID.me as part of a US$ 2.5M unemployment-fraud scheme, using various wigs to evade the face recognition system.",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
     "reportTitle": "NIST AI 100-2e2025",
@@ -10120,7 +10120,7 @@
     "context": "Model extraction feasibility"
   },
   {
-    "fact": "The 2020 U.S. Census release used ε = 19.61 for differential privacy.",
+    "fact": "The 2020 U.S. Census release used \u03b5 = 19.61 for differential privacy.",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
     "reportTitle": "Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (NIST AI 100-2e2025)",
@@ -10384,7 +10384,7 @@
     "context": "Trade-offs between attributes of trustworthy AI"
   },
   {
-    "fact": "Tramèr has shown that designing techniques to detect adversarial examples is equivalent to robust classification, which is inherently difficult to solve.",
+    "fact": "Tram\u00e8r has shown that designing techniques to detect adversarial examples is equivalent to robust classification, which is inherently difficult to solve.",
     "source": "NIST AI 100-2e2025",
     "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
     "reportTitle": "Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations (NIST AI 100-2e2025)",
@@ -10856,7 +10856,7 @@
     "context": "Cross-cutting barriers: Financial costs"
   },
   {
-    "fact": "\"The scale and complexity of monitoring efforts can… be resource-intensive and challenging to manage effectively.\"",
+    "fact": "\"The scale and complexity of monitoring efforts can\u2026 be resource-intensive and challenging to manage effectively.\"",
     "source": "Srikumar et al. [46]",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -10872,7 +10872,7 @@
     "context": "Cross-cutting barriers: Financial costs"
   },
   {
-    "fact": "\"Model developers may be required to pay some cost, i.e., a monitorability tax, such as deploying slightly less performant models or suffering more expensive inference, in order to maintain the monitorability of… agents.\"",
+    "fact": "\"Model developers may be required to pay some cost, i.e., a monitorability tax, such as deploying slightly less performant models or suffering more expensive inference, in order to maintain the monitorability of\u2026 agents.\"",
     "source": "Baker et al. [70]",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -10880,7 +10880,7 @@
     "context": "Cross-cutting barriers: Financial costs"
   },
   {
-    "fact": "\"The need to work directly with users and user-facing systems… can be challenging and costly.\"",
+    "fact": "\"The need to work directly with users and user-facing systems\u2026 can be challenging and costly.\"",
     "source": "Lam [79]",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -10888,7 +10888,7 @@
     "context": "Cross-cutting barriers: Financial costs"
   },
   {
-    "fact": "\"An organization lacking sufficient AI experts… could create gaps in post-deployment monitoring, leading to blind spots and overconfidence.\"",
+    "fact": "\"An organization lacking sufficient AI experts\u2026 could create gaps in post-deployment monitoring, leading to blind spots and overconfidence.\"",
     "source": "Workshop attendee",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -10912,7 +10912,7 @@
     "context": "Cross-cutting barriers: Hiring and training qualified AI experts"
   },
   {
-    "fact": "\"Post-deployment ground truth labels… are often delayed, costly, or entirely unavailable. This motivates research into label-efficient monitoring strategies.\"",
+    "fact": "\"Post-deployment ground truth labels\u2026 are often delayed, costly, or entirely unavailable. This motivates research into label-efficient monitoring strategies.\"",
     "source": "Dolin et al. [81]",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -10944,7 +10944,7 @@
     "context": "Functionality: Barrier: Detecting performance degradation and drift"
   },
   {
-    "fact": "\"Cost variables may not be directly tied to a system alone\" and that \"human labor and hidden costs… may be indirect.\"",
+    "fact": "\"Cost variables may not be directly tied to a system alone\" and that \"human labor and hidden costs\u2026 may be indirect.\"",
     "source": "Solaiman et al. [88]",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -10968,7 +10968,7 @@
     "context": "Operational: Barrier: Fragmented logging across distributed infrastructure"
   },
   {
-    "fact": "\"Comparing the results of pre-deployment evaluations… to post-deployment evaluations and monitoring enables an evaluation feedback loop.\"",
+    "fact": "\"Comparing the results of pre-deployment evaluations\u2026 to post-deployment evaluations and monitoring enables an evaluation feedback loop.\"",
     "source": "Weidinger et al. [89]",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -11048,7 +11048,7 @@
     "context": "Large-Scale Impacts: Gap: Defining metrics for beneficial impacts to humans"
   },
   {
-    "fact": "\"The harm in question is… distributed across thousands of people and potentially unobservable at the individual level?\"",
+    "fact": "\"The harm in question is\u2026 distributed across thousands of people and potentially unobservable at the individual level?\"",
     "source": "Paeth et al. [69]",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Challenges in Monitoring AI Systems: Gaps, Barriers, and Open Questions",
@@ -11096,7 +11096,7 @@
     "context": "Large-Scale Impacts: Barrier: Capturing downstream effects of open-weight models"
   },
   {
-    "fact": "“What is the difference between monitoring and an audit?”",
+    "fact": "\u201cWhat is the difference between monitoring and an audit?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11104,103 +11104,95 @@
     "context": "Purpose of monitoring vs. auditing"
   },
   {
-    "fact": "“How do we need to change statistics when we’re moving from development to production, thinking in a continuous way?”",
+    "fact": "\u201cHow do we need to change statistics when we\u2019re moving from development to production, thinking in a continuous way?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Methods – How to Monitor"
+    "context": "Methods \u2013 How to Monitor"
   },
   {
-    "fact": "“What’s the Goldilocks between automated testing and human red-teaming type approaches?”",
+    "fact": "\u201cWhat\u2019s the Goldilocks between automated testing and human red-teaming type approaches?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Methods – How to Monitor"
+    "context": "Methods \u2013 How to Monitor"
   },
   {
-    "fact": "“What factors play into the pace and regularity of monitoring?” and “Are these factors event-driven or temporal – maybe both?”",
+    "fact": "\u201cWhat factors play into the pace and regularity of monitoring?\u201d and \u201cAre these factors event-driven or temporal \u2013 maybe both?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Cadence – When to Monitor"
+    "context": "Cadence \u2013 When to Monitor"
   },
   {
-    "fact": "“How [is] monitoring data used longitudinally?” and “How [do] we think about it from a long-term temporal perspective, rather than incident[-driven]?”",
+    "fact": "\u201cHow [is] monitoring data used longitudinally?\u201d and \u201cHow [do] we think about it from a long-term temporal perspective, rather than incident[-driven]?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Cadence – When to Monitor"
+    "context": "Cadence \u2013 When to Monitor"
   },
   {
-    "fact": "“How often should we be re-evaluating?”",
+    "fact": "\u201cHow often should we be re-evaluating?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Cadence – When to Monitor"
+    "context": "Cadence \u2013 When to Monitor"
   },
   {
-    "fact": "“How does risk-management play into how post-deployment monitoring should be conducted?” and “How does risk assessment for each use case impact post-deployment monitoring?”",
+    "fact": "\u201cHow does risk-management play into how post-deployment monitoring should be conducted?\u201d and \u201cHow does risk assessment for each use case impact post-deployment monitoring?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Purpose – Why Monitor"
+    "context": "Purpose \u2013 Why Monitor"
   },
   {
-    "fact": "“How do we make the outputs from monitoring useful more broadly? (e.g., to support incident reporting).”",
+    "fact": "\u201cHow do we make the outputs from monitoring useful more broadly? (e.g., to support incident reporting).\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Purpose – Why Monitor"
+    "context": "Purpose \u2013 Why Monitor"
   },
   {
-    "fact": "“How to validate models in one setting, then bring them to another?”",
+    "fact": "\u201cHow to validate models in one setting, then bring them to another?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Methods – How to Monitor"
+    "context": "Methods \u2013 How to Monitor"
   },
   {
-    "fact": "“What system architectures enable automated monitoring?” and “How can AI systems be designed to accommodate post-deployment monitoring?”",
+    "fact": "\u201cWhat system architectures enable automated monitoring?\u201d and \u201cHow can AI systems be designed to accommodate post-deployment monitoring?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Methods – How to Monitor"
+    "context": "Methods \u2013 How to Monitor"
   },
   {
-    "fact": "“What criteria should trigger a re-evaluation?” and “When should we stop re-evaluating models?” Additionally, “should re-evaluation stop if the model is de-deployed or if more powerful models are deployed?” [100].",
+    "fact": "\u201cWhat criteria should trigger a re-evaluation?\u201d and \u201cWhen should we stop re-evaluating models?\u201d Additionally, \u201cshould re-evaluation stop if the model is de-deployed or if more powerful models are deployed?\u201d [100].",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Cadence – When to Monitor (citing Berglund [100])"
+    "context": "Cadence \u2013 When to Monitor (citing Berglund [100])"
   },
   {
-    "fact": "“How do we do the normal software monitoring systems on an accelerated cadence?”",
+    "fact": "\u201cHow do we do the normal software monitoring systems on an accelerated cadence?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
     "category": "expert_quote",
-    "context": "Cadence – When to Monitor"
+    "context": "Cadence \u2013 When to Monitor"
   },
   {
-    "fact": "“How to detect when a model becomes stale?”",
-    "source": "nist.gov",
-    "sourceFile": "/reports/NIST.AI.800-4.pdf",
-    "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
-    "category": "expert_quote",
-    "context": "Functionality Monitoring definition"
-  },
-  {
-    "fact": "“How do we assess model competency, when multiple alternatives are possible?”",
+    "fact": "\u201cHow to detect when a model becomes stale?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11208,7 +11200,15 @@
     "context": "Functionality Monitoring definition"
   },
   {
-    "fact": "“How fast can a model perform a specific task on a specified set of hardware? How much [is the] down time when running particular types of tasks?”",
+    "fact": "\u201cHow do we assess model competency, when multiple alternatives are possible?\u201d",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
+    "category": "expert_quote",
+    "context": "Functionality Monitoring definition"
+  },
+  {
+    "fact": "\u201cHow fast can a model perform a specific task on a specified set of hardware? How much [is the] down time when running particular types of tasks?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11216,7 +11216,7 @@
     "context": "Operational Monitoring definition"
   },
   {
-    "fact": "“How does user interaction with the AI system impact the frequency of edge-cases being observed?”",
+    "fact": "\u201cHow does user interaction with the AI system impact the frequency of edge-cases being observed?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11224,7 +11224,7 @@
     "context": "Human Factors Monitoring definition"
   },
   {
-    "fact": "“How… AI-infused technology is working with people over time (e.g., joint human-AI performance)”",
+    "fact": "\u201cHow\u2026 AI-infused technology is working with people over time (e.g., joint human-AI performance)\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11232,7 +11232,7 @@
     "context": "Human Factors Monitoring definition"
   },
   {
-    "fact": "“Does the model display high propensity for scheming?”",
+    "fact": "\u201cDoes the model display high propensity for scheming?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11240,7 +11240,7 @@
     "context": "Security Monitoring definition"
   },
   {
-    "fact": "“Is the model attempting to subvert monitoring e.g., via sandbagging?”",
+    "fact": "\u201cIs the model attempting to subvert monitoring e.g., via sandbagging?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11248,7 +11248,7 @@
     "context": "Security Monitoring definition"
   },
   {
-    "fact": "“If we’re using a model that’s been trained on other data, does it have a disclosure avoidance”",
+    "fact": "\u201cIf we\u2019re using a model that\u2019s been trained on other data, does it have a disclosure avoidance\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11256,7 +11256,7 @@
     "context": "Compliance Monitoring definition"
   },
   {
-    "fact": "“Ensure [the model is] being used in accordance with internal and model company's AUP [acceptable use policies]”",
+    "fact": "\u201cEnsure [the model is] being used in accordance with internal and model company's AUP [acceptable use policies]\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11264,7 +11264,7 @@
     "context": "Compliance Monitoring definition"
   },
   {
-    "fact": "“What externalities from use can be monitored effectively at [or] by the system? What is missed?”",
+    "fact": "\u201cWhat externalities from use can be monitored effectively at [or] by the system? What is missed?\u201d",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.AI.800-4.pdf",
     "reportTitle": "NIST AI 800-4: Post-Deployment Monitoring of AI Systems",
@@ -11864,7 +11864,7 @@
     "context": "Asset management"
   },
   {
-    "fact": "ID.AM-03: Representations of the organization’s authorized network communication and internal and external network data flows are maintained",
+    "fact": "ID.AM-03: Representations of the organization\u2019s authorized network communication and internal and external network data flows are maintained",
     "source": "NIST",
     "sourceFile": "/reports/NIST.IR.8596.iprd.pdf",
     "reportTitle": "Cybersecurity AI Profile",
@@ -11936,7 +11936,7 @@
     "context": "Risk assessment"
   },
   {
-    "fact": "AI introduces a suite of new metrics to consider. Carefully select which metrics closely align with the organization’s goals.",
+    "fact": "AI introduces a suite of new metrics to consider. Carefully select which metrics closely align with the organization\u2019s goals.",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.IR.8596.iprd.pdf",
     "reportTitle": "NIST Community Profile: Cybersecurity AI Profile (Initial Preliminary Draft)",
@@ -12400,7 +12400,7 @@
     "context": "End of incident recovery"
   },
   {
-    "fact": "Communication during AI-related recovery informs stakeholders of the model’s status (e.g., restored model version) and the expected delay in reenabling automated defense capabilities.",
+    "fact": "Communication during AI-related recovery informs stakeholders of the model\u2019s status (e.g., restored model version) and the expected delay in reenabling automated defense capabilities.",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.IR.8596.iprd.pdf",
     "reportTitle": "Cybersecurity AI Profile",
@@ -12416,7 +12416,7 @@
     "context": "CSF Core structure"
   },
   {
-    "fact": "The Cyber AI Profile is designed to support an organization’s cybersecurity program with understanding cybersecurity-related opportunities for implementing AI capabilities and managing new cybersecurity risks introduced by AI systems.",
+    "fact": "The Cyber AI Profile is designed to support an organization\u2019s cybersecurity program with understanding cybersecurity-related opportunities for implementing AI capabilities and managing new cybersecurity risks introduced by AI systems.",
     "source": "nist.gov",
     "sourceFile": "/reports/NIST.IR.8596.iprd.pdf",
     "reportTitle": "NIST IR 8596 irpd (Initial Preliminary Draft) Cybersecurity AI Profile",
@@ -12429,7 +12429,7 @@
     "sourceFile": "/reports/WEF_AI_and_Cybersecurity_2025.pdf",
     "reportTitle": "Artificial Intelligence and Cybersecurity: Balancing Risks and Rewards",
     "category": "statistic",
-    "context": "Use of AI by threat actors – impersonation, social engineering and spear phishing"
+    "context": "Use of AI by threat actors \u2013 impersonation, social engineering and spear phishing"
   },
   {
     "fact": "Researchers have also found that multiple GPT-4 models working in tandem are capable of autonomously exploiting zero-day vulnerabilities.",
@@ -12437,7 +12437,7 @@
     "sourceFile": "/reports/WEF_AI_and_Cybersecurity_2025.pdf",
     "reportTitle": "Artificial Intelligence and Cybersecurity: Balancing Risks and Rewards",
     "category": "benchmark",
-    "context": "Use of AI by threat actors – discovering and exploiting zero-days"
+    "context": "Use of AI by threat actors \u2013 discovering and exploiting zero-days"
   },
   {
     "fact": "According to research from the AI Governance Alliance, organizations are commonly using 'smaller, use-case-based approaches that emphasize ideation and experimentation'.",
@@ -12445,7 +12445,7 @@
     "sourceFile": "/reports/WEF_AI_and_Cybersecurity_2025.pdf",
     "reportTitle": "Artificial Intelligence and Cybersecurity: Balancing Risks and Rewards",
     "category": "statistic",
-    "context": "Context of AI adoption – experimentation and piloting"
+    "context": "Context of AI adoption \u2013 experimentation and piloting"
   },
   {
     "fact": "The AI Governance Alliance's approach promotes the need to 'shift left', i.e. implement safety guardrails early in the AI system life cycle (namely, at the building and pre-deployment stages) to mitigate related risks.",
@@ -12464,7 +12464,7 @@
     "context": "Level of AI autonomy"
   },
   {
-    "fact": "Research by the AI Governance Alliance has informed categorization of the opportunities that generative AI is perceived to be creating for businesses: enhancing enterprise productivity; creating new products or services; redefining industries and societies (e.g. making sectors such as healthcare more efficient and responsive to market changes – e.g. accelerating drug discovery).",
+    "fact": "Research by the AI Governance Alliance has informed categorization of the opportunities that generative AI is perceived to be creating for businesses: enhancing enterprise productivity; creating new products or services; redefining industries and societies (e.g. making sectors such as healthcare more efficient and responsive to market changes \u2013 e.g. accelerating drug discovery).",
     "source": "weforum.org",
     "sourceFile": "/reports/WEF_AI_and_Cybersecurity_2025.pdf",
     "reportTitle": "Artificial Intelligence and Cybersecurity: Balancing Risks and Rewards",
@@ -12488,7 +12488,7 @@
     "context": "Security properties"
   },
   {
-    "fact": "Other important security properties include: explainability (human users can comprehend the outputs generated by the AI model) and traceability (allows users to track its processes – including understanding the data used and how it was processed by the models).",
+    "fact": "Other important security properties include: explainability (human users can comprehend the outputs generated by the AI model) and traceability (allows users to track its processes \u2013 including understanding the data used and how it was processed by the models).",
     "source": "weforum.org",
     "sourceFile": "/reports/WEF_AI_and_Cybersecurity_2025.pdf",
     "reportTitle": "Artificial Intelligence and Cybersecurity: Balancing Risks and Rewards",
@@ -12728,7 +12728,7 @@
     "context": "DREAD Threat Modeling"
   },
   {
-    "fact": "DREAD overall score ranges: Low (1–10), Medium (11–24), High (25–39), Critical (40–50).",
+    "fact": "DREAD overall score ranges: Low (1\u201310), Medium (11\u201324), High (25\u201339), Critical (40\u201350).",
     "source": "https://doi.org/10.3390/jcp6030084",
     "sourceFile": "/reports/jcp-06-00084-v2.pdf",
     "reportTitle": "Systematic Empirical Evaluation of Client-Side Security in MCP Implementations",
@@ -12928,7 +12928,7 @@
     "context": "MCP Server Threats"
   },
   {
-    "fact": "Tool—Tool Poisoning (threat No. 48) scores 46.5 (Critical) for data store threats.",
+    "fact": "Tool\u2014Tool Poisoning (threat No. 48) scores 46.5 (Critical) for data store threats.",
     "source": "jcp6030084",
     "sourceFile": "/reports/jcp-06-00084-v2.pdf",
     "reportTitle": "A Threat Modeling Framework for MCP-Based AI Assistants",
@@ -13168,7 +13168,7 @@
     "context": "Limitations of defenses"
   },
   {
-    "fact": "Automated judge agreement with human labels varies: HarmBench reports ≈93% for its fine-tuned Llama-2-13B classifier and ≈88% for GPT-4, substring matching reaches ≈70%, while vanilla GPT-4 can drop to ≈0.55 F1 on challenging tasks before multi-agent scaffolds lift performance above 0.9.",
+    "fact": "Automated judge agreement with human labels varies: HarmBench reports \u224893% for its fine-tuned Llama-2-13B classifier and \u224888% for GPT-4, substring matching reaches \u224870%, while vanilla GPT-4 can drop to \u22480.55 F1 on challenging tasks before multi-agent scaffolds lift performance above 0.9.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13192,7 +13192,7 @@
     "context": "Transferability of GCG suffixes"
   },
   {
-    "fact": "PAIR achieves successful jailbreaks for roughly $0.026 per attack with fewer than 20 queries when using a Mixtral-8×7B attacker against Vicuna-13B-v1.5.",
+    "fact": "PAIR achieves successful jailbreaks for roughly $0.026 per attack with fewer than 20 queries when using a Mixtral-8\u00d77B attacker against Vicuna-13B-v1.5.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13200,7 +13200,7 @@
     "context": "Cost-efficiency of PAIR attacks"
   },
   {
-    "fact": "AmpleGCG samples ~200 candidate suffixes in about 4 seconds of A100 inference, though the end-to-end pipeline takes several minutes for a batch achieving ≈99% ASR on Llama-2-7B-Chat.",
+    "fact": "AmpleGCG samples ~200 candidate suffixes in about 4 seconds of A100 inference, though the end-to-end pipeline takes several minutes for a batch achieving \u224899% ASR on Llama-2-7B-Chat.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13216,7 +13216,7 @@
     "context": "Judge reliability comparison"
   },
   {
-    "fact": "White-box attacks achieve ≈90–99% ASR on open-weight models.",
+    "fact": "White-box attacks achieve \u224890\u201399% ASR on open-weight models.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13224,7 +13224,7 @@
     "context": "White-box attack success rates"
   },
   {
-    "fact": "Black-box attacks reach 80–94% ASR on deployed APIs.",
+    "fact": "Black-box attacks reach 80\u201394% ASR on deployed APIs.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13256,7 +13256,7 @@
     "context": "Attack potency-robustness trade-offs"
   },
   {
-    "fact": "\"SmoothLLM substantially reduces GCG-style ASR on Vicuna-7B (98.1% → 0.8%) and Llama-2-7B (51.0% → 0.1%).\"",
+    "fact": "\"SmoothLLM substantially reduces GCG-style ASR on Vicuna-7B (98.1% \u2192 0.8%) and Llama-2-7B (51.0% \u2192 0.1%).\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13264,7 +13264,7 @@
     "context": "Safe decoding defense"
   },
   {
-    "fact": "\"Semantic persuasion (PAIR) retains ≈50–60% ASR under smoothing.\"",
+    "fact": "\"Semantic persuasion (PAIR) retains \u224850\u201360% ASR under smoothing.\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13272,7 +13272,7 @@
     "context": "SmoothLLM limitations"
   },
   {
-    "fact": "\"SmoothLLM incurs N-fold query multiplier (typically N=2–20) and 3.5–4.4s latency per prompt on A100/A6000.\"",
+    "fact": "\"SmoothLLM incurs N-fold query multiplier (typically N=2\u201320) and 3.5\u20134.4s latency per prompt on A100/A6000.\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13280,7 +13280,7 @@
     "context": "SmoothLLM overhead"
   },
   {
-    "fact": "\"PIQA accuracy drops 76.7% → 70.3% (8.3% at q=5%, N=20).\"",
+    "fact": "\"PIQA accuracy drops 76.7% \u2192 70.3% (8.3% at q=5%, N=20).\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13288,7 +13288,7 @@
     "context": "SmoothLLM utility degradation"
   },
   {
-    "fact": "\"SafeDecoding achieves ASR reductions from ≈75% to 3–4% against GCG, AutoDAN, DeepInception.\"",
+    "fact": "\"SafeDecoding achieves ASR reductions from \u224875% to 3\u20134% against GCG, AutoDAN, DeepInception.\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13304,7 +13304,7 @@
     "context": "SafeDecoding effectiveness"
   },
   {
-    "fact": "\"SafeDecoding incurs 3–7% overhead (1.07× Vicuna, 1.03× Llama2).\"",
+    "fact": "\"SafeDecoding incurs 3\u20137% overhead (1.07\u00d7 Vicuna, 1.03\u00d7 Llama2).\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13312,7 +13312,7 @@
     "context": "SafeDecoding overhead"
   },
   {
-    "fact": "\"31/250 responses (12.4%) initially refuse then agree—'semantic transition' breaking first-token safety under complex narratives.\"",
+    "fact": "\"31/250 responses (12.4%) initially refuse then agree\u2014'semantic transition' breaking first-token safety under complex narratives.\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13384,7 +13384,7 @@
     "context": "JBFuzz fuzzing attack"
   },
   {
-    "fact": "\"COLD-Attack achieves 92–100% ASR.\"",
+    "fact": "\"COLD-Attack achieves 92\u2013100% ASR.\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13416,7 +13416,7 @@
     "context": "Adaptive pre-fill attack"
   },
   {
-    "fact": "\"DrAttack achieves 63–85% ASR.\"",
+    "fact": "\"DrAttack achieves 63\u201385% ASR.\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13424,7 +13424,7 @@
     "context": "DrAttack heuristic attack"
   },
   {
-    "fact": "\"AutoDAN achieves 70–98% ASR.\"",
+    "fact": "\"AutoDAN achieves 70\u201398% ASR.\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13432,7 +13432,7 @@
     "context": "AutoDAN automated generation attack"
   },
   {
-    "fact": "\"Mechanistic Interpretability attack achieves 80–95% ASR; fast (minutes/seconds).\"",
+    "fact": "\"Mechanistic Interpretability attack achieves 80\u201395% ASR; fast (minutes/seconds).\"",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13488,7 +13488,7 @@
     "context": "Jailbreak attack methods"
   },
   {
-    "fact": "LIAR (Best-of-N Alignment) achieves competitive ASR with ~10× speedup using efficient best-of-N inference without training.",
+    "fact": "LIAR (Best-of-N Alignment) achieves competitive ASR with ~10\u00d7 speedup using efficient best-of-N inference without training.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13568,7 +13568,7 @@
     "context": "Jailbreak attack methods"
   },
   {
-    "fact": "Persuasion Attacks achieve ≈92% aggregate ASR (GPT-4: 88%, GPT-3.5: 86%, Llama-2: 68%, Claude-1/2: 0%) using 40 persuasion techniques.",
+    "fact": "Persuasion Attacks achieve \u224892% aggregate ASR (GPT-4: 88%, GPT-3.5: 86%, Llama-2: 68%, Claude-1/2: 0%) using 40 persuasion techniques.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13576,7 +13576,7 @@
     "context": "Jailbreak attack methods"
   },
   {
-    "fact": "SelfDefenD reduces attack success on GPT-3.5 by 8.97–97.26% (avg 65.70%) and GPT-4 by 69.69–100% (avg 88.43%), with extra delay ≈0.06 s for GPT-3.5 and ≈0.35 s for GPT-4 under attack; >95% benign queries incur zero delay.",
+    "fact": "SelfDefenD reduces attack success on GPT-3.5 by 8.97\u201397.26% (avg 65.70%) and GPT-4 by 69.69\u2013100% (avg 88.43%), with extra delay \u22480.06 s for GPT-3.5 and \u22480.35 s for GPT-4 under attack; >95% benign queries incur zero delay.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13600,7 +13600,7 @@
     "context": "Model- and architecture-level defenses"
   },
   {
-    "fact": "LED utility degradation is modest: MT-Bench scores 7.26 → 7.08 (-2.5%) on Mistral and 6.55 → 6.48 (-1.1%) on Llama2; false refusal minimal (1–2% estimated).",
+    "fact": "LED utility degradation is modest: MT-Bench scores 7.26 \u2192 7.08 (-2.5%) on Mistral and 6.55 \u2192 6.48 (-1.1%) on Llama2; false refusal minimal (1\u20132% estimated).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13608,7 +13608,7 @@
     "context": "Model- and architecture-level defenses"
   },
   {
-    "fact": "Constitutional classifiers reduce jailbreak ASR ≈86% → 4.4% on held-out chemical-weapon prompts, with 23.7% inference overhead and 0.38% false refusal increase.",
+    "fact": "Constitutional classifiers reduce jailbreak ASR \u224886% \u2192 4.4% on held-out chemical-weapon prompts, with 23.7% inference overhead and 0.38% false refusal increase.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13616,7 +13616,7 @@
     "context": "Model- and architecture-level defenses"
   },
   {
-    "fact": "Circuit-breaker representation control (RR) reduces harmful rates on Mistral-7B-Instruct-v2 from 76.7% → 9.8%; Llama-3-8B-Instruct 38.1% → 3.8%, with Cygnet finetune → 0.8% (97.9% reduction).",
+    "fact": "Circuit-breaker representation control (RR) reduces harmful rates on Mistral-7B-Instruct-v2 from 76.7% \u2192 9.8%; Llama-3-8B-Instruct 38.1% \u2192 3.8%, with Cygnet finetune \u2192 0.8% (97.9% reduction).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13624,7 +13624,7 @@
     "context": "Model- and architecture-level defenses"
   },
   {
-    "fact": "Multimodal circuit breaker experiments show ASR 91.0% → 14.3% on LLaVA-NeXT-Mistral-7B under strong PGD image perturbations (epsilon=32/255, 1000 steps), with only ≈0.5% capability loss (MMMU score 43.8% → 43.3%).",
+    "fact": "Multimodal circuit breaker experiments show ASR 91.0% \u2192 14.3% on LLaVA-NeXT-Mistral-7B under strong PGD image perturbations (epsilon=32/255, 1000 steps), with only \u22480.5% capability loss (MMMU score 43.8% \u2192 43.3%).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13632,7 +13632,7 @@
     "context": "Model- and architecture-level defenses"
   },
   {
-    "fact": "Circuit breaker tool-using agents on BFCL: direct harmful requests 67.0% → 11.0% (83.6% reduction); forced function calls 64.0% → 11.0% (82.8% reduction); BFCL-AST performance 83.0% maintained.",
+    "fact": "Circuit breaker tool-using agents on BFCL: direct harmful requests 67.0% \u2192 11.0% (83.6% reduction); forced function calls 64.0% \u2192 11.0% (82.8% reduction); BFCL-AST performance 83.0% maintained.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13648,7 +13648,7 @@
     "context": "Model- and architecture-level defenses"
   },
   {
-    "fact": "Independent evaluations report higher false-refusal rates for circuit breakers (up to ≈38% on large suites like or-bench-80k) compared to ≈3–4% on WildTeaming-style traffic.",
+    "fact": "Independent evaluations report higher false-refusal rates for circuit breakers (up to \u224838% on large suites like or-bench-80k) compared to \u22483\u20134% on WildTeaming-style traffic.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13656,7 +13656,7 @@
     "context": "Model- and architecture-level defenses"
   },
   {
-    "fact": "HarmBench's fine-tuned Llama-2-13B classifier achieves ≈93% agreement with human annotations; GPT-4 judges achieve ≈88%.",
+    "fact": "HarmBench's fine-tuned Llama-2-13B classifier achieves \u224893% agreement with human annotations; GPT-4 judges achieve \u224888%.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13664,7 +13664,7 @@
     "context": "Judges and reliability"
   },
   {
-    "fact": "Simpler heuristics such as substring matching on JailbreakBench reach ≈70% agreement with human annotations.",
+    "fact": "Simpler heuristics such as substring matching on JailbreakBench reach \u224870% agreement with human annotations.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13728,7 +13728,7 @@
     "context": "Calibration standards"
   },
   {
-    "fact": "AmpleGCG reaches ≈99% on Llama-2-7B-Chat (200–1000 suffixes, AdvBench).",
+    "fact": "AmpleGCG reaches \u224899% on Llama-2-7B-Chat (200\u20131000 suffixes, AdvBench).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13736,7 +13736,7 @@
     "context": "Attack evolution and success patterns"
   },
   {
-    "fact": "TAP attains 90–94% on GPT-4/4-Turbo/4o under multi-turn protocols.",
+    "fact": "TAP attains 90\u201394% on GPT-4/4-Turbo/4o under multi-turn protocols.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13744,7 +13744,7 @@
     "context": "Attack evolution and success patterns"
   },
   {
-    "fact": "Multimodal linkage exceeds 94–99% on VLM benchmarks.",
+    "fact": "Multimodal linkage exceeds 94\u201399% on VLM benchmarks.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13752,7 +13752,7 @@
     "context": "Attack evolution and success patterns"
   },
   {
-    "fact": "Structured attacks raise harmfulness from ≈28% to >80%.",
+    "fact": "Structured attacks raise harmfulness from \u224828% to >80%.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13760,7 +13760,7 @@
     "context": "Attack evolution and success patterns via multi-agent debate"
   },
   {
-    "fact": "White-box gradient attacks achieve ≈90–99% ASR on open-weight models.",
+    "fact": "White-box gradient attacks achieve \u224890\u201399% ASR on open-weight models.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13768,7 +13768,7 @@
     "context": "Threat-model stratification"
   },
   {
-    "fact": "Black-box query-only attacks climbed from ≈40% to 80–94% on modern GPT-4-class APIs.",
+    "fact": "Black-box query-only attacks climbed from \u224840% to 80\u201394% on modern GPT-4-class APIs.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13776,7 +13776,7 @@
     "context": "Threat-model stratification"
   },
   {
-    "fact": "AmpleGCG samples ∼200 suffixes in 4 s inference (end-to-end: several minutes for ≈99% ASR batch).",
+    "fact": "AmpleGCG samples \u223c200 suffixes in 4 s inference (end-to-end: several minutes for \u224899% ASR batch).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13784,7 +13784,7 @@
     "context": "Automated generation efficiency"
   },
   {
-    "fact": "JBFuzz achieves 99% average ASR with ∼60 s per jailbreak.",
+    "fact": "JBFuzz achieves 99% average ASR with \u223c60 s per jailbreak.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13792,7 +13792,7 @@
     "context": "Automated generation efficiency"
   },
   {
-    "fact": "PAIR demonstrates $0.026 per attack (<20 queries, Mixtral-8×7B → Vicuna-13B-v1.5).",
+    "fact": "PAIR demonstrates $0.026 per attack (<20 queries, Mixtral-8\u00d77B \u2192 Vicuna-13B-v1.5).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13808,7 +13808,7 @@
     "context": "Transferability patterns"
   },
   {
-    "fact": "White-box gradient approaches show improved transferability when superfluous constraints are removed (18.4% → 50.3% target ASR).",
+    "fact": "White-box gradient approaches show improved transferability when superfluous constraints are removed (18.4% \u2192 50.3% target ASR).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13840,7 +13840,7 @@
     "context": "Defense progress and limitations"
   },
   {
-    "fact": "SelfDefenD achieves 65–88% reduction with minimal latency.",
+    "fact": "SelfDefenD achieves 65\u201388% reduction with minimal latency.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13872,7 +13872,7 @@
     "context": "Defense effectiveness across attack categories"
   },
   {
-    "fact": "Circuit Breakers show 9.8–14.3% residual across text/multimodal but face 100% ASR under adaptive attacks.",
+    "fact": "Circuit Breakers show 9.8\u201314.3% residual across text/multimodal but face 100% ASR under adaptive attacks.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13960,7 +13960,7 @@
     "context": "Attack methods comparison (Table 5)"
   },
   {
-    "fact": "HarmBench’s fine-tuned Llama-2-13B classifier achieves ≈93% agreement with human annotations; GPT-4 judges ≈88%.",
+    "fact": "HarmBench\u2019s fine-tuned Llama-2-13B classifier achieves \u224893% agreement with human annotations; GPT-4 judges \u224888%.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13968,7 +13968,7 @@
     "context": "Judge reliability"
   },
   {
-    "fact": "Substring matching reaches ≈70% agreement.",
+    "fact": "Substring matching reaches \u224870% agreement.",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -13984,7 +13984,7 @@
     "context": "Judge reliability"
   },
   {
-    "fact": "Inter-judge disagreement ranges from 0.30–0.72 F1, with dramatic ASR variations (up to 30%) and substantial error rates (18–52% false positives).",
+    "fact": "Inter-judge disagreement ranges from 0.30\u20130.72 F1, with dramatic ASR variations (up to 30%) and substantial error rates (18\u201352% false positives).",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -14016,7 +14016,7 @@
     "context": "Multimodal safety gaps"
   },
   {
-    "fact": "Automated black-box attacks now report success rates in the 80–94% range on deployed APIs",
+    "fact": "Automated black-box attacks now report success rates in the 80\u201394% range on deployed APIs",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",
@@ -14024,7 +14024,7 @@
     "context": "attack success rates"
   },
   {
-    "fact": "White-box techniques reach ≈99% on open-weight models",
+    "fact": "White-box techniques reach \u224899% on open-weight models",
     "source": "techrxiv.org",
     "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
     "reportTitle": "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",

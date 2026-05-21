@@ -148,43 +148,19 @@ function estimateTokens(text: string): number {
 }
 
 function extractTextFromHTML(html: string): string {
+  // Single-pass CPU-light extraction: strip tags, keep paragraph breaks
   let text = html
-    // Remove entire non-content elements with their contents
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
-    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
-    .replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/gi, "")
-    .replace(/<template[^>]*>[\s\S]*?<\/template>/gi, "")
-    .replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, "")
-    .replace(/<footer[^>]*>[\s\S]*?<\/footer>/gi, "")
-    .replace(/<header[^>]*>[\s\S]*?<\/header>/gi, "")
-    .replace(/<aside[^>]*>[\s\S]*?<\/aside>/gi, "")
-    // Convert block elements to paragraph breaks
-    .replace(/<\/(p|div|h[1-6]|li|section|article|header|footer|main|aside|blockquote|pre|table|tr|figure|figcaption|details|summary)>/gi, "\n\n")
-    .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/<\/(ul|ol|dl)>/gi, "\n")
-    // Self-closing block elements
-    .replace(/<\/?(hr|img)[^>]*\/?>/gi, "\n")
-    // Strip remaining inline tags
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "\n")
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "\n")
+    .replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, "\n")
+    .replace(/<footer[^>]*>[\s\S]*?<\/footer>/gi, "\n")
+    .replace(/<header[^>]*>[\s\S]*?<\/header>/gi, "\n")
+    .replace(/<\/p>|<\/h[1-6]>|<\/li>|<\/div>|<\/section>|<\/article>|<\/blockquote>|<br\s*\/?>/gi, "\n\n")
     .replace(/<[^>]+>/g, "")
-    // Decode HTML entities
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&rsquo;/g, "'")
-    .replace(/&lsquo;/g, "'")
-    .replace(/&rdquo;/g, '"')
-    .replace(/&ldquo;/g, '"')
-    .replace(/&mdash;/g, "\u2014")
-    .replace(/&ndash;/g, "\u2013")
-    .replace(/&nbsp;/g, " ")
-    // Normalize whitespace within paragraphs (but preserve paragraph breaks)
+    .replace(/&[a-z#0-9]+;/gi, " ")
     .replace(/[ \t]+/g, " ")
     .replace(/\n{3,}/g, "\n\n")
-    .replace(/^\n+|\n+$/g, "")
     .trim();
-
   return text;
 }
 
@@ -215,26 +191,29 @@ function findRelevantDataPoints(
   if (allPoints.length === 0) return [];
 
   const articleLower = articleText.toLowerCase();
-  const scored = allPoints.map((point) => {
-    const factLower = point.fact.toLowerCase();
-    const contextLower = point.context.toLowerCase();
+  const scored: { point: DataPoint; score: number }[] = [];
 
-    const factWords = new Set(factLower.split(/\s+/));
-    const articleWords = new Set(articleLower.split(/\s+/));
-    const overlap = [...factWords].filter((w) => articleWords.has(w)).length;
+  for (let i = 0; i < allPoints.length; i++) {
+    const p = allPoints[i];
+    const factLower = p.fact.toLowerCase();
+    let score = 0;
 
-    const contextWords = contextLower.split(/\s+/);
-    const contextOverlap = contextWords.filter((w) => articleWords.has(w)).length;
+    // Simple word overlap (no set/split alloc per point)
+    const factWords = factLower.split(/\s+/);
+    for (let w = 0; w < factWords.length; w++) {
+      if (articleLower.indexOf(factWords[w]) !== -1) {
+        score++;
+      }
+    }
 
-    return { point, score: overlap + contextOverlap * 0.5 };
-  });
+    if (score > 1) {
+      scored.push({ point: p, score });
+    }
+  }
 
   scored.sort((a, b) => b.score - a.score);
 
-  return scored
-    .filter((s) => s.score > 1)
-    .slice(0, maxResults)
-    .map((s) => s.point);
+  return scored.slice(0, maxResults).map((s) => s.point);
 }
 
 interface Injection {

@@ -91,11 +91,11 @@
       // Original: context without the injection
       var originalExcerpt = ellipsisStart + escapeHtml(cleanBefore + cleanAfter) + ellipsisEnd;
 
-      // Enriched: context with highlighted injection
+      // Enriched: context with highlighted injection (strip neighbor IG markers from view)
       var enrichedExcerpt = ellipsisStart +
-        escapeHtml(before) +
+        escapeHtml(cleanBefore) +
         '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + escapeHtml(injection) + '</mark>' +
-        escapeHtml(after) +
+        escapeHtml(cleanAfter) +
         ellipsisEnd;
 
       // Look up report title from data.injections (best effort)

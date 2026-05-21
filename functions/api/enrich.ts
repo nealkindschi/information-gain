@@ -30,7 +30,7 @@ type RateLimitStore = Map<string, { count: number; resetAt: number }>;
 const rateLimitStore: RateLimitStore = new Map();
 const RATE_LIMIT = 10;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
-const MAX_WORDS = 5000;
+const MAX_WORDS = 8000;
 const MAX_TOKENS = 10000;
 const FETCH_TIMEOUT_MS = 10000;
 
@@ -130,11 +130,15 @@ function estimateTokens(text: string): number {
 
 function extractTextFromHTML(html: string): string {
   let text = html
-    // Remove scripts, styles, noscript, template
+    // Remove entire non-content elements with their contents
     .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
     .replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/gi, "")
     .replace(/<template[^>]*>[\s\S]*?<\/template>/gi, "")
+    .replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, "")
+    .replace(/<footer[^>]*>[\s\S]*?<\/footer>/gi, "")
+    .replace(/<header[^>]*>[\s\S]*?<\/header>/gi, "")
+    .replace(/<aside[^>]*>[\s\S]*?<\/aside>/gi, "")
     // Convert block elements to paragraph breaks
     .replace(/<\/(p|div|h[1-6]|li|section|article|header|footer|main|aside|blockquote|pre|table|tr|figure|figcaption|details|summary)>/gi, "\n\n")
     .replace(/<br\s*\/?>/gi, "\n")

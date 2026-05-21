@@ -85,7 +85,12 @@ function isValidURL(url: string): boolean {
 function buildError(status: number, body: ErrorResponse): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
   });
 }
 
@@ -95,8 +100,19 @@ type Env = {
 };
 
 export const onRequest: PagesFunction<Env> = async (context) => {
+  if (context.request.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    });
+  }
+
   if (context.request.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+    return buildError(405, { error: "METHOD_NOT_ALLOWED" });
   }
 
   let body: EnrichRequest;

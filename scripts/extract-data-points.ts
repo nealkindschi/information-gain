@@ -22,7 +22,7 @@ interface DataPoint {
 
 const SYSTEM_PROMPT = `You are a data extraction assistant. Given a research report, extract every discrete, citable fact, statistic, case study result, and named insight.
 
-Return a JSON array of objects with these fields:
+Return a JSON object with a "data_points" key containing an array of data point objects, each with these fields:
 - fact: The exact fact or data point as a quoted statement (e.g. "Only 12% of content achieves an IGS above 0.7")
 - source: The domain or publication name where this fact originated (e.g. "searchbloom.com")
 - sourceFile: The relative path to the source report (e.g. "/reports/nist-ai-100.pdf")
@@ -93,9 +93,13 @@ async function main() {
       const text = await extractTextFromPDF(filePath);
       console.log(`  Extracted ${text.length} characters`);
 
-      const truncatedText = text.slice(0, 30000);
+      let textForExtraction = text;
+      if (text.length > 30000) {
+        console.log(`  Truncating text from ${text.length} to 30000 characters`);
+        textForExtraction = text.slice(0, 30000);
+      }
       const points = await extractDataPoints(
-        truncatedText,
+        textForExtraction,
         `/reports/${file}`
       );
       console.log(`  Extracted ${points.length} data points`);

@@ -285,7 +285,7 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
       fact: matched?.fact ?? injectedText.substring(0, 120),
       source: matched?.source ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       sourceFile: sourceFile,
-      reportTitle: reportTitles[sourceFile] ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
+      reportTitle: reportTitles[sourceFile]?.title ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       category: matched?.category ?? "data",
       position: match.index,
     });

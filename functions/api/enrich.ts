@@ -216,7 +216,12 @@ Rules:
 4. Do not remove or modify any original text outside of the injection areas.
 5. Match the article's tone, voice, sentence length, and vocabulary level exactly.
 6. If a data point is widely known, generic, or common knowledge (e.g. "AI is growing rapidly"), skip it. Only inject novel, specific, research-backed facts that add real information gain.
-7. Return the FULL enriched article text, including all unchanged portions. The client extracts context around each injection.`;
+7. Return the FULL enriched article text, including all unchanged portions.
+
+Anti-slop rules:
+8. Never use em dashes (—). Use commas, periods, or semicolons instead.
+9. Never use "it's not X — it's Y" or "not just X, but Y" sentence patterns. State facts directly.
+10. No fluff. Cut filler words and phrases. Every sentence must carry information.`;
 
 async function enrichWithLLM(
   articleText: string,

@@ -1,0 +1,8 @@
+{"type":"server-started","port":51457,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:51457","screen_dir":"/Users/nealkindschi/Desktop/OpenCode Projects/information-gain/.superpowers/brainstorm/11379-1779310907/content","state_dir":"/Users/nealkindschi/Desktop/OpenCode Projects/information-gain/.superpowers/brainstorm/11379-1779310907/state"}
+{"type":"screen-added","file":"/Users/nealkindschi/Desktop/OpenCode Projects/information-gain/.superpowers/brainstorm/11379-1779310907/content/output-format.html"}
+{"source":"user-event","type":"click","text":"A\n    \n      Side-by-Side Split\n      Original text on the left, enriched text on the right. Injected data points are highlighted with source links. Best for direct comparison.","choice":"a","id":null,"timestamp":1779311214999}
+{"type":"screen-added","file":"/Users/nealkindschi/Desktop/OpenCode Projects/information-gain/.superpowers/brainstorm/11379-1779310907/content/architecture.html"}
+{"type":"screen-added","file":"/Users/nealkindschi/Desktop/OpenCode Projects/information-gain/.superpowers/brainstorm/11379-1779310907/content/architecture-v2.html"}
+{"type":"screen-added","file":"/Users/nealkindschi/Desktop/OpenCode Projects/information-gain/.superpowers/brainstorm/11379-1779310907/content/page-layout.html"}
+{"type":"screen-added","file":"/Users/nealkindschi/Desktop/OpenCode Projects/information-gain/.superpowers/brainstorm/11379-1779310907/content/page-layout-v2.html"}
+{"type":"server-stopped","reason":"idle timeout"}

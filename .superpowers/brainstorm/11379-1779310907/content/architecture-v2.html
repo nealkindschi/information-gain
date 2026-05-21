@@ -1,0 +1,51 @@
+<h2>How the Tool Works</h2>
+<p class="subtitle">Three stages: user submits a URL, the backend processes it, the result appears side-by-side.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin:24px 0">
+  <div style="background:var(--bg-card);border-radius:12px;padding:20px;text-align:center">
+    <div style="font-size:32px;margin-bottom:8px">1</div>
+    <h3>You Submit</h3>
+    <p style="font-size:14px;color:var(--text-secondary)">Paste an article URL and click submit. A Turnstile check prevents bots.</p>
+  </div>
+  <div style="background:var(--bg-card);border-radius:12px;padding:20px;text-align:center">
+    <div style="font-size:32px;margin-bottom:8px">2</div>
+    <h3>Backend Processes</h3>
+    <p style="font-size:14px;color:var(--text-secondary)">Fetches the article, finds matching data points from our report library, sends both to AI for enrichment.</p>
+  </div>
+  <div style="background:var(--bg-card);border-radius:12px;padding:20px;text-align:center">
+    <div style="font-size:32px;margin-bottom:8px">3</div>
+    <h3>Compare Results</h3>
+    <p style="font-size:14px;color:var(--text-secondary)">Original text on the left, enriched text on the right. Every new data point links to its source report.</p>
+  </div>
+</div>
+
+<div style="background:var(--bg-card);border-radius:12px;padding:24px;margin-top:24px">
+<h3>What happens inside the backend (step 2):</h3>
+<table style="width:100%;border-collapse:collapse;font-size:14px">
+<tr style="border-bottom:1px solid var(--border)">
+  <td style="padding:10px 8px;font-weight:600">Validate</td>
+  <td style="padding:10px 8px">Check rate limit (10/hr), word count (max 5K), Turnstile passes</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border)">
+  <td style="padding:10px 8px;font-weight:600">Fetch</td>
+  <td style="padding:10px 8px">Download the article text from the URL you provided</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border)">
+  <td style="padding:10px 8px;font-weight:600">Match</td>
+  <td style="padding:10px 8px">Search pre-extracted data points for facts relevant to the article</td>
+</tr>
+<tr style="border-bottom:1px solid var(--border)">
+  <td style="padding:10px 8px;font-weight:600">Enrich</td>
+  <td style="padding:10px 8px">Send article + matched data to DeepSeek V4 Flash (10K token cap)</td>
+</tr>
+<tr>
+  <td style="padding:10px 8px;font-weight:600">Return</td>
+  <td style="padding:10px 8px">Send back the enriched version with source citations</td>
+</tr>
+</table>
+</div>
+
+<div style="background:var(--bg-card);border-radius:12px;padding:24px;margin-top:24px">
+<h3>Before anything else runs (one-time setup):</h3>
+<p style="font-size:14px;color:var(--text-secondary);margin:0">Each source report in <code>reports/</code> is processed once to extract discrete data points into <code>reports/data-points.json</code>. This is a build step — not repeated per request.</p>
+</div>

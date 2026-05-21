@@ -1,0 +1,49 @@
+<h2>Page Layout — matching seoplus.dev/tools/entity-gap-analyzer/</h2>
+<p class="subtitle">Same max-width, same card style, same spacing. Fits right into the existing site.</p>
+
+<div class="mockup" style="margin-bottom:24px">
+<div class="mockup-header">Tool page structure (max-w-4xl centered)</div>
+<div class="mockup-body" style="padding:24px">
+  <div style="text-align:center;margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid #f59e0b">
+    <h2 style="font-size:22px;font-weight:700;margin:0">Information Gain Tool</h2>
+    <p style="font-size:14px;color:#6b7280;margin:8px 0 0;max-width:400px;margin-left:auto;margin-right:auto">Enrich articles with novel data from curated research. Every injected fact includes its source.</p>
+  </div>
+
+  <div style="background:#faf8f4;border:1px solid #e5d9c8;border-radius:8px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,.05)">
+    <div style="margin-bottom:20px">
+      <div style="font-size:13px;font-weight:600;margin-bottom:6px">Article URL</div>
+      <div class="mock-input" style="margin-bottom:4px">https://yoursite.com/blog/your-article</div>
+      <div style="font-size:11px;color:#9ca3af">The article you want to enrich with data points.</div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div style="font-size:13px;font-weight:600;margin-bottom:6px">Human verification</div>
+      <div class="placeholder" style="text-align:center;padding:14px;font-size:13px">[Turnstile widget]</div>
+    </div>
+
+    <button class="mock-button" style="width:100%">Run Enrichment &rarr;</button>
+
+    <div style="margin-top:16px;padding:12px;background:#f5f3ed;border-radius:6px">
+      <div style="font-size:11px;color:#6b7280;font-family:monospace;line-height:1.5">Rate limit: 10/hr &middot; Max 5,000 words &middot; 10K token budget &middot; Uses DeepSeek V4 Flash</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="mockup" style="margin-top:24px">
+<div class="mockup-header">Results area (appears below form card after running)</div>
+<div class="mockup-body" style="padding:24px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:280px;background:#faf8f4;border:1px solid #e5d9c8;border-radius:8px;overflow:hidden">
+    <div style="border-right:1px solid #e5d9c8;padding:24px">
+      <div style="font-size:12px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px">Original</div>
+      <p style="font-size:13px;line-height:1.7;color:#4b5563">Content refresh strategies often fail because they rephrase what's already ranking. Most SEOs rewrite titles, update dates, and call it done.</p>
+      <p style="font-size:13px;line-height:1.7;color:#4b5563;margin-top:12px">The problem is consensus content provides zero information gain.</p>
+    </div>
+    <div style="padding:24px">
+      <div style="font-size:12px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px">Enriched</div>
+      <p style="font-size:13px;line-height:1.7;color:#4b5563">Content refresh strategies often fail because they rephrase what's already ranking. Most SEOs rewrite titles, update dates, and call it done.</p>
+      <p style="font-size:13px;line-height:1.7;color:#4b5563;margin-top:12px">The problem is consensus content provides zero information gain. <mark style="background:#fef3c7;padding:1px 2px;border-radius:2px">Only 12% of content achieves an IGS above 0.7.</mark> <span style="font-size:10px;color:#9ca3af;display:block;margin-top:4px">Source: searchbloom.com</span></p>
+    </div>
+  </div>
+</div>
+</div>

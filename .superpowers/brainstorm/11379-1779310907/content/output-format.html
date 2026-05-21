@@ -1,0 +1,26 @@
+<h2>How should enriched results be displayed?</h2>
+<p class="subtitle">User pastes an article URL, tool returns the enriched version. Pick the layout that feels most useful.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Side-by-Side Split</h3>
+      <p>Original text on the left, enriched text on the right. Injected data points are highlighted with source links. Best for direct comparison.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Inline With Highlights</h3>
+      <p>Single text output where new data points appear inline, styled differently (e.g. amber background/callouts) with source citations. The original article is shown collapsed/expandable above.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Table of Changes</h3>
+      <p>A structured table with columns: Original Phrase / Injected Data Point / Source Report. Best for reviewing exactly what changed and where.</p>
+    </div>
+  </div>
+</div>

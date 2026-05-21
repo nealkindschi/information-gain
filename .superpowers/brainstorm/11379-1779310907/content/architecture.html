@@ -1,0 +1,35 @@
+<h2>Architecture & Data Flow</h2>
+<p class="subtitle">Single Pages Function handles the full pipeline. API key stored as Cloudflare secret.</p>
+
+<div style="background:var(--bg-card, #f8f6f0);border-radius:12px;padding:24px;font-family:monospace;font-size:13px;line-height:1.8">
+<strong>Browser (form)</strong><br>
+&nbsp;&nbsp;&#x251C;&#x2500; User pastes article URL<br>
+&nbsp;&nbsp;&#x251C;&#x2500; Turnstile challenge<br>
+&nbsp;&nbsp;&#x2514;&#x2500; POST /api/enrich<br>
+<br>
+<strong>Pages Function: /api/enrich</strong><br>
+&nbsp;&#x251C; 1. Validate: rate limit (10/hr/IP), word cap (5K), Turnstile token<br>
+&nbsp;&#x251C; 2. Fetch article: proxy GET the URL, extract plain text<br>
+&nbsp;&#x251C; 3. Match: search pre-generated data-points.json for relevant entries<br>
+&nbsp;&#x251C; 4. Prompt: send article + matched data points to DeepSeek V4 Flash<br>
+&nbsp;&#x251C;&nbsp;&nbsp;&nbsp;(10K token budget, structured output format)<br>
+&nbsp;&#x2514; 5. Return JSON: { original, enriched, sources[] }<br>
+<br>
+<strong>Browser (render)</strong><br>
+&nbsp;&#x2514;&#x2500; Side-by-side display with highlighted injections + source links
+</div>
+
+<div style="margin-top:20px;background:var(--bg-card, #f8f6f0);border-radius:12px;padding:24px">
+<h3>Pre-processing (one-time build step)</h3>
+<div style="font-family:monospace;font-size:13px;line-height:1.8">
+Source reports (.md) &#x2192; LLM extraction &#x2192; <code>reports/data-points.json</code><br>
+<br>
+<strong>JSON schema:</strong><br>
+{<br>
+&nbsp;&nbsp;"fact": "Only 12% of content achieves an IGS above 0.7",<br>
+&nbsp;&nbsp;"source": "searchbloom.com/blog/information-gain-seo",<br>
+&nbsp;&nbsp;"category": "statistic",<br>
+&nbsp;&nbsp;"context": "Information Gain Score tiers"<br>
+}
+</div>
+</div>

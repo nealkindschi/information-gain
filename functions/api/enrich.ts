@@ -94,6 +94,48 @@ function buildError(status: number, body: ErrorResponse): Response {
   });
 }
 
+async function fetchArticle(url: string): Promise<string> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (compatible; InformationGainBot/1.0; +https://seoplus.dev/tools/information-gain)",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const html = await response.text();
+    const text = extractTextFromHTML(html);
+    return text;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function extractTextFromHTML(html: string): string {
+  const stripped = html
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return stripped;
+}
+
 type Env = {
   DEEPSEEK_API_KEY: string;
   TURNSTILE_SECRET_KEY: string;
@@ -145,11 +187,30 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     return buildError(400, { error: "TURNSTILE_FAILED" });
   }
 
-  // 4. Fetch article (Task 4)
-  // 5. Match data points (Task 5)
-  // 6. Enrich via LLM (Task 6)
+  // 4. Fetch article
+  let articleText: string;
+  try {
+    articleText = await fetchArticle(body.url);
+  } catch (err) {
+    return buildError(502, { error: "FETCH_FAILED" });
+  }
 
-  return new Response(JSON.stringify({ status: "validation passed" }), {
-    headers: { "Content-Type": "application/json" },
+  // 5. Word count check
+  const wordCount = countWords(articleText);
+  if (wordCount > MAX_WORDS) {
+    return buildError(400, {
+      error: "WORD_LIMIT",
+      wordCount,
+    });
+  }
+
+  // 6. Match data points (Task 5)
+  // 7. Enrich via LLM (Task 6)
+
+  return new Response(JSON.stringify({ status: "article fetched", wordCount }), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
   });
 };

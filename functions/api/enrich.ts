@@ -210,7 +210,7 @@ Using the voice you identified in Step 1, insert data points from the provided l
 Rules:
 1. Only use data points from the provided list. Never fabricate data.
 2. Insert each data point where it naturally supports or enhances the existing content.
-3. Wrap each injection with [IG]...[/IG] markers.
+3. Wrap each injection with markers in this exact format: [IG src="SOURCE_FILE"]injected text[/IG]. Replace SOURCE_FILE with the path from the data point (e.g. [IG src="/reports/nist-ai-100.pdf"]Only 12% of orgs lack formal AI security policies[/IG]). Do NOT use square brackets [ ] anywhere inside the injected text — this breaks parsing.
 4. Do not remove or modify any original text outside of the injection areas.
 5. Match the article's tone, voice, sentence length, and vocabulary level exactly.
 6. If a data point doesn't fit anywhere in the article, skip it.
@@ -262,24 +262,24 @@ async function enrichWithLLM(
 
 function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[] {
   const injections: Injection[] = [];
-  const regex = /\[IG\]([\s\S]*?)\[\/IG\]/g;
+  const regex = /\[IG\s+src="([^"]*)"\]([\s\S]*?)\[\/IG\]/g;
   let match: RegExpExecArray | null;
 
   while ((match = regex.exec(enriched)) !== null) {
-    const injectedText = match[1].trim();
+    const sourceFile = match[1];
+    const injectedText = match[2].trim();
 
+    // Best-effort: match back to data point for fact/source details
     const matched = dataPoints.find((dp) =>
       injectedText.includes(dp.fact.substring(0, 30)),
     );
 
-    if (matched) {
-      injections.push({
-        fact: matched.fact,
-        source: matched.source,
-        sourceFile: matched.sourceFile,
-        position: match.index,
-      });
-    }
+    injections.push({
+      fact: matched?.fact ?? injectedText.substring(0, 120),
+      source: matched?.source ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
+      sourceFile: sourceFile,
+      position: match.index,
+    });
   }
 
   return injections;

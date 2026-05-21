@@ -188,6 +188,93 @@ function findRelevantDataPoints(
     .map((s) => s.point);
 }
 
+interface Injection {
+  fact: string;
+  source: string;
+  sourceFile: string;
+  position: number;
+}
+
+const SYSTEM_PROMPT = `You are a content enrichment assistant. Your task is to enhance an article by injecting relevant data points where they fit naturally.
+
+Rules:
+1. Only use data points from the provided list. Never fabricate data.
+2. Insert each data point where it naturally supports or enhances the existing content. Do not force injections where they don't fit.
+3. Wrap each injection with [IG]...[/IG] markers.
+4. Do not remove or modify any original text outside of the injection areas.
+5. Match the article's tone and style. Data points should flow seamlessly.
+6. If a data point doesn't fit anywhere in the article, skip it — it's better to have fewer, better injections than forced ones.
+7. Return the FULL enriched article text, not just excerpts.`;
+
+async function enrichWithLLM(
+  articleText: string,
+  dataPoints: DataPoint[],
+  apiKey: string,
+): Promise<string> {
+  const dataPointsFormatted = dataPoints
+    .map(
+      (dp) =>
+        `- FACT: ${dp.fact}\n  SOURCE: ${dp.source}\n  SOURCE FILE: ${dp.sourceFile}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`,
+    )
+    .join("\n\n");
+
+  const response = await fetch("https://api.deepseek.com/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "deepseek-chat",
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        {
+          role: "user",
+          content: `Article:\n\n${articleText}\n\nAvailable data points:\n\n${dataPointsFormatted}`,
+        },
+      ],
+      max_tokens: 4096,
+      temperature: 0.3,
+    }),
+  });
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(`DeepSeek API error: ${response.status} ${errText}`);
+  }
+
+  const data = (await response.json()) as {
+    choices: [{ message: { content: string } }];
+  };
+
+  return data.choices[0].message.content;
+}
+
+function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[] {
+  const injections: Injection[] = [];
+  const regex = /\[IG\]([\s\S]*?)\[\/IG\]/g;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(enriched)) !== null) {
+    const injectedText = match[1].trim();
+
+    const matched = dataPoints.find((dp) =>
+      injectedText.includes(dp.fact.substring(0, 30)),
+    );
+
+    if (matched) {
+      injections.push({
+        fact: matched.fact,
+        source: matched.source,
+        sourceFile: matched.sourceFile,
+        position: match.index,
+      });
+    }
+  }
+
+  return injections;
+}
+
 type Env = {
   DEEPSEEK_API_KEY: string;
   TURNSTILE_SECRET_KEY: string;
@@ -260,12 +347,29 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   const allPoints = await loadDataPoints();
   const matchedPoints = findRelevantDataPoints(articleText, allPoints);
 
-  // 7. Enrich via LLM (Task 6)
+  // 7. Enrich via LLM
+  let enrichedText: string;
+  try {
+    enrichedText = await enrichWithLLM(articleText, matchedPoints, context.env.DEEPSEEK_API_KEY);
+  } catch (err) {
+    return buildError(502, { error: "ENRICH_FAILED" });
+  }
 
-  return new Response(JSON.stringify({ status: "matched", wordCount, matches: matchedPoints.length }), {
+  // 8. Parse injections from enriched text
+  const injections = parseInjections(enrichedText, matchedPoints);
+
+  // 9. Return response
+  const responseBody: EnrichResponse = {
+    original: articleText,
+    enriched: enrichedText,
+    injections,
+  };
+
+  return new Response(JSON.stringify(responseBody), {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "no-store",
     },
   });
 };

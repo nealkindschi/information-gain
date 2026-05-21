@@ -6,3 +6,4 @@ dist/
 .superpowers/
 .dev.vars
 .wrangler/
+reports/*.pdf

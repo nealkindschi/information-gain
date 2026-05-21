@@ -1,4 +1,3 @@
-import dataPointsDefault from "./data-points";
 import reportTitles from "./report-titles";
 
 interface EnrichRequest {
@@ -187,18 +186,20 @@ function extractTextFromHTML(html: string): string {
 
 interface DataPoint {
   fact: string;
-  source: string;
   sourceFile: string;
-  reportTitle: string;
   category: string;
   context: string;
 }
 
 let cachedDataPoints: DataPoint[] | null = null;
 
-function loadDataPoints(): DataPoint[] {
+async function loadDataPoints(baseUrl: string): Promise<DataPoint[]> {
   if (cachedDataPoints) return cachedDataPoints;
-  cachedDataPoints = dataPointsDefault as DataPoint[];
+  const response = await fetch(`${baseUrl}/data-points.json`);
+  if (!response.ok) {
+    throw new Error(`Failed to load data points: ${response.status}`);
+  }
+  cachedDataPoints = await response.json() as DataPoint[];
   return cachedDataPoints;
 }
 
@@ -272,7 +273,7 @@ async function enrichWithLLM(
   const dataPointsFormatted = dataPoints
     .map(
       (dp) =>
-        `- FACT: ${dp.fact}\n  SOURCE: ${dp.source}\n  SOURCE FILE: ${dp.sourceFile}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`,
+        `- FACT: ${dp.fact}\n  SOURCE FILE: ${dp.sourceFile}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`,
     )
     .join("\n\n");
 
@@ -324,7 +325,7 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
 
     injections.push({
       fact: matched?.fact ?? injectedText.substring(0, 120),
-      source: matched?.source ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
+      source: sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       sourceFile: sourceFile,
       reportTitle: reportTitles[sourceFile]?.title ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       category: matched?.category ?? "data",
@@ -413,7 +414,9 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   }
 
   // 6. Match relevant data points
-  const allPoints = loadDataPoints();
+  const url = new URL(context.request.url);
+  const baseUrl = `${url.protocol}//${url.host}`;
+  const allPoints = await loadDataPoints(baseUrl);
   const matchedPoints = findRelevantDataPoints(articleText, allPoints);
 
   // Token budget check

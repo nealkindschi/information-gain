@@ -18,7 +18,7 @@ const reportTitles: Record<string, { title: string; url: string }> = {
   },
   "/reports/jcp-06-00084-v2.pdf": {
     title: "Model Context Protocol Threat Modeling & Prompt Injection Analysis",
-    url: "https://www.mdpi.com/2673-9585/6/2/84",
+    url: "https://arxiv.org/abs/2603.22489",
   },
   "/reports/techrxiv.176773228.86819800_v1.pdf": {
     title: "Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation",

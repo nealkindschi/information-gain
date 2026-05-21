@@ -1,4 +1,13 @@
 (function () {
+  // Turnstile error callback — catch widget failures
+  window.onTurnstileError = function (code) {
+    var err = document.getElementById("enrich-form");
+    var box = document.createElement("div");
+    box.className = "bg-red-50 dark:bg-red-900/20 border border-red-300 dark:border-red-800 rounded-lg p-3 mt-3 text-center";
+    box.innerHTML = '<p class="text-red-700 dark:text-red-300 font-medium text-xs">Turnstile error: ' + code + '</p>';
+    err.appendChild(box);
+  };
+
   const form = document.getElementById("enrich-form");
   const runBtn = document.getElementById("run-btn");
   const urlInput = document.getElementById("article-url");
@@ -154,7 +163,16 @@
         turnstileToken: turnstileToken,
       }),
     })
-      .then(function (response) { return response.json().then(function (data) { return { ok: response.ok, data: data }; }); })
+      .then(function (response) {
+        // Log raw response for debugging
+        var contentType = response.headers.get("content-type") || "";
+        if (!contentType.includes("application/json")) {
+          return response.text().then(function (raw) {
+            throw new Error("Non-JSON response (" + response.status + "): " + raw.substring(0, 200));
+          });
+        }
+        return response.json().then(function (data) { return { ok: response.ok, data: data }; });
+      })
       .then(function (result) {
         if (!result.ok) {
           var errors = {
@@ -176,8 +194,9 @@
         addProgress("Enrichment complete. Rendering...");
         renderResults(result.data);
       })
-      .catch(function () {
-        showError("Network error. Please check your connection and try again.");
+      .catch(function (err) {
+        console.error("Fetch error:", err);
+        showError("Network error: " + (err.message || "Please check your connection and try again."));
       })
       .finally(function () {
         runBtn.disabled = false;

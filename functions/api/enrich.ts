@@ -1,3 +1,5 @@
+import dataPointsDefault from "./data-points";
+
 interface EnrichRequest {
   url: string;
   turnstileToken: string;
@@ -150,15 +152,9 @@ interface DataPoint {
 
 let cachedDataPoints: DataPoint[] | null = null;
 
-async function loadDataPoints(): Promise<DataPoint[]> {
+function loadDataPoints(): DataPoint[] {
   if (cachedDataPoints) return cachedDataPoints;
-
-  try {
-    const data = await import("../../reports/data-points.json");
-    cachedDataPoints = data.default as DataPoint[];
-  } catch {
-    cachedDataPoints = [];
-  }
+  cachedDataPoints = dataPointsDefault as DataPoint[];
   return cachedDataPoints;
 }
 
@@ -357,7 +353,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   }
 
   // 6. Match relevant data points
-  const allPoints = await loadDataPoints();
+  const allPoints = loadDataPoints();
   const matchedPoints = findRelevantDataPoints(articleText, allPoints);
 
   // Token budget check

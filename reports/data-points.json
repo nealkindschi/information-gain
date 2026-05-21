@@ -1,1 +1,625 @@
-[]
+[
+  {
+    "fact": "We analyze 295 GitHub Security Advisories published between January 2025 and January 2026 that reference LLM-related components.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "Data collection methodology"
+  },
+  {
+    "fact": "CWE-94 appears most often, with 24 occurrences, followed by CWE-502 and CWE-77, with 22 occurrences each.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "CWE distribution in LLM-referenced advisories"
+  },
+  {
+    "fact": "CWE-77 appears 11 times, CWE-78 and CWE-502 appear 9 times each, and CWE-94 appears 8 times in the 100-advisory subset.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "CWE distribution in annotated subset"
+  },
+  {
+    "fact": "84 packages directly implement or orchestrate LLM functionality and account for 226 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "Package categorization"
+  },
+  {
+    "fact": "Sixteen packages are possible LLM-associated and account for 34 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "Package categorization"
+  },
+  {
+    "fact": "Thirty-three packages are non-LLM-associated and account for 35 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "Package categorization"
+  },
+  {
+    "fact": "PyPI contributes 162 advisories, npm 96, Go 22, Packagist 10, and crates.io and Maven 3 each.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "Ecosystem distribution"
+  },
+  {
+    "fact": "LLM03 (Supply Chain) is the most frequent OWASP category, appearing in 44 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP LLM risk categories annotation"
+  },
+  {
+    "fact": "LLM06 (Excessive Agency) appears in 20 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP LLM risk categories annotation"
+  },
+  {
+    "fact": "LLM01 (Prompt Injection) appears in 18 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP LLM risk categories annotation"
+  },
+  {
+    "fact": "LLM02 (Sensitive Information Disclosure) and LLM10 (Unbounded Consumption) each appear in 17 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP LLM risk categories annotation"
+  },
+  {
+    "fact": "LLM05 (Improper Output Handling) appears in 12 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP LLM risk categories annotation"
+  },
+  {
+    "fact": "LLM04 (Data and Model Poisoning) appears in 7 advisories.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP LLM risk categories annotation"
+  },
+  {
+    "fact": "LLM08 (Vector and Embedding Weaknesses) appears once.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP LLM risk categories annotation"
+  },
+  {
+    "fact": "Sixty-three advisories carry a single OWASP label, whereas 37 carry multiple labels.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP label co-occurrence"
+  },
+  {
+    "fact": "The pairing LLM03+LLM06 appears 12 times.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "OWASP label co-occurrence"
+  },
+  {
+    "fact": "Cohen's Kappa between annotators was 0.76 and Gwet's AC1 was 0.95.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "statistic",
+    "context": "Inter-annotator agreement"
+  },
+  {
+    "fact": "We find no evidence of new implementation-level weakness classes specific to LLM systems.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "insight",
+    "context": "Study conclusion"
+  },
+  {
+    "fact": "Most advisories map to established CWEs, particularly injection and deserialization weaknesses.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "insight",
+    "context": "Study conclusion"
+  },
+  {
+    "fact": "OWASP-based analysis reveals recurring architectural risk patterns, especially Supply Chain, Excessive Agency, and Prompt Injection, which often co-occur across multiple stages of execution.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "insight",
+    "context": "Study conclusion"
+  },
+  {
+    "fact": "GHSA-793v-gxfp-9q9h describes a Server-Side Template Injection vulnerability in spacy-llm, corresponding to CWE-94.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "case_study",
+    "context": "CWE illustration example"
+  },
+  {
+    "fact": "GHSA-mrw7-hf4f-83pf reports unsafe deserialization in vLLM, consistent with CWE-502.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "case_study",
+    "context": "CWE illustration example"
+  },
+  {
+    "fact": "The OWASP Top 10 for LLM Applications 2025 defines categories such as Prompt Injection, Improper Output Handling, Excessive Agency, Data and Model Poisoning, and Unbounded Consumption.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "framework",
+    "context": "OWASP Top 10 for LLM Applications 2025"
+  },
+  {
+    "fact": "The advisory metadata does not structurally encode generative AI involvement or model-mediated exposure mechanisms.",
+    "source": "arxiv.org",
+    "sourceFile": "/reports/2604.04288v2.pdf",
+    "category": "insight",
+    "context": "RQ2 finding"
+  },
+  {
+    "fact": "The OWASP Top 10 for LLM Applications 2025 was released on November 18, 2024.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "statistic",
+    "context": "Version release date"
+  },
+  {
+    "fact": "Prompt injection vulnerabilities exist in how models process prompts, and how input may force the model to incorrectly pass prompt data to other parts of the model.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "LLM01:2025 Prompt Injection description"
+  },
+  {
+    "fact": "Prompt injection and jailbreaking are related concepts in LLM security; jailbreaking is a form of prompt injection where the attacker provides inputs that cause the model to disregard its safety protocols entirely.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "LLM01:2025 Prompt Injection description"
+  },
+  {
+    "fact": "Direct prompt injections occur when a user's prompt input directly alters the behavior of the model in unintended or unexpected ways.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "Direct Prompt Injections"
+  },
+  {
+    "fact": "Indirect prompt injections occur when an LLM accepts input from external sources, such as websites or files, and the external content alters the model's behavior.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "Indirect Prompt Injections"
+  },
+  {
+    "fact": "The rise of multimodal AI, which processes multiple data types simultaneously, introduces unique prompt injection risks.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "Multimodal AI risks"
+  },
+  {
+    "fact": "An attacker exploited a vulnerability (CVE-2024-5184) in an LLM-powered email assistant to inject malicious prompts, allowing access to sensitive information and manipulation of email content.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "case_study",
+    "context": "Scenario #5: Code Injection"
+  },
+  {
+    "fact": "Sensitive information disclosure can include personal identifiable information (PII), financial details, health records, confidential business data, security credentials, and legal documents.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "LLM02:2025 Sensitive Information Disclosure description"
+  },
+  {
+    "fact": "The 'Proof Pudding' attack (CVE-2019-20634) demonstrated that disclosed training data facilitated model extraction and inversion, allowing attackers to circumvent security controls in machine learning algorithms and bypass email filters.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "case_study",
+    "context": "Proprietary Algorithm Exposure"
+  },
+  {
+    "fact": "LLM supply chains are susceptible to various vulnerabilities, which can affect the integrity of training data, models, and deployment platforms.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "LLM03:2025 Supply Chain description"
+  },
+  {
+    "fact": "The rise of open-access LLMs and new fine-tuning methods like 'LoRA' (Low-Rank Adaptation) and 'PEFT' (Parameter-Efficient Fine-Tuning), especially on platforms like Hugging Face, introduce new supply-chain risks.",
+    "source": "OWASP",
+    "sourceFile": "/reports/LLMAll_en-US_FINAL.pdf",
+    "category": "definition",
+    "context": "LLM03:2025 Supply Chain description"
+  },
+  {
+    "fact": "NIST AI 100-2e2025 provides a taxonomy and terminology for adversarial machine learning (AML) that may aid in securing applications of artificial intelligence (AI) against adversarial manipulations and attacks.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "definition",
+    "context": "Purpose of the document"
+  },
+  {
+    "fact": "The document distinguishes between predictive AI (PredAI) and generative AI (GenAI) systems.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "definition",
+    "context": "Classification of AI systems"
+  },
+  {
+    "fact": "There are no information-theoretic security proofs for the widely used ML algorithms in modern AI systems.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "statistic",
+    "context": "Security guarantees of ML algorithms"
+  },
+  {
+    "fact": "Adversarial perturbations of input images have caused autonomous vehicles to swerve into lanes going in the opposite direction, stop signs to be misclassified as speed limit signs, and even people wearing glasses to be misidentified in high-security settings.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "case_study",
+    "context": "Evasion attacks in computer vision"
+  },
+  {
+    "fact": "More than 11,354 references on arXiv.org since 2021 as of July 2024 exist on adversarial ML.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "statistic",
+    "context": "Literature on adversarial ML"
+  },
+  {
+    "fact": "The taxonomy covers attacks classified relative to: (i) the AI system type, (ii) the stage of the ML life cycle process, (iii) the attacker's goals and objectives, (iv) the attacker's capabilities and access, and (v) the attacker's knowledge.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "framework",
+    "context": "Taxonomy classification criteria"
+  },
+  {
+    "fact": "Attacks against PredAI systems include evasion, poisoning, and privacy attacks.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "framework",
+    "context": "Attack types for PredAI"
+  },
+  {
+    "fact": "Attacks against GenAI systems include poisoning, direct prompting, and indirect prompt injection attacks.",
+    "source": "nist.gov",
+    "sourceFile": "/reports/NIST.AI.100-2e2025.pdf",
+    "category": "framework",
+    "context": "Attack types for GenAI"
+  },
+  {
+    "fact": "This report identifies five broad categories of cross-cutting monitoring challenges: (1) trusted methods and tools, (2) visibility and transparency, (3) pace of change, (4) incentives and organizational culture, and (5) resource requirements.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "framework",
+    "context": "Cross-cutting monitoring challenges classification"
+  },
+  {
+    "fact": "Gaps are defined as notable areas that are either under-explored or lack sufficient attention.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Definition of gaps"
+  },
+  {
+    "fact": "Barriers are defined as known challenges or obstacles to achieving high-quality, rigorous post-deployment monitoring.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Definition of barriers"
+  },
+  {
+    "fact": "Open questions are unsettled or unanswered questions on aspects of conducting monitoring.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Definition of open questions"
+  },
+  {
+    "fact": "Post-deployment constitutes the period after an AI system is put into at least partial working operation in production or application.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Definition of post-deployment"
+  },
+  {
+    "fact": "Monitoring refers to any type of measurement, potentially 'continuous,' such as tracking, evaluation, data collection, or information gathering.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Definition of monitoring"
+  },
+  {
+    "fact": "The six monitoring categories are: Functionality, Operational, Human Factors, Security, Compliance, and Large-Scale Impacts.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "framework",
+    "context": "Monitoring categories overview"
+  },
+  {
+    "fact": "Functionality Monitoring: Measuring system functions, capabilities, and features, for example to ensure the system continues to work as intended.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Functionality monitoring definition"
+  },
+  {
+    "fact": "Operational Monitoring: Measuring system infrastructure components, for example to ensure the system maintains consistent levels of service.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Operational monitoring definition"
+  },
+  {
+    "fact": "Human Factors Monitoring: Measuring human-system interactions, for example to ensure the system produces high-quality outputs and is transparent.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Human factors monitoring definition"
+  },
+  {
+    "fact": "Security Monitoring: Measuring where the system is potentially vulnerable to adversarial attacks and misuse.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Security monitoring definition"
+  },
+  {
+    "fact": "Compliance Monitoring: Measuring system components for adherence to relevant laws, regulations, standards, controls, and guidelines.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Compliance monitoring definition"
+  },
+  {
+    "fact": "Large-Scale Impacts Monitoring: Measuring system properties that have wide downstream impacts, for example to ensure the system promotes human flourishing.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "definition",
+    "context": "Large-scale impacts monitoring definition"
+  },
+  {
+    "fact": "CAISI held three workshops on post-deployment AI system monitoring from April to May 2025.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "statistic",
+    "context": "Workshop details"
+  },
+  {
+    "fact": "The literature review grew to include 87 papers in total.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "statistic",
+    "context": "Literature review scope"
+  },
+  {
+    "fact": "A smaller proportion of the workshop quotations and literature excerpts covered operational and compliance monitoring.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "statistic",
+    "context": "Distribution of monitoring topics"
+  },
+  {
+    "fact": "Workshop attendees had a larger proportion of quotations related to human factors monitoring compared to literature excerpts.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "statistic",
+    "context": "Distribution of monitoring topics"
+  },
+  {
+    "fact": "A larger share of literature excerpts in this review were related to security monitoring compared to workshop quotations.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "statistic",
+    "context": "Distribution of monitoring topics"
+  },
+  {
+    "fact": "Workshops included subject matter experts across 10+ federal agencies and about 200 external experts across academia and industry.",
+    "source": "NIST",
+    "sourceFile": "/reports/NIST.AI.800-4.pdf",
+    "category": "statistic",
+    "context": "Workshop participation"
+  },
+  {
+    "fact": "\"Only 12% of content achieves an IGS above 0.7\"",
+    "source": "searchbloom.com",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "statistic",
+    "context": "Example fact placeholder"
+  },
+  {
+    "fact": "\"The Model Context Protocol (MCP), introduced by Anthropic in November 2024, is a standard for connecting AI hosts/assistants to external tools/services\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "definition",
+    "context": "MCP introduction"
+  },
+  {
+    "fact": "\"In only a year, the MCP has been widely adopted in the industry, with more than 18,000 servers listed on the MCP Market\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "statistic",
+    "context": "MCP adoption"
+  },
+  {
+    "fact": "\"The MCP specification does not require client-side validation of server-provided metadata, and our empirical testing reveals that most clients (five out of seven evaluated) do not implement static validation mechanisms\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "statistic",
+    "context": "Client-side validation"
+  },
+  {
+    "fact": "\"The integration of LLMs as decision-makers introduces prompt injection as a primary attack vector (#1 in OWASP's LLM vulnerability rankings)\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "benchmark",
+    "context": "OWASP LLM vulnerabilities"
+  },
+  {
+    "fact": "\"Hasan et al. conducted a comprehensive study examining 1899 open source MCP servers and found concerning security issues. In total, 7.2% of servers contained general security vulnerabilities, 5.5% exhibited MCP-specific attack vectors (tool poisoning)\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "statistic",
+    "context": "Server-side vulnerabilities"
+  },
+  {
+    "fact": "\"Wang et al. introduced the concept of 'tool poisoning' as a specific manifestation of prompt injection in MCP contexts\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "definition",
+    "context": "Tool poisoning concept"
+  },
+  {
+    "fact": "\"The authors of [4] built MCPTox on 45 live MCP servers with 353 authentic tools, designed 3 attack templates that generated 1312 malicious test cases spanning 10 risk categories, and evaluated 20 LLM agents; they observed attack success rates up to 72.8% (o1-mini) with the highest refusal rate still below 3% (Claude-3.7-Sonnet)\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "statistic",
+    "context": "MCPTox attack success rates"
+  },
+  {
+    "fact": "\"STRIDE (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) threat modeling framework\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "framework",
+    "context": "Threat modeling methodology"
+  },
+  {
+    "fact": "\"DREAD (Damage potential, Reproducibility, Exploitability, Affected users, Discoverability) risk assessment model\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "framework",
+    "context": "Risk assessment methodology"
+  },
+  {
+    "fact": "\"Tool poisoning ranks #1 in OWASP's LLM Top 10 and scores Critical (46.5/50) in our DREAD analysis\"",
+    "source": "Journal of Cybersecurity and Privacy",
+    "sourceFile": "/reports/jcp-06-00084-v2.pdf",
+    "category": "statistic",
+    "context": "Tool poisoning severity"
+  },
+  {
+    "fact": "Advanced automated attacks routinely achieve 90-99% success on open-weight models, while black-box attacks reach 80-94% effectiveness on proprietary models.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Attack success rates by threat model"
+  },
+  {
+    "fact": "Agent-driven multi-turn attacks demonstrate 95% success by decomposing harmful queries across conversation turns.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Multi-turn attack effectiveness"
+  },
+  {
+    "fact": "Feedback-based attacks often retain residual success above 15% even against layered protections.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Defense limitations"
+  },
+  {
+    "fact": "Automated judge agreement varies 70-93% depending on implementation, weakening confidence in security assessments.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Evaluation reliability"
+  },
+  {
+    "fact": "HarmBench reports approximately 93% agreement for its fine-tuned Llama-2-13B classifier and approximately 88% for GPT-4.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Automated judge agreement with human labels"
+  },
+  {
+    "fact": "Substring matching reaches approximately 70% agreement.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "String matching agreement"
+  },
+  {
+    "fact": "Vanilla GPT-4 can drop to approximately 0.55 F1 on challenging tasks before multi-agent scaffolds lift performance above 0.9.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "GPT-4 evaluation performance"
+  },
+  {
+    "fact": "AmpleGCG reports 99% ASR on GPT-3.5 using suffixes trained on open-source models.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Transferability of universal suffixes"
+  },
+  {
+    "fact": "GCG-style suffixes achieve 87.9% ASR on gpt-3.5-turbo-0301, 53.6% on gpt-4-0314, and 66% on PaLM-2 with ensemble usage.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Transferability of GCG suffixes"
+  },
+  {
+    "fact": "PAIR achieves successful jailbreaks for roughly $0.026 per attack with fewer than 20 queries when using a Mixtral-8×7B attacker against Vicuna-13B-v1.5.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Cost efficiency of PAIR"
+  },
+  {
+    "fact": "AmpleGCG samples approximately 200 candidate suffixes in about 4 seconds of A100 inference, though the end-to-end pipeline takes several minutes for a batch achieving approximately 99% ASR on Llama-2-7B-Chat.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Speed and effectiveness of AmpleGCG"
+  },
+  {
+    "fact": "Safety alignment via RLHF alone proves insufficient against sophisticated semantic vulnerabilities.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "expert_quote",
+    "context": "Limitations of RLHF"
+  },
+  {
+    "fact": "HarmBench’s fine-tuned Llama-2-13b-cls achieves 93.19% agreement; GPT-4 achieves 88.37%; simpler string matching achieves 69.93%.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Judge reliability comparison"
+  },
+  {
+    "fact": "White-box attacks achieve approximately 90-99% ASR on open-weight models.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "White-box attack effectiveness"
+  },
+  {
+    "fact": "Black-box attacks reach 80-94% ASR on deployed APIs.",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Black-box attack effectiveness"
+  },
+  {
+    "fact": "Cross-modal exploitation in VLMs reaches approximately 99% on specific benchmarks (e.g., SafeBench).",
+    "source": "techrxiv.org",
+    "sourceFile": "/reports/techrxiv.176773228.86819800_v1.pdf",
+    "category": "statistic",
+    "context": "Multimodal attack performance"
+  }
+]

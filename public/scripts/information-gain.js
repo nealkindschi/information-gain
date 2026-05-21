@@ -189,11 +189,20 @@
       }),
     })
       .then(function (response) {
-        // Log raw response for debugging
         var contentType = response.headers.get("content-type") || "";
         if (!contentType.includes("application/json")) {
           return response.text().then(function (raw) {
-            throw new Error("Non-JSON response (" + response.status + "): " + raw.substring(0, 200));
+            var snippet = raw.substring(0, 500);
+            if (
+              response.status === 503 &&
+              (snippet.indexOf("<!--[if lt IE 7]>") !== -1 ||
+               snippet.indexOf("cf-browser-verify") !== -1 ||
+               snippet.indexOf("cf_challenge") !== -1 ||
+               snippet.indexOf("_cf_chl_opt") !== -1)
+            ) {
+              throw new Error("CF_CHALLENGE");
+            }
+            throw new Error("Non-JSON response (" + response.status + "): " + snippet.substring(0, 200));
           });
         }
         return response.json().then(function (data) { return { ok: response.ok, data: data }; });
@@ -209,6 +218,7 @@
             FETCH_FAILED: "Could not fetch the article. The site may be blocking requests.",
             FETCH_TIMEOUT: "Request timed out. The article site may be slow or unreachable.",
             FETCH_BLOCKED: "Could not fetch the article. The site may be blocking automated requests.",
+            FETCH_CF_BLOCKED: "The article site blocked our request (bot protection). Try a different article URL.",
             TOKEN_BUDGET: "Article is too large for enrichment. Try a shorter article.",
             ENRICH_FAILED: "The enrichment service encountered an error. Please try again.",
           };
@@ -220,13 +230,11 @@
         renderResults(result.data);
       })
       .catch(function (err) {
-        console.error("Fetch error:", err);
-        showError("Network error: " + (err.message || "Please check your connection and try again."));
-      })
-      .finally(function () {
-        runBtn.disabled = false;
-        runBtn.textContent = "Run Enrichment \u2192";
-        clearProgress();
+        if (err.message === "CF_CHALLENGE") {
+          showError("Cloudflare security intercepted the request. This is a known issue on pages.dev domains. Try a simpler article URL or deploy to a custom domain.");
+        } else {
+          showError("Fetch error: " + err.message);
+        }
       });
   });
 })();

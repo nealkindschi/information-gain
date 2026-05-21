@@ -32,7 +32,7 @@ const RATE_LIMIT = 10;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 const MAX_WORDS = 20000;
 const MAX_TOKENS = 30000;
-const FETCH_TIMEOUT_MS = 5000;
+const FETCH_TIMEOUT_MS = 3000;
 
 function getIP(request: Request): string {
   return request.headers.get("CF-Connecting-IP") || "unknown";
@@ -210,7 +210,7 @@ async function loadDataPoints(baseUrl: string): Promise<DataPoint[]> {
 function findRelevantDataPoints(
   articleText: string,
   allPoints: DataPoint[],
-  maxResults = 10,
+  maxResults = 5,
 ): DataPoint[] {
   if (allPoints.length === 0) return [];
 
@@ -306,7 +306,7 @@ async function enrichWithLLM(
           content: `Article:\n\n${articleText}\n\nAvailable data points:\n\n${dataPointsFormatted}`,
         },
       ],
-      max_tokens: 4096,
+      max_tokens: 2048,
       temperature: 0.3,
     }),
   });

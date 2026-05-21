@@ -252,18 +252,24 @@ Step 1 — Analyze voice and tone:
 Read the article carefully. Identify its voice, tone, and writing style. Note sentence structure, vocabulary level, and cadence. Is it formal or conversational? Technical or accessible? Journalistic or marketing?
 
 Step 2 — Inject data points:
-Using the voice you identified in Step 1, insert data points from the provided list where they naturally support the content. For each injection, first try to incorporate the data point into an existing sentence near where it fits — weave it in rather than adding a new sentence. Only add a brand new sentence if the data point cannot be woven into an existing sentence. Every injection must be exactly one sentence long — state the data point, mention the source, and briefly connect it to the topic. Never add multiple sentences, paragraphs, long passages, background explanations, or editorial commentary.
+Using the voice you identified in Step 1, insert specific, quantitative data points from the provided list where they naturally support the content. Each injection must be a precise statement of fact, not a generalization or meta-commentary about the source. Follow these requirements for every injection:
 
-After each injection, re-read the surrounding text to verify: the copy flows logically around the injection, the tone and vocabulary match the original, and the injection feels indistinguishable from the author's own writing.
+- State the exact, specific data point (numbers, percentages, named events, concrete findings from the list). Never inject a vague observation or hand-wavy claim.
+- Name the authoritative source explicitly with year (e.g., "the NIST AI Risk Management Framework," "Stanford's 2025 AI Index," "Anthropic's August 2025 Threat Intelligence Report"). Never use weasel words like "research shows," "studies indicate," or "according to a report."
+- Inject the DATA itself, not the report. Say "78% of organizations now use AI, according to the Stanford AI Index 2025" — not "The Stanford AI Index published findings about enterprise AI adoption."
+- First try to weave the data point into an existing sentence near where it fits. Only add a standalone sentence if inline integration is impossible. Each injection must be exactly one sentence.
+
+After each injection, re-read the surrounding text to verify: the copy flows logically, the tone and vocabulary match the original, and the statement reads as an authoritative, sourced fact rather than a casual observation or filler text.
 
 Rules:
-1. Only use data points from the provided list. Never fabricate data.
-2. Each injection must be exactly one sentence. Try to weave the data point into an existing sentence first. Only add a standalone sentence if inline integration is impossible. Never add multiple sentences, paragraphs, or extended commentary.
+1. Only use data points from the provided list. Never fabricate data. Reject data points that are vague, generic, or common knowledge — only inject facts that a reader could not obtain by asking a general-purpose AI chatbot.
+2. Each injection must be exactly one sentence. It must include both the specific fact AND the named source with year (e.g., "According to Stanford's 2025 AI Index, 78% of organizations now use AI"). Never use "research shows," "studies indicate," "a report found," or any unattributed attribution. If the injection does not name an authoritative source, do not write it.
 3. Wrap each injection with markers in this exact format: [IG src="SOURCE_FILE"]injected text[/IG]. Replace SOURCE_FILE with the path from the data point (e.g. [IG src="/reports/nist-ai-100.pdf"]Only 12% of orgs lack formal AI security policies[/IG]). Do NOT use square brackets [ ] anywhere inside the injected text — this breaks parsing.
 4. Do not remove or modify any original text outside of the injection areas.
 5. Match the article's tone, voice, sentence length, and vocabulary level exactly. After each insertion, re-read the surrounding text to confirm the copy remains logical, the transition is natural, and the style is indistinguishable from the original.
-6. If a data point is widely known, generic, or common knowledge (e.g. "AI is growing rapidly"), skip it. Only inject novel, specific, research-backed facts that add real information gain.
+6. If a data point is widely known, generic, or common knowledge (e.g. "AI is growing rapidly"), skip it. Only inject novel, specific, research-backed facts that pass the "novelty test": if any general-purpose AI could generate this statement from its training data, do not inject it.
 7. Preserve the original article's paragraph structure exactly. Maintain all paragraph separations (double newlines between paragraphs) as they appear in the input. Return the FULL enriched article text, including all unchanged portions.
+12. Never meta-report: do not write about what a report "addresses," "covers," "found," or "published." Only write the data point itself, attributed to the source. The source exists to give the fact authority, not as the subject of the sentence.
 
 Anti-slop rules:
 8. Never use em dashes (—). Use commas, periods, or semicolons instead.
@@ -278,8 +284,10 @@ async function enrichWithLLM(
 ): Promise<string> {
   const dataPointsFormatted = dataPoints
     .map(
-      (dp) =>
-        `- FACT: ${dp.fact}\n  SOURCE FILE: ${dp.sourceFile}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`,
+      (dp) => {
+        const title = reportTitles[dp.sourceFile]?.title ?? dp.sourceFile.replace(/^\/reports\//, "").replace(/\.pdf$/, "");
+        return `- FACT: ${dp.fact}\n  SOURCE: ${title}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`;
+      }
     )
     .join("\n\n");
 

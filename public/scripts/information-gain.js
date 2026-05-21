@@ -98,13 +98,11 @@
         escapeHtml(after) +
         ellipsisEnd;
 
-      // Look up category and report title from data.injections (best effort)
-      var category = "data";
+      // Look up report title from data.injections (best effort)
       var reportTitle = match.sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, "");
       for (var j = 0; j < data.injections.length; j++) {
         var inj = data.injections[j];
         if (inj && injection.indexOf(inj.fact.substring(0, 30)) !== -1) {
-          category = (inj.category || "data").replace(/_/g, " ");
           if (inj.reportTitle) reportTitle = inj.reportTitle;
           break;
         }
@@ -117,8 +115,7 @@
       cardsHtml +=
         '<div class="change-card">' +
         '<div class="change-card-header">' +
-        '<span class="change-card-category">' + escapeHtml(category) + '</span>' +
-        '<span class="change-card-num">' + (i + 1) + ' of ' + matches.length + '</span>' +
+        '<span class="change-card-num">Change ' + (i + 1) + ' of ' + matches.length + '</span>' +
         '</div>' +
         '<div class="grid grid-cols-1 md:grid-cols-2">' +
         '<div class="change-card-col change-card-original">' +

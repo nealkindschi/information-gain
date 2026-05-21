@@ -78,8 +78,9 @@
       // Look up category from data.injections (best effort)
       var category = "data";
       for (var j = 0; j < data.injections.length; j++) {
-        if (injectionContent.indexOf(data.injections[j].fact.substring(0, 30)) !== -1) {
-          category = data.injections[j].category.replace(/_/g, " ");
+        var inj = data.injections[j];
+        if (inj && injectionContent.indexOf(inj.fact.substring(0, 30)) !== -1) {
+          category = (inj.category || "data").replace(/_/g, " ");
           break;
         }
       }

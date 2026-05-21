@@ -12,6 +12,7 @@ interface EnrichResponse {
     fact: string;
     source: string;
     sourceFile: string;
+    category: string;
     position: number;
   }>;
 }
@@ -192,6 +193,7 @@ interface Injection {
   fact: string;
   source: string;
   sourceFile: string;
+  category: string;
   position: number;
 }
 
@@ -274,6 +276,7 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
       fact: matched?.fact ?? injectedText.substring(0, 120),
       source: matched?.source ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       sourceFile: sourceFile,
+      category: matched?.category ?? "data",
       position: match.index,
     });
   }

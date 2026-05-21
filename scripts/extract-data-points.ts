@@ -67,33 +67,73 @@ async function extractDataPoints(
   });
 
   if (!response.ok) {
+    const body = await response.text();
     throw new Error(
-      `DeepSeek API error: ${response.status} ${await response.text()}`
+      `DeepSeek API error: ${response.status} ${body.slice(0, 200)}`
     );
   }
 
   const data = (await response.json()) as {
     choices: [{ message: { content: string } }];
   };
-  const parsed = JSON.parse(data.choices[0].message.content);
+  const rawContent = data.choices[0].message.content;
+  let parsed: { report_title?: string; data_points?: Omit<DataPoint, "reportTitle">[] };
+
+  try {
+    parsed = JSON.parse(rawContent);
+  } catch {
+    // Try to repair truncated JSON by closing array/object
+    const repaired = rawContent.replace(/(,\s*)?$/, "").trim();
+    if (!repaired.endsWith("]")) {
+      // Find last complete fact and close the array
+      const lastComma = repaired.lastIndexOf('",');
+      if (lastComma > 0) {
+        parsed = JSON.parse(repaired.slice(0, lastComma + 1) + "\n  ]\n}");
+      } else {
+        throw new Error(`Unrepairable JSON response`);
+      }
+    } else {
+      throw new Error(`JSON parse failed: ${String(parsed)}`);
+    }
+  }
+
   const reportTitle = (parsed.report_title as string) || filename.replace(/^\/reports\//, "").replace(/\.pdf$/, "");
-  const points = parsed.data_points as Omit<DataPoint, "reportTitle">[];
+  const points = (parsed.data_points || []) as Omit<DataPoint, "reportTitle">[];
   return points.map((p) => ({ ...p, reportTitle }));
 }
 
 async function main() {
-  const files = fs
+  const specifiedFiles = process.argv.slice(2);
+  const allFiles = fs
     .readdirSync(REPORTS_DIR)
     .filter((f: string) => f.endsWith(".pdf"));
+  const files = specifiedFiles.length > 0
+    ? allFiles.filter((f) => specifiedFiles.includes(f))
+    : allFiles;
 
   if (files.length === 0) {
-    console.log("No PDF files found in reports/");
+    console.log("No matching PDF files found in reports/");
     process.exit(0);
   }
 
   const allDataPoints: DataPoint[] = [];
+  const existingFiles = new Set<string>();
+
+  if (fs.existsSync(OUTPUT)) {
+    const existing = JSON.parse(fs.readFileSync(OUTPUT, "utf-8")) as DataPoint[];
+    for (const dp of existing) {
+      existingFiles.add(dp.sourceFile);
+      allDataPoints.push(dp);
+    }
+    console.log(`Loaded ${existing.length} existing data points from ${OUTPUT}`);
+  }
 
   for (const file of files) {
+    const sourcePath = `/reports/${file}`;
+    if (existingFiles.has(sourcePath)) {
+      console.log(`Skipping: ${file} (already extracted)`);
+      continue;
+    }
     console.log(`Processing: ${file}`);
     const filePath = path.join(REPORTS_DIR, file);
 
@@ -101,21 +141,60 @@ async function main() {
       const text = await extractTextFromPDF(filePath);
       console.log(`  Extracted ${text.length} characters`);
 
-      let textForExtraction = text;
-      if (text.length > 30000) {
-        console.log(`  Truncating text from ${text.length} to 30000 characters`);
-        textForExtraction = text.slice(0, 30000);
+      const CHUNK_SIZE = 25000;
+      const chunks: string[] = [];
+      for (let i = 0; i < text.length; i += CHUNK_SIZE) {
+        chunks.push(text.slice(i, i + CHUNK_SIZE));
       }
-      const points = await extractDataPoints(
-        textForExtraction,
-        `/reports/${file}`
-      );
-      console.log(`  Extracted ${points.length} data points`);
-      allDataPoints.push(...points);
+
+      console.log(`  Split into ${chunks.length} chunk(s)`);
+
+      // Process chunks concurrently with resilience
+      const CONCURRENCY = 3;
+      for (let ci = 0; ci < chunks.length; ci += CONCURRENCY) {
+        const batch = chunks.slice(ci, ci + CONCURRENCY);
+        const batchStart = ci + 1;
+        console.log(`  Chunks ${batchStart}-${batchStart + batch.length - 1}/${chunks.length}`);
+        const results = await Promise.allSettled(
+          batch.map((chunk) =>
+            extractDataPoints(chunk, `/reports/${file}`)
+          )
+        );
+        let batchOk = 0;
+        for (let ri = 0; ri < results.length; ri++) {
+          const result = results[ri];
+          if (result.status === "fulfilled") {
+            allDataPoints.push(...result.value);
+            batchOk++;
+          } else {
+            console.log(`    Chunk ${batchStart + ri} failed: ${result.reason}`);
+          }
+        }
+        if (batchOk < batch.length) {
+          console.log(`    ${batchOk}/${batch.length} chunks succeeded`);
+        }
+      }
+
+      console.log(`  Total points so far: ${allDataPoints.length}`);
     } catch (err) {
       console.error(`  Failed to process ${file}: ${err}`);
     }
   }
+
+  // Final deduplication across all reports
+  const before = allDataPoints.length;
+  const seen = new Set<string>();
+  const deduped: DataPoint[] = [];
+  for (const dp of allDataPoints) {
+    const key = dp.fact.toLowerCase().trim();
+    if (!seen.has(key)) {
+      seen.add(key);
+      deduped.push(dp);
+    }
+  }
+  console.log(`\nRemoved ${before - deduped.length} total duplicates`);
+  allDataPoints.length = 0;
+  allDataPoints.push(...deduped);
 
   fs.writeFileSync(OUTPUT, JSON.stringify(allDataPoints, null, 2));
   console.log(

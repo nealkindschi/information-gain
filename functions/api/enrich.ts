@@ -136,6 +136,58 @@ function extractTextFromHTML(html: string): string {
   return stripped;
 }
 
+interface DataPoint {
+  fact: string;
+  source: string;
+  sourceFile: string;
+  category: string;
+  context: string;
+}
+
+let cachedDataPoints: DataPoint[] | null = null;
+
+async function loadDataPoints(): Promise<DataPoint[]> {
+  if (cachedDataPoints) return cachedDataPoints;
+
+  try {
+    const data = await import("../../reports/data-points.json");
+    cachedDataPoints = data.default as DataPoint[];
+  } catch {
+    cachedDataPoints = [];
+  }
+  return cachedDataPoints;
+}
+
+function findRelevantDataPoints(
+  articleText: string,
+  allPoints: DataPoint[],
+  maxResults = 15,
+): DataPoint[] {
+  if (allPoints.length === 0) return [];
+
+  const articleLower = articleText.toLowerCase();
+  const scored = allPoints.map((point) => {
+    const factLower = point.fact.toLowerCase();
+    const contextLower = point.context.toLowerCase();
+
+    const factWords = new Set(factLower.split(/\s+/));
+    const articleWords = new Set(articleLower.split(/\s+/));
+    const overlap = [...factWords].filter((w) => articleWords.has(w)).length;
+
+    const contextWords = contextLower.split(/\s+/);
+    const contextOverlap = contextWords.filter((w) => articleWords.has(w)).length;
+
+    return { point, score: overlap + contextOverlap * 0.5 };
+  });
+
+  scored.sort((a, b) => b.score - a.score);
+
+  return scored
+    .filter((s) => s.score > 1)
+    .slice(0, maxResults)
+    .map((s) => s.point);
+}
+
 type Env = {
   DEEPSEEK_API_KEY: string;
   TURNSTILE_SECRET_KEY: string;
@@ -204,10 +256,13 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     });
   }
 
-  // 6. Match data points (Task 5)
+  // 6. Match relevant data points
+  const allPoints = await loadDataPoints();
+  const matchedPoints = findRelevantDataPoints(articleText, allPoints);
+
   // 7. Enrich via LLM (Task 6)
 
-  return new Response(JSON.stringify({ status: "article fetched", wordCount }), {
+  return new Response(JSON.stringify({ status: "matched", wordCount, matches: matchedPoints.length }), {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",

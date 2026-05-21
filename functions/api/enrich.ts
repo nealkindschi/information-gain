@@ -129,20 +129,40 @@ function estimateTokens(text: string): number {
 }
 
 function extractTextFromHTML(html: string): string {
-  const stripped = html
+  let text = html
+    // Remove scripts, styles, noscript, template
     .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "")
-    .replace(/<[^>]+>/g, " ")
+    .replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/gi, "")
+    .replace(/<template[^>]*>[\s\S]*?<\/template>/gi, "")
+    // Convert block elements to paragraph breaks
+    .replace(/<\/(p|div|h[1-6]|li|section|article|header|footer|main|aside|blockquote|pre|table|tr|figure|figcaption|details|summary)>/gi, "\n\n")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(ul|ol|dl)>/gi, "\n")
+    // Self-closing block elements
+    .replace(/<\/?(hr|img)[^>]*\/?>/gi, "\n")
+    // Strip remaining inline tags
+    .replace(/<[^>]+>/g, "")
+    // Decode HTML entities
     .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&rdquo;/g, '"')
+    .replace(/&ldquo;/g, '"')
+    .replace(/&mdash;/g, "\u2014")
+    .replace(/&ndash;/g, "\u2013")
     .replace(/&nbsp;/g, " ")
-    .replace(/\s+/g, " ")
+    // Normalize whitespace within paragraphs (but preserve paragraph breaks)
+    .replace(/[ \t]+/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .replace(/^\n+|\n+$/g, "")
     .trim();
 
-  return stripped;
+  return text;
 }
 
 interface DataPoint {
@@ -216,7 +236,7 @@ Rules:
 4. Do not remove or modify any original text outside of the injection areas.
 5. Match the article's tone, voice, sentence length, and vocabulary level exactly.
 6. If a data point is widely known, generic, or common knowledge (e.g. "AI is growing rapidly"), skip it. Only inject novel, specific, research-backed facts that add real information gain.
-7. Return the FULL enriched article text, including all unchanged portions.
+7. Preserve the original article's paragraph structure exactly. Maintain all paragraph separations (double newlines between paragraphs) as they appear in the input. Return the FULL enriched article text, including all unchanged portions.
 
 Anti-slop rules:
 8. Never use em dashes (—). Use commas, periods, or semicolons instead.

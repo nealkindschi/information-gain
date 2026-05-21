@@ -232,6 +232,12 @@ mark {
   color: var(--warm-800);
   line-height: 1.625;
 }
+.change-card-text p {
+  margin: 0 0 0.75rem;
+}
+.change-card-text p:last-child {
+  margin-bottom: 0;
+}
 .change-card-source-wrap {
   margin-top: 0.75rem;
   padding-top: 0.5rem;

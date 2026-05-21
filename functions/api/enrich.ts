@@ -126,8 +126,12 @@ async function fetchArticle(url: string): Promise<string> {
       html.includes("cf-browser-verify") ||
       html.includes("cf_challenge") ||
       html.includes("_cf_chl_opt") ||
-      html.includes("Cloudflare") && html.includes("checking your browser") ||
-      html.includes("Just a moment") && html.includes("security")
+      html.includes("challenge-platform") ||
+      html.includes("cf-wrapper") ||
+      html.includes("window._cf_chl") ||
+      (html.includes('class="no-js') && html.includes("<!--[if")) ||
+      (html.includes("Cloudflare") && html.includes("checking your browser")) ||
+      (html.includes("Just a moment") && html.includes("security"))
     ) {
       throw new Error("CF_CHALLENGE");
     }

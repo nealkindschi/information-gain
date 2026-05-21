@@ -6,9 +6,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-    "types": ["node"],
+    "types": ["node", "@cloudflare/workers-types/experimental"],
     "outDir": "dist",
     "rootDir": "."
   },
-  "include": ["scripts/**/*.ts"]
+  "include": ["scripts/**/*.ts", "functions/**/*.ts"]
 }

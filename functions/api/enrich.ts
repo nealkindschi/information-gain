@@ -186,7 +186,7 @@ async function loadDataPoints(baseUrl: string): Promise<DataPoint[]> {
 function findRelevantDataPoints(
   articleText: string,
   allPoints: DataPoint[],
-  maxResults = 5,
+  maxResults = 10,
 ): DataPoint[] {
   if (allPoints.length === 0) return [];
 
@@ -225,14 +225,15 @@ interface Injection {
   position: number;
 }
 
-const SYSTEM_PROMPT = `Enrich this article by injecting data points from the list where they fit naturally. For each injection:
-- State the exact data point with its named source and year (e.g., "According to the NIST AI Risk Management Framework, 40% of organizations..."). Never use "research shows" or "studies indicate."
-- Inject the data, not the report. Say "X according to Source (Year)." Not "Source published findings about X."
-- Weave into an existing sentence where possible; add a standalone sentence only if needed. One sentence, ≤30 words, no run-on catalogues.
-- Match the article's tone exactly. Skip generic or common-knowledge facts.
-- Wrap each injection: [IG src="SOURCE_FILE"]injected text[/IG]
-- Preserve original paragraph structure. Return the full enriched text.
-- No em dashes, no HTML entities, no meta-reporting.`;
+const SYSTEM_PROMPT = `Insert data points from the list into the article. Every insertion MUST be wrapped EXACTLY like this — no exceptions:
+
+[IG src="the-source-file-path"]The injected sentence here[/IG]
+
+Rules:
+- Name the source with year (e.g., "According to the NIST AI Risk Management Framework...").
+- Never use "research shows" or "studies indicate." Name the specific source.
+- One sentence only, ≤30 words. Match the article's tone.
+- Return the full article with insertions inline. Do not add introductions or conclusions. Do not echo the article without insertions.`;
 
 async function enrichWithLLM(
   articleText: string,
@@ -248,7 +249,7 @@ async function enrichWithLLM(
     .map(
       (dp) => {
         const title = reportTitles[dp.sourceFile]?.title ?? dp.sourceFile.replace(/^\/reports\//, "").replace(/\.pdf$/, "");
-        return `- FACT: ${dp.fact}\n  SOURCE: ${title}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`;
+        return `- FACT: ${dp.fact}\n  SOURCE FILE: ${dp.sourceFile}\n  SOURCE: ${title}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`;
       }
     )
     .join("\n\n");
@@ -282,12 +283,7 @@ async function enrichWithLLM(
     choices: [{ message: { content: string } }];
   };
 
-  const raw = data.choices[0].message.content;
-
-  // Strip any unclosed/dangling IG markers (from truncated responses)
-  const cleaned = raw
-    .replace(/\[IG\s+src="[^"]*"\]/g, "")  // unclosed opening tags
-    .replace(/\[\/IG\]/g, "");               // orphan closing tags
+  const cleaned = data.choices[0].message.content;
 
   return cleaned;
 }

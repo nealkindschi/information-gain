@@ -4,3 +4,5 @@ dist/
 .DS_Store
 *.crdownload
 .superpowers/
+.dev.vars
+.wrangler/

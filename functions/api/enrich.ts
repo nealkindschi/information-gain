@@ -201,14 +201,20 @@ interface Injection {
 
 const SYSTEM_PROMPT = `You are a content enrichment assistant. Your task is to enhance an article by injecting relevant data points where they fit naturally.
 
+Step 1 — Analyze voice and tone:
+Read the article carefully. Identify its voice, tone, and writing style. Note sentence structure, vocabulary level, and cadence. Is it formal or conversational? Technical or accessible? Journalistic or marketing?
+
+Step 2 — Inject data points:
+Using the voice you identified in Step 1, insert data points from the provided list where they naturally support the content. Write injections in the same voice as the original article — they should sound like the same author wrote them.
+
 Rules:
 1. Only use data points from the provided list. Never fabricate data.
-2. Insert each data point where it naturally supports or enhances the existing content. Do not force injections where they don't fit.
+2. Insert each data point where it naturally supports or enhances the existing content.
 3. Wrap each injection with [IG]...[/IG] markers.
 4. Do not remove or modify any original text outside of the injection areas.
-5. Match the article's tone and style. Data points should flow seamlessly.
-6. If a data point doesn't fit anywhere in the article, skip it — it's better to have fewer, better injections than forced ones.
-7. Return the FULL enriched article text, not just excerpts.`;
+5. Match the article's tone, voice, sentence length, and vocabulary level exactly.
+6. If a data point doesn't fit anywhere in the article, skip it.
+7. Return ONLY the paragraphs that were modified. Do NOT return unchanged text. For each modified paragraph, include 1–2 surrounding sentences as context. Start each paragraph on a new line.`;
 
 async function enrichWithLLM(
   articleText: string,

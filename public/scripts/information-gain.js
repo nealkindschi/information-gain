@@ -36,19 +36,17 @@
   function renderResults(data) {
     resultsArea.classList.remove("hidden");
 
-    // Find all [IG] positions in the enriched text
-    var regex = /\[IG\]([\s\S]*?)\[\/IG\]/g;
-    var matches = [];
-    var m;
-    while ((m = regex.exec(data.enriched)) !== null) {
-      matches.push({
-        content: m[1].trim(),
-        start: m.index,
-        end: m.index + m[0].length,
-      });
+    // Enriched text now contains only modified paragraphs, each with [IG] markers.
+    // Split into paragraphs by blank lines.
+    var paragraphs = data.enriched.split(/\n\n+/).filter(function (p) { return p.trim(); });
+    var enrichedParagraphs = [];
+    for (var i = 0; i < paragraphs.length; i++) {
+      if (/\[IG\]/.test(paragraphs[i])) {
+        enrichedParagraphs.push(paragraphs[i].trim());
+      }
     }
 
-    if (matches.length === 0) {
+    if (enrichedParagraphs.length === 0) {
       resultsArea.innerHTML =
         '<div class="bg-cream-100 dark:bg-warm-850 border border-cream-400 dark:border-warm-800 rounded-lg p-6 text-center">' +
         '<p class="text-warm-700 dark:text-cream-300">No enrichment opportunities found in this article.</p>' +
@@ -56,46 +54,35 @@
       return;
     }
 
-    var CONTEXT_CHARS = 50;
     var cardsHtml = "";
-    var enrichedText = data.enriched;
 
-    for (var i = 0; i < matches.length; i++) {
-      var match = matches[i];
+    for (var i = 0; i < enrichedParagraphs.length; i++) {
+      var enrichedPara = enrichedParagraphs[i];
 
-      // Find matching injection from data
+      // Find [IG] matches in this paragraph
+      var regex = /\[IG\]([\s\S]*?)\[\/IG\]/g;
+      var match = regex.exec(enrichedPara);
+      if (!match) continue;
+
+      var injectionContent = match[1].trim();
+
+      // Find matching injection for source info
       var matched = null;
       for (var j = 0; j < data.injections.length; j++) {
-        if (match.content.indexOf(data.injections[j].fact.substring(0, 30)) !== -1) {
+        if (injectionContent.indexOf(data.injections[j].fact.substring(0, 30)) !== -1) {
           matched = data.injections[j];
           break;
         }
       }
 
-      // Extract context around the injection (50 chars each side)
-      var ctxStart = Math.max(0, match.start - CONTEXT_CHARS);
-      var ctxEnd = Math.min(enrichedText.length, match.end + CONTEXT_CHARS);
+      // Original: strip [IG] markers
+      var originalText = enrichedPara.replace(/\[IG\][\s\S]*?\[\/IG\]/g, "");
 
-      var before = enrichedText.substring(ctxStart, match.start);
-      var injection = match.content;
-      var after = enrichedText.substring(match.end, ctxEnd);
-
-      // Clean [IG] markers from context (in case another injection overlaps)
-      var cleanBefore = before.replace(/\[IG\][\s\S]*?\[\/IG\]/g, "");
-      var cleanAfter = after.replace(/\[IG\][\s\S]*?\[\/IG\]/g, "");
-
-      var ellipsisStart = ctxStart > 0 ? "&hellip; " : "";
-      var ellipsisEnd = ctxEnd < enrichedText.length ? " &hellip;" : "";
-
-      // Original: context without the injection
-      var originalExcerpt = ellipsisStart + escapeHtml(cleanBefore + cleanAfter) + ellipsisEnd;
-
-      // Enriched: context with highlighted injection + source link
-      var enrichedExcerpt = ellipsisStart +
-        escapeHtml(before) +
-        '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + escapeHtml(injection) + '</mark>' +
-        escapeHtml(after) +
-        ellipsisEnd;
+      // Enriched: convert [IG] to highlighted mark with source link
+      var enrichedHtml = enrichedPara.replace(
+        /\[IG\]([\s\S]*?)\[\/IG\]/g,
+        '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + escapeHtml(injectionContent) + '</mark>'
+      );
 
       var category = matched ? matched.category.replace(/_/g, " ") : "data";
       var source = matched
@@ -106,25 +93,25 @@
         '<div class="change-card">' +
         '<div class="change-card-header">' +
         '<span class="change-card-category">' + escapeHtml(category) + '</span>' +
-        '<span class="change-card-num">' + (i + 1) + ' of ' + matches.length + '</span>' +
+        '<span class="change-card-num">' + (i + 1) + ' of ' + enrichedParagraphs.length + '</span>' +
         '</div>' +
         '<div class="grid grid-cols-1 md:grid-cols-2">' +
         '<div class="change-card-col change-card-original">' +
         '<div class="change-card-label">Original</div>' +
-        '<div class="change-card-text">' + originalExcerpt + '</div>' +
+        '<div class="change-card-text">' + escapeHtml(originalText) + '</div>' +
         '</div>' +
         '<div class="change-card-col change-card-enriched">' +
         '<div class="change-card-label">Enriched</div>' +
-        '<div class="change-card-text">' + enrichedExcerpt + '</div>' +
+        '<div class="change-card-text">' + enrichedHtml + '</div>' +
         (source ? '<div class="change-card-source-wrap">' + source + '</div>' : "") +
         '</div>' +
         '</div>' +
-        '</div>';
+      '</div>';
     }
 
     resultsArea.innerHTML =
       '<div class="changes-header">' +
-      '<span class="font-semibold text-warm-800 dark:text-cream-200">' + matches.length + ' change' + (matches.length !== 1 ? "s" : "") + ' found</span>' +
+      '<span class="font-semibold text-warm-800 dark:text-cream-200">' + enrichedParagraphs.length + ' change' + (enrichedParagraphs.length !== 1 ? "s" : "") + ' found</span>' +
       '</div>' +
       cardsHtml;
   }

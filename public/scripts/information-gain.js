@@ -42,6 +42,12 @@
       '</div>';
   }
 
+  function decodeHtml(str) {
+    var textarea = document.createElement("textarea");
+    textarea.innerHTML = str;
+    return textarea.value;
+  }
+
   function renderResults(data) {
     resultsArea.classList.remove("hidden");
 
@@ -89,13 +95,13 @@
       var ellipsisEnd = ctxEnd < enrichedText.length ? " &hellip;" : "";
 
       // Original: context without the injection
-      var originalExcerpt = ellipsisStart + escapeHtml(cleanBefore + cleanAfter) + ellipsisEnd;
+      var originalExcerpt = ellipsisStart + escapeHtml(decodeHtml(cleanBefore + cleanAfter)) + ellipsisEnd;
 
       // Enriched: context with highlighted injection (strip neighbor IG markers from view)
       var enrichedExcerpt = ellipsisStart +
-        escapeHtml(cleanBefore) +
-        '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + escapeHtml(injection) + '</mark>' +
-        escapeHtml(cleanAfter) +
+        escapeHtml(decodeHtml(cleanBefore)) +
+        '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + escapeHtml(decodeHtml(injection)) + '</mark>' +
+        escapeHtml(decodeHtml(cleanAfter)) +
         ellipsisEnd;
 
       // Look up report title from data.injections (best effort)

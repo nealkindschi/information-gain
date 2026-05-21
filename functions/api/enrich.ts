@@ -221,7 +221,8 @@ Rules:
 Anti-slop rules:
 8. Never use em dashes (—). Use commas, periods, or semicolons instead.
 9. Never use "it's not X — it's Y" or "not just X, but Y" sentence patterns. State facts directly.
-10. No fluff. Cut filler words and phrases. Every sentence must carry information.`;
+10. No fluff. Cut filler words and phrases. Every sentence must carry information.
+11. Do not use HTML entities (&#8221;, &#8217;, &mdash;, etc.) in the injected text. Use plain Unicode characters instead.`;
 
 async function enrichWithLLM(
   articleText: string,

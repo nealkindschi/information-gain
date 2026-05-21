@@ -1,0 +1,78 @@
+---
+// Note: the layout import path should match your Astro project structure.
+// For standalone development, this page can be self-contained.
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Information Gain Tool</title>
+</head>
+<body class="bg-cream-200 text-warm-800 dark:bg-warm-950 dark:text-cream-200 font-body antialiased">
+<div class="px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 md:max-w-6xl grid gap-12 mt-4">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12">
+
+    <header class="text-center mb-12 pb-8 border-b-2 border-amber-300 dark:border-amber/20">
+      <h1 class="text-3xl font-bold">Information Gain Tool</h1>
+      <p class="mt-2 text-warm-700 dark:text-cream-300 max-w-lg mx-auto">
+        Enrich articles with novel data from curated research reports. Every injected fact includes its source.
+      </p>
+    </header>
+
+    <form id="enrich-form" class="bg-cream-100 dark:bg-warm-850 border border-cream-400 dark:border-warm-800 rounded-lg p-6 sm:p-10 shadow-sm" onsubmit="return false">
+      <div class="mb-6">
+        <label for="article-url" class="block text-sm font-medium text-warm-800 dark:text-cream-200 mb-2">
+          Article URL
+        </label>
+        <input
+          type="url"
+          id="article-url"
+          required
+          class="w-full px-4 py-3 border border-cream-400 dark:border-warm-700 rounded-md text-sm bg-cream-100 text-warm-900 dark:bg-cream-100 dark:text-warm-900 focus:outline-none focus:ring-2 focus:ring-amber dark:focus:ring-amber-bright focus:border-transparent"
+          placeholder="https://yoursite.com/blog/your-article"
+        />
+        <p class="text-xs text-warm-700/60 dark:text-cream-400/60 mt-1">
+          The article you want to enrich with data points from our research library.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <label class="block text-sm font-medium text-warm-800 dark:text-cream-200 mb-2">
+          Human verification
+        </label>
+        <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY_PLACEHOLDER"></div>
+        <p class="text-xs text-warm-700/60 dark:text-cream-400/60 mt-2">
+          Your API key stays in your browser. Never stored or transmitted to our servers.
+        </p>
+      </div>
+
+      <button
+        id="run-btn"
+        type="button"
+        class="w-full py-3 px-6 bg-amber dark:bg-amber-bright text-cream-50 dark:text-warm-900 rounded-md font-semibold text-base hover:bg-amber/90 dark:hover:bg-amber-bright/90 active:scale-[0.99] transition-all focus:outline-none focus:ring-2 focus:ring-amber dark:focus:ring-amber-bright focus:ring-offset-2 dark:focus:ring-offset-warm-900 min-h-[48px]"
+      >
+        Run Enrichment &rarr;
+      </button>
+
+      <div class="mt-4 p-3 bg-cream-200 dark:bg-warm-800 rounded-md">
+        <p class="text-xs text-warm-700/60 dark:text-cream-400/60 font-mono leading-relaxed">
+          Rate limit: 10/hr &middot; Max 5,000 words &middot; 10K token budget &middot; Uses DeepSeek V4 Flash
+        </p>
+      </div>
+
+      <div id="progress-area" class="hidden mt-6 p-4 bg-cream-200 dark:bg-warm-800 rounded-lg">
+        <div id="progress-list" class="flex flex-col gap-2 text-sm font-mono"></div>
+      </div>
+    </form>
+
+    <div id="results-area" class="hidden mt-8"></div>
+
+  </div>
+</div>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/scripts/information-gain.js"></script>
+</body>
+</html>

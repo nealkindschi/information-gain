@@ -15,14 +15,23 @@
       <p class="mt-3 text-sm text-warm-700 dark:text-cream-300 max-w-xl mx-auto leading-relaxed">
         This demo draws from a curated set of research reports on AI security. The tool injects novel data points from these reports into your article. For best results, provide a URL with content related to AI security, LLM risks, or cybersecurity.
       </p>
-      <ul class="mt-4 text-sm text-warm-600 dark:text-cream-400 max-w-xl mx-auto text-left space-y-1 list-disc pl-5 leading-relaxed">
+      <details class="mt-4 text-sm text-warm-600 dark:text-cream-400 max-w-xl mx-auto text-left leading-relaxed group">
+        <summary class="cursor-pointer text-amber hover:underline select-none">Research Reports (12)</summary>
+        <ul class="mt-3 space-y-1 list-disc pl-5">
           <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf" target="_blank" class="text-amber hover:underline">NIST AI Risk Management Framework (AI 100-2e)</a></li>
           <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-4.pdf" target="_blank" class="text-amber hover:underline">NIST AI Security and Privacy (AI 800-4)</a></li>
+          <li><a href="https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.8596.iprd.pdf" target="_blank" class="text-amber hover:underline">NIST IR 8596: Cybersecurity Framework Profile for AI</a></li>
           <li><a href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" class="text-amber hover:underline">OWASP Top 10 for LLM Applications</a></li>
-          <li><a href="https://arxiv.org/abs/2604.04288" target="_blank" class="text-amber hover:underline">LLM-Enabled Open-Source Systems in the Wild: An Empirical Study</a></li>
+          <li><a href="https://arxiv.org/abs/2604.04288" target="_blank" class="text-amber hover:underline">LLM-Enabled Open-Source Systems in the Wild</a></li>
           <li><a href="https://arxiv.org/abs/2603.22489" target="_blank" class="text-amber hover:underline">Model Context Protocol Threat Modeling &amp; Prompt Injection Analysis</a></li>
           <li><a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.176773228.86819800" target="_blank" class="text-amber hover:underline">Jailbreaking LLMs: A Survey of Attacks, Defenses and Evaluation</a></li>
+          <li><a href="https://hai.stanford.edu/ai-index/2025" target="_blank" class="text-amber hover:underline">Stanford HAI Artificial Intelligence Index Report 2025</a></li>
+          <li><a href="https://www.anthropic.com/security" target="_blank" class="text-amber hover:underline">Anthropic AI Threat Intelligence Report (August 2025)</a></li>
+          <li><a href="https://layerxsecurity.com" target="_blank" class="text-amber hover:underline">LayerX Enterprise AI and SaaS Data Security Report 2025</a></li>
+          <li><a href="https://internationalaisafetyreport.org" target="_blank" class="text-amber hover:underline">International AI Safety Report 2026</a></li>
+          <li><a href="https://www.weforum.org/publications/artificial-intelligence-and-cybersecurity-balancing-risks-and-rewards/" target="_blank" class="text-amber hover:underline">WEF: AI and Cybersecurity &mdash; Balancing Risks and Rewards</a></li>
         </ul>
+      </details>
     </header>
 
     <form id="enrich-form" class="bg-cream-100 dark:bg-warm-850 border border-cream-400 dark:border-warm-800 rounded-lg p-6 sm:p-10 shadow-sm" onsubmit="return false">
@@ -42,10 +51,6 @@
         </p>
       </div>
 
-      <div class="mb-8">
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAADTd6rvtgyCPooVS" data-error-callback="onTurnstileError"></div>
-      </div>
-
       <button
         id="run-btn"
         type="button"
@@ -53,6 +58,10 @@
       >
         Run Enrichment &rarr;
       </button>
+
+      <div class="mt-6">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADTd6rvtgyCPooVS" data-error-callback="onTurnstileError"></div>
+      </div>
 
 
       <div id="progress-area" class="hidden mt-6 p-4 bg-cream-200 dark:bg-warm-800 rounded-lg">

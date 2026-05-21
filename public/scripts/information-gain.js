@@ -112,7 +112,7 @@
 
       // Build source link from the marker's src attribute
       var sourceLink =
-        '<a href="' + escapeHtml(match.sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">&Nearr; ' + escapeHtml(reportTitle) + '</a>';
+        '<a href="' + escapeHtml(match.sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">\u2197 ' + escapeHtml(reportTitle) + '</a>';
 
       cardsHtml +=
         '<div class="change-card">' +

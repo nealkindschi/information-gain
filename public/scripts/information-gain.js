@@ -116,6 +116,9 @@
             TURNSTILE_FAILED: "Verification failed. Please refresh and try again.",
             TURNSTILE_MISSING: "Please complete the verification challenge.",
             FETCH_FAILED: "Could not fetch the article. The site may be blocking requests.",
+            FETCH_TIMEOUT: "Request timed out. The article site may be slow or unreachable.",
+            FETCH_BLOCKED: "Could not fetch the article. The site may be blocking automated requests.",
+            TOKEN_BUDGET: "Article is too large for enrichment. Try a shorter article.",
             ENRICH_FAILED: "The enrichment service encountered an error. Please try again.",
           };
           showError(errors[result.data.error] || "An unexpected error occurred.");

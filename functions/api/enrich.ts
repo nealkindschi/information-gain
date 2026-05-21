@@ -119,6 +119,10 @@ async function fetchArticle(url: string): Promise<string> {
   }
 }
 
+function estimateTokens(text: string): number {
+  return Math.ceil(text.trim().split(/\s+/).filter(Boolean).length * 1.3);
+}
+
 function extractTextFromHTML(html: string): string {
   const stripped = html
     .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
@@ -331,7 +335,10 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   try {
     articleText = await fetchArticle(body.url);
   } catch (err) {
-    return buildError(502, { error: "FETCH_FAILED" });
+    if (err instanceof Error && err.name === "AbortError") {
+      return buildError(502, { error: "FETCH_TIMEOUT" });
+    }
+    return buildError(502, { error: "FETCH_BLOCKED" });
   }
 
   // 5. Word count check
@@ -346,6 +353,13 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   // 6. Match relevant data points
   const allPoints = await loadDataPoints();
   const matchedPoints = findRelevantDataPoints(articleText, allPoints);
+
+  // Token budget check
+  const estimatedInputTokens = estimateTokens(articleText) +
+    matchedPoints.reduce((sum, dp) => sum + estimateTokens(dp.fact + dp.context), 0);
+  if (estimatedInputTokens > MAX_TOKENS * 0.6) {
+    return buildError(413, { error: "TOKEN_BUDGET" });
+  }
 
   // 7. Enrich via LLM
   let enrichedText: string;

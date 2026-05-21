@@ -3,6 +3,7 @@
 // For standalone development, this page can be self-contained.
 ---
 
+<!-- IMPORTANT: Replace __TURNSTILE_SITE_KEY__ with your actual Turnstile site key or use Astro env: import.meta.env.PUBLIC_TURNSTILE_SITE_KEY -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -42,7 +43,7 @@
         <label class="block text-sm font-medium text-warm-800 dark:text-cream-200 mb-2">
           Human verification
         </label>
-        <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY_PLACEHOLDER"></div>
+        <div class="cf-turnstile" data-sitekey="__TURNSTILE_SITE_KEY__"></div>
         <p class="text-xs text-warm-700/60 dark:text-cream-400/60 mt-2">
           Your API key stays in your browser. Never stored or transmitted to our servers.
         </p>

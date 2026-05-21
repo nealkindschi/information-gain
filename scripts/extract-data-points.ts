@@ -16,18 +16,24 @@ interface DataPoint {
   fact: string;
   source: string;
   sourceFile: string;
+  reportTitle: string;
   category: string;
   context: string;
 }
 
 const SYSTEM_PROMPT = `You are a data extraction assistant. Given a research report, extract every discrete, citable fact, statistic, case study result, and named insight.
 
-Return a JSON object with a "data_points" key containing an array of data point objects, each with these fields:
-- fact: The exact fact or data point as a quoted statement (e.g. "Only 12% of content achieves an IGS above 0.7")
-- source: The domain or publication name where this fact originated (e.g. "searchbloom.com")
-- sourceFile: The relative path to the source report (e.g. "/reports/nist-ai-100.pdf")
-- category: One of "statistic", "case_study", "definition", "framework", "expert_quote", "benchmark"
-- context: A short phrase describing what topic/section this fact relates to
+First, identify the report's full title from the document text.
+
+Return a JSON object with:
+- "report_title": The full title of the report/document
+- "data_points": An array of data point objects, each with these fields:
+  - fact: The exact fact or data point as a quoted statement (e.g. "Only 12% of content achieves an IGS above 0.7")
+  - source: The domain or publication name where this fact originated (e.g. "searchbloom.com")
+  - sourceFile: The relative path to the source report (e.g. "/reports/nist-ai-100.pdf")
+  - reportTitle: The full title of the report (e.g. "NIST AI Risk Management Framework")
+  - category: One of "statistic", "case_study", "definition", "framework", "expert_quote", "benchmark"
+  - context: A short phrase describing what topic/section this fact relates to
 
 Only include specific, citable facts. Do NOT extract narrative prose, opinion without data, or vague generalities. Each fact must be verifiable and attributable.`;
 
@@ -70,7 +76,9 @@ async function extractDataPoints(
     choices: [{ message: { content: string } }];
   };
   const parsed = JSON.parse(data.choices[0].message.content);
-  return parsed.data_points as DataPoint[];
+  const reportTitle = (parsed.report_title as string) || filename.replace(/^\/reports\//, "").replace(/\.pdf$/, "");
+  const points = parsed.data_points as Omit<DataPoint, "reportTitle">[];
+  return points.map((p) => ({ ...p, reportTitle }));
 }
 
 async function main() {

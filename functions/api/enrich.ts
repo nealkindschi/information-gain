@@ -1,4 +1,5 @@
 import dataPointsDefault from "./data-points";
+import reportTitles from "./report-titles";
 
 interface EnrichRequest {
   url: string;
@@ -13,6 +14,7 @@ interface EnrichResponse {
     source: string;
     sourceFile: string;
     category: string;
+    reportTitle: string;
     position: number;
   }>;
 }
@@ -147,6 +149,7 @@ interface DataPoint {
   fact: string;
   source: string;
   sourceFile: string;
+  reportTitle: string;
   category: string;
   context: string;
 }
@@ -194,6 +197,7 @@ interface Injection {
   source: string;
   sourceFile: string;
   category: string;
+  reportTitle: string;
   position: number;
 }
 
@@ -276,6 +280,7 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
       fact: matched?.fact ?? injectedText.substring(0, 120),
       source: matched?.source ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       sourceFile: sourceFile,
+      reportTitle: reportTitles[sourceFile] ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       category: matched?.category ?? "data",
       position: match.index,
     });

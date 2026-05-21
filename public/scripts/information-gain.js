@@ -98,20 +98,21 @@
         escapeHtml(after) +
         ellipsisEnd;
 
-      // Look up category from data.injections (best effort)
+      // Look up category and report title from data.injections (best effort)
       var category = "data";
+      var reportTitle = match.sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, "");
       for (var j = 0; j < data.injections.length; j++) {
         var inj = data.injections[j];
         if (inj && injection.indexOf(inj.fact.substring(0, 30)) !== -1) {
           category = (inj.category || "data").replace(/_/g, " ");
+          if (inj.reportTitle) reportTitle = inj.reportTitle;
           break;
         }
       }
 
       // Build source link from the marker's src attribute
-      var sourceLabel = match.sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, "");
       var sourceLink =
-        '<a href="' + escapeHtml(match.sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">&Nearr; ' + escapeHtml(sourceLabel) + '</a>';
+        '<a href="' + escapeHtml(match.sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">&Nearr; ' + escapeHtml(reportTitle) + '</a>';
 
       cardsHtml +=
         '<div class="change-card">' +

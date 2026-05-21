@@ -45,16 +45,20 @@
   function renderResults(data) {
     resultsArea.classList.remove("hidden");
 
-    // Enriched text contains only modified paragraphs, each with [IG src="..."]...[/IG] markers.
-    var paragraphs = data.enriched.split(/\n\n+/).filter(function (p) { return p.trim(); });
-    var enrichedParagraphs = [];
-    for (var i = 0; i < paragraphs.length; i++) {
-      if (/\[IG\s/.test(paragraphs[i])) {
-        enrichedParagraphs.push(paragraphs[i].trim());
-      }
+    // Find all [IG src="..."]...[/IG] markers in the full enriched text
+    var regex = /\[IG\s+src="([^"]*)"\]([\s\S]*?)\[\/IG\]/g;
+    var matches = [];
+    var m;
+    while ((m = regex.exec(data.enriched)) !== null) {
+      matches.push({
+        sourceFile: m[1],
+        content: m[2].trim(),
+        start: m.index,
+        end: m.index + m[0].length,
+      });
     }
 
-    if (enrichedParagraphs.length === 0) {
+    if (matches.length === 0) {
       resultsArea.innerHTML =
         '<div class="bg-cream-100 dark:bg-warm-850 border border-cream-400 dark:border-warm-800 rounded-lg p-6 text-center">' +
         '<p class="text-warm-700 dark:text-cream-300">No enrichment opportunities found in this article.</p>' +
@@ -62,57 +66,67 @@
       return;
     }
 
+    var CONTEXT = 150;
     var cardsHtml = "";
+    var enrichedText = data.enriched;
 
-    for (var i = 0; i < enrichedParagraphs.length; i++) {
-      var enrichedPara = enrichedParagraphs[i];
+    for (var i = 0; i < matches.length; i++) {
+      var match = matches[i];
 
-      // Parse [IG src="path"]content[/IG]
-      var regex = /\[IG\s+src="([^"]*)"\]([\s\S]*?)\[\/IG\]/g;
-      var match = regex.exec(enrichedPara);
-      if (!match) continue;
+      // Extract 150 chars context before and after the injection
+      var ctxStart = Math.max(0, match.start - CONTEXT);
+      var ctxEnd = Math.min(enrichedText.length, match.end + CONTEXT);
 
-      var sourceFile = match[1];
-      var injectionContent = match[2].trim();
+      var before = enrichedText.substring(ctxStart, match.start);
+      var injection = match.content;
+      var after = enrichedText.substring(match.end, ctxEnd);
+
+      // Clean [IG] markers from context (in case another injection overlaps)
+      var cleanBefore = before.replace(/\[IG\s+src="[^"]*"\][\s\S]*?\[\/IG\]/g, "");
+      var cleanAfter = after.replace(/\[IG\s+src="[^"]*"\][\s\S]*?\[\/IG\]/g, "");
+
+      var ellipsisStart = ctxStart > 0 ? "&hellip; " : "";
+      var ellipsisEnd = ctxEnd < enrichedText.length ? " &hellip;" : "";
+
+      // Original: context without the injection
+      var originalExcerpt = ellipsisStart + escapeHtml(cleanBefore + cleanAfter) + ellipsisEnd;
+
+      // Enriched: context with highlighted injection
+      var enrichedExcerpt = ellipsisStart +
+        escapeHtml(before) +
+        '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + escapeHtml(injection) + '</mark>' +
+        escapeHtml(after) +
+        ellipsisEnd;
 
       // Look up category from data.injections (best effort)
       var category = "data";
       for (var j = 0; j < data.injections.length; j++) {
         var inj = data.injections[j];
-        if (inj && injectionContent.indexOf(inj.fact.substring(0, 30)) !== -1) {
+        if (inj && injection.indexOf(inj.fact.substring(0, 30)) !== -1) {
           category = (inj.category || "data").replace(/_/g, " ");
           break;
         }
       }
 
       // Build source link from the marker's src attribute
-      var sourceLabel = sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, "");
+      var sourceLabel = match.sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, "");
       var sourceLink =
-        '<a href="' + escapeHtml(sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">&Nearr; ' + escapeHtml(sourceLabel) + '</a>';
-
-      // Original: strip all [IG src="..."]...[/IG] markers
-      var originalText = enrichedPara.replace(/\[IG\s+src="[^"]*"\][\s\S]*?\[\/IG\]/g, "");
-
-      // Enriched: convert [IG src="..."]...[/IG] to highlighted mark
-      var enrichedHtml = enrichedPara.replace(
-        /\[IG\s+src="[^"]*"\]([\s\S]*?)\[\/IG\]/g,
-        '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + escapeHtml(injectionContent) + '</mark>'
-      );
+        '<a href="' + escapeHtml(match.sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">&Nearr; ' + escapeHtml(sourceLabel) + '</a>';
 
       cardsHtml +=
         '<div class="change-card">' +
         '<div class="change-card-header">' +
         '<span class="change-card-category">' + escapeHtml(category) + '</span>' +
-        '<span class="change-card-num">' + (i + 1) + ' of ' + enrichedParagraphs.length + '</span>' +
+        '<span class="change-card-num">' + (i + 1) + ' of ' + matches.length + '</span>' +
         '</div>' +
         '<div class="grid grid-cols-1 md:grid-cols-2">' +
         '<div class="change-card-col change-card-original">' +
         '<div class="change-card-label">Original</div>' +
-        '<div class="change-card-text">' + escapeHtml(originalText) + '</div>' +
+        '<div class="change-card-text">' + originalExcerpt + '</div>' +
         '</div>' +
         '<div class="change-card-col change-card-enriched">' +
         '<div class="change-card-label">Enriched</div>' +
-        '<div class="change-card-text">' + enrichedHtml + '</div>' +
+        '<div class="change-card-text">' + enrichedExcerpt + '</div>' +
         '<div class="change-card-source-wrap">' + sourceLink + '</div>' +
         '</div>' +
         '</div>' +
@@ -121,7 +135,7 @@
 
     resultsArea.innerHTML =
       '<div class="changes-header">' +
-      '<span class="font-semibold text-warm-800 dark:text-cream-200">' + enrichedParagraphs.length + ' change' + (enrichedParagraphs.length !== 1 ? "s" : "") + ' found</span>' +
+      '<span class="font-semibold text-warm-800 dark:text-cream-200">' + matches.length + ' change' + (matches.length !== 1 ? "s" : "") + ' found</span>' +
       '</div>' +
       cardsHtml;
   }

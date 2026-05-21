@@ -211,8 +211,8 @@ Rules:
 3. Wrap each injection with markers in this exact format: [IG src="SOURCE_FILE"]injected text[/IG]. Replace SOURCE_FILE with the path from the data point (e.g. [IG src="/reports/nist-ai-100.pdf"]Only 12% of orgs lack formal AI security policies[/IG]). Do NOT use square brackets [ ] anywhere inside the injected text — this breaks parsing.
 4. Do not remove or modify any original text outside of the injection areas.
 5. Match the article's tone, voice, sentence length, and vocabulary level exactly.
-6. If a data point doesn't fit anywhere in the article, skip it.
-7. Return ONLY the paragraphs that were modified. Do NOT return unchanged text. For each modified paragraph, include 1–2 surrounding sentences as context. Start each paragraph on a new line.`;
+6. If a data point is widely known, generic, or common knowledge (e.g. "AI is growing rapidly"), skip it. Only inject novel, specific, research-backed facts that add real information gain.
+7. Return the FULL enriched article text, including all unchanged portions. The client extracts context around each injection.`;
 
 async function enrichWithLLM(
   articleText: string,

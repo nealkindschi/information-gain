@@ -258,8 +258,8 @@ async function enrichWithLLM(
   apiKey: string,
 ): Promise<string> {
   // Trim article to control execution time (LLM processing scales with input size)
-  const trimmedArticle = articleText.length > 5000
-    ? articleText.slice(0, 5000) + "\n\n[...]"
+  const trimmedArticle = articleText.length > 10000
+    ? articleText.slice(0, 10000)
     : articleText;
 
   const dataPointsFormatted = dataPoints
@@ -284,7 +284,7 @@ async function enrichWithLLM(
           content: `Article:\n\n${trimmedArticle}\n\nAvailable data points:\n\n${dataPointsFormatted}`,
         },
       ],
-      max_tokens: 2048,
+      max_tokens: 4096,
       temperature: 0.3,
     }),
   });

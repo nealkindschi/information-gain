@@ -325,7 +325,7 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
     }
 
     injections.push({
-      fact: matched?.fact ?? injectedText.substring(0, 120),
+      fact: matched?.fact ?? injectedText,
       source: sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       sourceFile: sourceFile,
       reportTitle: resolveReportTitle(sourceFile),

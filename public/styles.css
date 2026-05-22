@@ -18,11 +18,11 @@
   --amber-400: #fbbf24;
   --amber-600: #d97706;
   --amber-900: #78350f;
-  --card-bg: #fefefe;
-  --card-border: #e6e1d8;
-  --card-header-bg: #fef3c7;
+  --card-bg: #faf8f4;
+  --card-border: #d4c5a9;
+  --card-header-bg: #f5f3ed;
   --card-muted: #8b7355;
-  --card-text: #1a120a;
+  --card-text: #5c4a3a;
   --red-50: #fef2f2;
   --red-300: #fca5a5;
   --red-600: #dc2626;
@@ -47,6 +47,8 @@ body {
 .bg-amber { background: var(--amber); }
 .bg-amber-100 { background: var(--amber-100); }
 .bg-red-50 { background: var(--red-50); }
+.bg-card-bg { background: var(--card-bg); }
+.border-card-border { border-color: var(--card-border); }
 
 .text-warm-800 { color: var(--warm-800); }
 .text-warm-700 { color: var(--warm-700); }
@@ -194,7 +196,16 @@ mark {
 .changes-header {
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.changes-header-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--amber);
 }
 
 .change-card {
@@ -204,6 +215,10 @@ mark {
   overflow: hidden;
   background: var(--card-bg);
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: border-color 0.2s;
+}
+.change-card:hover {
+  border-color: var(--amber);
 }
 .change-card-header {
   display: flex;
@@ -218,7 +233,7 @@ mark {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--amber-600);
+  color: var(--amber);
 }
 .change-card-num {
   font-size: 0.75rem;
@@ -256,7 +271,7 @@ mark {
 }
 .change-card-source {
   font-size: 0.75rem;
-  color: var(--amber-600);
+  color: var(--amber);
   text-decoration: underline;
 }
 .change-card-source:hover {

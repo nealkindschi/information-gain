@@ -144,7 +144,11 @@ async function fetchArticle(url: string): Promise<string> {
 }
 
 function estimateTokens(text: string): number {
-  return Math.ceil(text.trim().split(/\s+/).filter(Boolean).length * 1.3);
+  return Math.ceil(countWords(text) * 1.3);
+}
+
+function resolveReportTitle(sourceFile: string): string {
+  return reportTitles[sourceFile]?.title ?? sourceFile.replace(/^\/reports\//, "").replace(/\.pdf$/, "");
 }
 
 function extractTextFromHTML(html: string): string {
@@ -190,30 +194,41 @@ function findRelevantDataPoints(
 ): DataPoint[] {
   if (allPoints.length === 0) return [];
 
-  const articleLower = articleText.toLowerCase();
-  const scored: { point: DataPoint; score: number }[] = [];
+  const articleWords = new Set(articleText.toLowerCase().split(/\s+/));
+  const top: { point: DataPoint; score: number }[] = [];
+  let worstScore = 0;
 
   for (let i = 0; i < allPoints.length; i++) {
     const p = allPoints[i];
-    const factLower = p.fact.toLowerCase();
+    const words = p.fact.toLowerCase().split(/\s+/);
     let score = 0;
 
-    // Simple word overlap (no set/split alloc per point)
-    const factWords = factLower.split(/\s+/);
-    for (let w = 0; w < factWords.length; w++) {
-      if (articleLower.indexOf(factWords[w]) !== -1) {
-        score++;
-      }
+    for (let w = 0; w < words.length; w++) {
+      if (articleWords.has(words[w])) score++;
     }
 
-    if (score > 1) {
-      scored.push({ point: p, score });
+    if (score <= 1) continue;
+
+    if (top.length < maxResults) {
+      top.push({ point: p, score });
+      if (top.length === maxResults) {
+        top.sort((a, b) => b.score - a.score);
+        worstScore = top[maxResults - 1].score;
+      }
+    } else if (score > worstScore) {
+      for (let t = 0; t < maxResults; t++) {
+        if (top[t].score === worstScore) {
+          top[t] = { point: p, score };
+          break;
+        }
+      }
+      top.sort((a, b) => b.score - a.score);
+      worstScore = top[maxResults - 1].score;
     }
   }
 
-  scored.sort((a, b) => b.score - a.score);
-
-  return scored.slice(0, maxResults).map((s) => s.point);
+  top.sort((a, b) => b.score - a.score);
+  return top.map((s) => s.point);
 }
 
 interface Injection {
@@ -227,13 +242,15 @@ interface Injection {
 
 const SYSTEM_PROMPT = `Insert data points from the list into the article. Every insertion MUST be wrapped EXACTLY like this — no exceptions:
 
-[IG src="the-source-file-path"]The injected sentence here[/IG]
+[IG src="/reports/source-file.pdf"]The injected sentence here[/IG]
 
 Rules:
 - Name the source with year (e.g., "According to the NIST AI Risk Management Framework...").
 - Never use "research shows" or "studies indicate." Name the specific source.
-- One sentence only, ≤30 words. Match the article's tone.
-- Return the full article with insertions inline. Do not add introductions or conclusions. Do not echo the article without insertions.`;
+- One or two short sentences per injection, ≤40 words total. Match the article's tone.
+- Connect each injection to the paragraph it sits in — it should read like it belongs there.
+- Inject 2-5 data points across the article.
+- Return the full article with insertions inline. No introductions or conclusions. Do not echo the article without insertions.`;
 
 async function enrichWithLLM(
   articleText: string,
@@ -246,12 +263,10 @@ async function enrichWithLLM(
     : articleText;
 
   const dataPointsFormatted = dataPoints
-    .map(
-      (dp) => {
-        const title = reportTitles[dp.sourceFile]?.title ?? dp.sourceFile.replace(/^\/reports\//, "").replace(/\.pdf$/, "");
-        return `- FACT: ${dp.fact}\n  SOURCE FILE: ${dp.sourceFile}\n  SOURCE: ${title}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`;
-      }
-    )
+    .map((dp) => {
+      const title = resolveReportTitle(dp.sourceFile);
+      return `- FACT: ${dp.fact}\n  SOURCE FILE: ${dp.sourceFile}\n  SOURCE: ${title}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`;
+    })
     .join("\n\n");
 
   const response = await fetch("https://api.deepseek.com/chat/completions", {
@@ -293,20 +308,27 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
   const regex = /\[IG\s+src="([^"]*)"\]([\s\S]*?)\[\/IG\]/g;
   let match: RegExpExecArray | null;
 
+  // Pre-compute fact prefixes for matching
+  const prefixes = dataPoints.map((dp) => dp.fact.substring(0, 30));
+
   while ((match = regex.exec(enriched)) !== null) {
     const sourceFile = match[1];
     const injectedText = match[2].trim();
 
     // Best-effort: match back to data point for fact/source details
-    const matched = dataPoints.find((dp) =>
-      injectedText.includes(dp.fact.substring(0, 30)),
-    );
+    let matched: DataPoint | undefined;
+    for (let i = 0; i < dataPoints.length; i++) {
+      if (injectedText.includes(prefixes[i])) {
+        matched = dataPoints[i];
+        break;
+      }
+    }
 
     injections.push({
       fact: matched?.fact ?? injectedText.substring(0, 120),
       source: sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       sourceFile: sourceFile,
-      reportTitle: reportTitles[sourceFile]?.title ?? sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
+      reportTitle: resolveReportTitle(sourceFile),
       category: matched?.category ?? "data",
       position: match.index,
     });
@@ -398,10 +420,10 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   const allPoints = await loadDataPoints(baseUrl);
   const matchedPoints = findRelevantDataPoints(articleText, allPoints);
 
-  // Token budget check
-  const estimatedInputTokens = estimateTokens(articleText) +
-    matchedPoints.reduce((sum, dp) => sum + estimateTokens(dp.fact + dp.context), 0);
-  if (estimatedInputTokens > MAX_TOKENS * 0.6) {
+  // Token budget check (skip string concat for estimation)
+  const articleTokens = estimateTokens(articleText);
+  const dataTokens = matchedPoints.reduce((sum, dp) => sum + estimateTokens(dp.fact) + estimateTokens(dp.context), 0);
+  if (articleTokens + dataTokens > MAX_TOKENS * 0.6) {
     return buildError(413, { error: "TOKEN_BUDGET" });
   }
 
@@ -410,7 +432,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   try {
     enrichedText = await enrichWithLLM(articleText, matchedPoints, context.env.DEEPSEEK_API_KEY);
   } catch (err) {
-    return buildError(502, { error: "ENRICH_FAILED" });
+    const msg = err instanceof Error ? err.message : String(err);
+    return buildError(502, { error: "ENRICH_FAILED", detail: msg });
   }
 
   // 8. Parse injections from enriched text

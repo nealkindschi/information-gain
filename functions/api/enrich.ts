@@ -242,14 +242,16 @@ interface Injection {
 
 const SYSTEM_PROMPT = `Insert data points from the list into the article. Every insertion MUST be wrapped EXACTLY like this — no exceptions:
 
-[IG src="/reports/source-file.pdf"]The injected sentence here[/IG]
+[IG src="/reports/source-file.pdf"]The enriched text here[/IG]
 
 Rules:
-- Name the source with year (e.g., "According to the NIST AI Risk Management Framework...").
-- Never use "research shows" or "studies indicate." Name the specific source.
-- One or two short sentences per injection, ≤40 words total. Match the article's tone.
-- Connect each injection to the paragraph it sits in — it should read like it belongs there.
-- Inject 2-5 data points across the article.
+- Prefer data points with hard statistics (percentages, numbers, specific figures) over general claims.
+- Write enrichments that blend into the article — a reader should not be able to tell which parts were added.
+- Name the source naturally in the sentence (e.g., "according to the NIST AI Risk Management Framework").
+- Never use "research shows" or "studies indicate." Attribute to the named source.
+- One sentence per enrichment, ≤30 words. No long passages, no catalogue listings.
+- Match the article's tone exactly.
+- Insert 2-5 data points across the article.
 - Return the full article with insertions inline. No introductions or conclusions. Do not echo the article without insertions.`;
 
 async function enrichWithLLM(

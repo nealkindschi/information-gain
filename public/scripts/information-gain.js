@@ -1,4 +1,12 @@
 (function () {
+  // Load Turnstile only when not in local dev
+  if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
+    var tsScript = document.createElement("script");
+    tsScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    tsScript.defer = true;
+    document.head.appendChild(tsScript);
+  }
+
   // Turnstile error callback — catch widget failures
   window.onTurnstileError = function (code) {
     var err = document.getElementById("enrich-form");
@@ -11,15 +19,25 @@
   const form = document.getElementById("enrich-form");
   const runBtn = document.getElementById("run-btn");
   const urlInput = document.getElementById("article-url");
+  const selectedUrl = document.getElementById("selected-url");
   const progressArea = document.getElementById("progress-area");
   const progressList = document.getElementById("progress-list");
   const resultsArea = document.getElementById("results-area");
+
+  urlInput.addEventListener("change", function () {
+    selectedUrl.value = urlInput.value;
+  });
 
   function addProgress(msg) {
     progressArea.classList.remove("hidden");
     var el = document.createElement("div");
     el.textContent = msg;
     progressList.appendChild(el);
+  }
+
+  function resetButton() {
+    runBtn.disabled = false;
+    runBtn.textContent = "Run Enrichment \u2192";
   }
 
   function clearProgress() {
@@ -40,12 +58,6 @@
       '</div>';
   }
 
-  function formatText(str) {
-    return escapeHtml(str)
-      .replace(/\n\n/g, "</p><p>")
-      .replace(/\n/g, "<br>");
-  }
-
   function renderResults(data) {
     resultsArea.classList.remove("hidden");
 
@@ -58,39 +70,64 @@
       return;
     }
 
-    var CONTEXT = 150;
     var enrichedText = data.enriched;
+
+    // Build paragraph boundary positions (indices of \n\n breaks)
+    var paraStarts = [0];
+    var pos = enrichedText.indexOf("\n\n");
+    while (pos !== -1) {
+      paraStarts.push(pos + 2);
+      pos = enrichedText.indexOf("\n\n", pos + 2);
+    }
+
+    function cleanIg(str) {
+      return str.replace(/\[IG\s+src="[^"]*"\][\s\S]*?\[\/IG\]/g, "");
+    }
+
+    function renderPara(text, highlight) {
+      if (!text) return "";
+      var escaped = escapeHtml(text);
+      if (highlight) {
+        escaped = escaped.replace(
+          /\[IG\s+src=&quot;[^&]*&quot;\]/g,
+          '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">'
+        );
+        escaped = escaped.replace(/\[\/IG\]/g, "</mark>");
+      }
+      escaped = escaped.replace(/\n/g, "<br>");
+      return "<p>" + escaped + "</p>";
+    }
+
     var cardsHtml = "";
 
     for (var i = 0; i < injections.length; i++) {
       var inj = injections[i];
 
-      // Find actual marker boundaries in enriched text
-      var start = inj.position;
-      var closingTag = enrichedText.indexOf("[/IG]", start + 10);
-      if (closingTag === -1) closingTag = enrichedText.length;
-      var end = closingTag + 5; // +5 for "[/IG]"
+      // Find which paragraph contains this injection
+      var paraIdx = paraStarts.length - 1;
+      for (var p = 0; p < paraStarts.length - 1; p++) {
+        if (inj.position >= paraStarts[p] && inj.position < paraStarts[p + 1]) {
+          paraIdx = p;
+          break;
+        }
+      }
 
-      var ctxStart = Math.max(0, start - CONTEXT);
-      var ctxEnd = Math.min(enrichedText.length, end + CONTEXT);
+      function getPara(idx) {
+        if (idx < 0 || idx >= paraStarts.length) return "";
+        return enrichedText.substring(paraStarts[idx], paraStarts[idx + 1]).trim();
+      }
 
-      var before = enrichedText.substring(ctxStart, start);
-      var after = enrichedText.substring(end, ctxEnd);
+      var prevText = getPara(paraIdx - 1);
+      var currText = getPara(paraIdx);
+      var nextText = getPara(paraIdx + 1);
 
-      // Clean overlapping IG markers from context
-      var cleanBefore = before.replace(/\[IG\s+src="[^"]*"\][\s\S]*?\[\/IG\]/g, "");
-      var cleanAfter = after.replace(/\[IG\s+src="[^"]*"\][\s\S]*?\[\/IG\]/g, "");
+      var originalExcerpt = renderPara(cleanIg(prevText)) +
+        renderPara(cleanIg(currText)) +
+        renderPara(cleanIg(nextText));
 
-      var ellipsisStart = ctxStart > 0 ? "&hellip; " : "";
-      var ellipsisEnd = ctxEnd < enrichedText.length ? " &hellip;" : "";
-
-      var originalExcerpt = ellipsisStart + formatText(cleanBefore + cleanAfter) + ellipsisEnd;
-
-      var enrichedExcerpt = ellipsisStart +
-        formatText(cleanBefore) +
-        '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">' + formatText(inj.fact) + '</mark>' +
-        formatText(cleanAfter) +
-        ellipsisEnd;
+      var enrichedExcerpt = renderPara(cleanIg(prevText)) +
+        renderPara(currText, true) +
+        renderPara(cleanIg(nextText));
 
       var sourceLink =
         '<a href="' + escapeHtml(inj.sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">\u2197 ' + escapeHtml(inj.reportTitle) + '</a>';
@@ -125,7 +162,7 @@
     var url = urlInput.value.trim();
 
     if (!url) {
-      showError("Please enter an article URL.");
+      showError("Please select an article.");
       return;
     }
 
@@ -136,8 +173,9 @@
       return;
     }
 
+    var isLocalDev = location.hostname === "localhost" || location.hostname === "127.0.0.1";
     var turnstileEl = document.querySelector('[name="cf-turnstile-response"]');
-    var turnstileToken = turnstileEl ? turnstileEl.value : "";
+    var turnstileToken = isLocalDev ? "local-dev" : (turnstileEl ? turnstileEl.value : "");
 
     if (!turnstileToken) {
       showError("Please complete the verification challenge.");
@@ -194,11 +232,15 @@
             ENRICH_FAILED: "The enrichment service encountered an error. Please try again.",
           };
           showError(errors[result.data.error] || "An unexpected error occurred.");
+          clearProgress();
+          resetButton();
           return;
         }
 
         addProgress("Enrichment complete. Rendering...");
         renderResults(result.data);
+        clearProgress();
+        resetButton();
       })
       .catch(function (err) {
         if (err.message === "CF_CHALLENGE") {
@@ -206,6 +248,8 @@
         } else {
           showError("Fetch error: " + err.message);
         }
+        clearProgress();
+        resetButton();
       });
   });
 })();

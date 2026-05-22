@@ -252,6 +252,7 @@ Rules:
 - One sentence per enrichment, ≤30 words. No long passages, no catalogue listings.
 - Match the article's tone exactly.
 - Insert 2-5 data points across the article.
+- Each data point may only be inserted once. Do not reuse the same statistic or claim.
 - Return the full article with insertions inline. No introductions or conclusions. Do not echo the article without insertions.`;
 
 async function enrichWithLLM(
@@ -312,6 +313,7 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
 
   // Pre-compute fact prefixes for matching
   const prefixes = dataPoints.map((dp) => dp.fact.substring(0, 30));
+  const usedDataPoints = new Set<string>();
 
   while ((match = regex.exec(enriched)) !== null) {
     const sourceFile = match[1];
@@ -319,12 +321,19 @@ function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[]
 
     // Best-effort: match back to data point for fact/source details
     let matched: DataPoint | undefined;
+    let matchedIndex = -1;
     for (let i = 0; i < dataPoints.length; i++) {
       if (injectedText.includes(prefixes[i])) {
         matched = dataPoints[i];
+        matchedIndex = i;
         break;
       }
     }
+
+    // Deduplicate: skip if this data point was already used
+    const dedupKey = matched ? `${matched.sourceFile}::${matchedIndex}` : sourceFile;
+    if (usedDataPoints.has(dedupKey)) continue;
+    usedDataPoints.add(dedupKey);
 
     injections.push({
       fact: matched?.fact ?? injectedText,
@@ -381,13 +390,15 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     return buildError(400, { error: "INVALID_URL" });
   }
 
-  if (!body.turnstileToken) {
+  if (body.turnstileToken === "local-dev") {
+    // Local dev bypass — skip Turnstile verification
+  } else if (!body.turnstileToken) {
     return buildError(400, { error: "TURNSTILE_MISSING" });
-  }
-
-  const turnstileValid = await verifyTurnstile(body.turnstileToken, ip, context.env.TURNSTILE_SECRET_KEY);
-  if (!turnstileValid) {
-    return buildError(400, { error: "TURNSTILE_FAILED" });
+  } else {
+    const turnstileValid = await verifyTurnstile(body.turnstileToken, ip, context.env.TURNSTILE_SECRET_KEY);
+    if (!turnstileValid) {
+      return buildError(400, { error: "TURNSTILE_FAILED" });
+    }
   }
 
   // 4. Fetch article

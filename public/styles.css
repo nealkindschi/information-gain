@@ -116,11 +116,13 @@ body {
 .gap-12 { gap: 3rem; }
 .grid-cols-1 { grid-template-columns: 1fr; }
 
-input {
+input,
+select {
   outline: none;
   transition: box-shadow 0.15s;
 }
-input:focus {
+input:focus,
+select:focus {
   box-shadow: 0 0 0 2px var(--amber);
 }
 

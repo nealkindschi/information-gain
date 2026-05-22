@@ -4,6 +4,10 @@ const reportTitles: Record<string, { title: string; url: string }> = {
     title: "Cost of a Data Breach Report 2025",
     url: "https://www.bakerdonelson.com/",
   },
+  "/reports/ibm_securing_generative_ai.txt": {
+    title: "IBM: Securing Generative AI — What Matters Now (with AWS, 2024)",
+    url: "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/securing-generative-ai",
+  },
   "/reports/lynn_university_ai_security.pdf": {
     title: "Patterns of LLM Weaponization: A Comparative Analysis of Exploitation Incidents Across Commercial AI Systems",
     url: "https://spiral.lynn.edu/",

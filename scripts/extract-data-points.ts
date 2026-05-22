@@ -106,7 +106,7 @@ async function main() {
   const specifiedFiles = process.argv.slice(2);
   const allFiles = fs
     .readdirSync(REPORTS_DIR)
-    .filter((f: string) => f.endsWith(".pdf"));
+    .filter((f: string) => f.endsWith(".pdf") || f.endsWith(".txt"));
   const files = specifiedFiles.length > 0
     ? allFiles.filter((f) => specifiedFiles.includes(f))
     : allFiles;
@@ -138,7 +138,9 @@ async function main() {
     const filePath = path.join(REPORTS_DIR, file);
 
     try {
-      const text = await extractTextFromPDF(filePath);
+      const text = file.endsWith(".txt")
+        ? fs.readFileSync(filePath, "utf-8")
+        : await extractTextFromPDF(filePath);
       console.log(`  Extracted ${text.length} characters`);
 
       const CHUNK_SIZE = 25000;

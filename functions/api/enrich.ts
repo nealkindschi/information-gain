@@ -1,4 +1,4 @@
-import reportTitles from "./report-titles";
+import reportTitles from "./report-titles.js";
 
 interface EnrichRequest {
   url: string;

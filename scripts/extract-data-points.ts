@@ -93,7 +93,7 @@ async function extractDataPoints(
         throw new Error(`Unrepairable JSON response`);
       }
     } else {
-      throw new Error(`JSON parse failed: ${String(parsed)}`);
+      throw new Error(`JSON parse failed for response`);
     }
   }
 

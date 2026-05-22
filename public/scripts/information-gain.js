@@ -80,21 +80,9 @@
       pos = enrichedText.indexOf("\n\n", pos + 2);
     }
 
-    function cleanIg(str) {
-      return str.replace(/\[IG\s+src="[^"]*"\][\s\S]*?\[\/IG\]/g, "");
-    }
-
-    function renderPara(text, highlight) {
+    function renderPara(text) {
       if (!text) return "";
-      var escaped = escapeHtml(text);
-      if (highlight) {
-        escaped = escaped.replace(
-          /\[IG\s+src=&quot;[^&]*&quot;\]/g,
-          '<mark class="bg-amber-100 dark:bg-amber-900/40 px-1 rounded">'
-        );
-        escaped = escaped.replace(/\[\/IG\]/g, "</mark>");
-      }
-      escaped = escaped.replace(/\n/g, "<br>");
+      var escaped = escapeHtml(text).replace(/\n/g, "<br>");
       return "<p>" + escaped + "</p>";
     }
 
@@ -121,13 +109,20 @@
       var currText = getPara(paraIdx);
       var nextText = getPara(paraIdx + 1);
 
-      var originalExcerpt = renderPara(cleanIg(prevText)) +
-        renderPara(cleanIg(currText)) +
-        renderPara(cleanIg(nextText));
+      var originalExcerpt = renderPara(prevText) +
+        renderPara(currText) +
+        renderPara(nextText);
 
-      var enrichedExcerpt = renderPara(cleanIg(prevText)) +
-        renderPara(currText, true) +
-        renderPara(cleanIg(nextText));
+      // Highlight the injected fact in the current paragraph using indexOf
+      var relOffset = inj.position - paraStarts[paraIdx];
+      var before = escapeHtml(currText.slice(0, relOffset)).replace(/\n/g, "<br>");
+      var given = escapeHtml(currText.slice(relOffset, relOffset + inj.fact.length)).replace(/\n/g, "<br>");
+      var after = escapeHtml(currText.slice(relOffset + inj.fact.length)).replace(/\n/g, "<br>");
+      var enrichedPara = (before ? "<p>" + before + "<mark class=\"bg-amber-100 dark:bg-amber-900/40 px-1 rounded\">" + given + "</mark>" + after + "</p>" : "");
+
+      var enrichedExcerpt = renderPara(prevText) +
+        enrichedPara +
+        renderPara(nextText);
 
       var sourceLink =
         '<a href="' + escapeHtml(inj.sourceFile) + '" target="_blank" rel="noopener" class="change-card-source">\u2197 ' + escapeHtml(inj.reportTitle) + '</a>';

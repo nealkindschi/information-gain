@@ -240,20 +240,28 @@ interface Injection {
   position: number;
 }
 
-const SYSTEM_PROMPT = `Insert data points from the list into the article. Every insertion MUST be wrapped EXACTLY like this — no exceptions:
-
-[IG src="/reports/source-file.pdf"]The enriched text here[/IG]
+const SYSTEM_PROMPT = `You are enriching articles with statistics from research reports. Weave data points into the article as plain text — no markup, no formatting.
 
 Rules:
-- Prefer data points with hard statistics (percentages, numbers, specific figures) over general claims.
-- Write enrichments that blend into the article — a reader should not be able to tell which parts were added.
-- Name the source naturally in the sentence (e.g., "according to the NIST AI Risk Management Framework").
-- Never use "research shows" or "studies indicate." Attribute to the named source.
-- One sentence per enrichment, ≤30 words. No long passages, no catalogue listings.
+- Blend hard statistics into the article's existing voice. A percentage reads naturally when it reinforces a point the article is already making.
+- The data is provided as bare facts. Build each into a grammatical clause that names the source (e.g., "according to Pentera, 67% of organizations have limited visibility into AI usage"). Never say "research shows" or "studies indicate."
+- Insert the clause within an existing sentence, mid-paragraph. Do not write standalone sentences. Example:
+  Original: "AI adoption is accelerating across enterprises, creating new attack surfaces."
+  With insertion: "AI adoption is accelerating across enterprises, and according to Pentera, 67% of CISOs lack visibility into AI usage, creating new attack surfaces."
+- The inserted clause itself must be ≤20 words. The surrounding sentence can be any length.
+- Use the TOPIC label on each data point to decide where it fits — insert a statistic where the article is already discussing that subject.
 - Match the article's tone exactly.
-- Insert 2-5 data points across the article.
-- Each data point may only be inserted once. Do not reuse the same statistic or claim.
-- Return the full article with insertions inline. No introductions or conclusions. Do not echo the article without insertions.`;
+- Each data point may only be inserted once.
+- Insert 1-3 data points.
+
+Response format — you MUST output exactly this structure. The format markers are non-negotiable:
+[ARTICLE]
+(The enriched article text with your insertions.)
+[FACTS]
+(Each injected clause, copy-pasted verbatim from the article above, one per line.)
+[END]
+
+If you cannot insert any data points, still output [ARTICLE] followed by the article text, then [FACTS] with nothing, then [END].`;
 
 async function enrichWithLLM(
   articleText: string,
@@ -261,14 +269,14 @@ async function enrichWithLLM(
   apiKey: string,
 ): Promise<string> {
   // Trim article to control execution time (LLM processing scales with input size)
-  const trimmedArticle = articleText.length > 10000
-    ? articleText.slice(0, 10000)
+  const trimmedArticle = articleText.length > 8000
+    ? articleText.slice(0, 8000)
     : articleText;
 
   const dataPointsFormatted = dataPoints
     .map((dp) => {
       const title = resolveReportTitle(dp.sourceFile);
-      return `- FACT: ${dp.fact}\n  SOURCE FILE: ${dp.sourceFile}\n  SOURCE: ${title}\n  CATEGORY: ${dp.category}\n  CONTEXT: ${dp.context}`;
+      return `- STAT: ${dp.fact}\n  REPORT: ${title}\n  TOPIC: ${dp.context}`;
     })
     .join("\n\n");
 
@@ -287,7 +295,7 @@ async function enrichWithLLM(
           content: `Article:\n\n${trimmedArticle}\n\nAvailable data points:\n\n${dataPointsFormatted}`,
         },
       ],
-      max_tokens: 4096,
+      max_tokens: 10000,
       temperature: 0.3,
     }),
   });
@@ -306,46 +314,59 @@ async function enrichWithLLM(
   return cleaned;
 }
 
-function parseInjections(enriched: string, dataPoints: DataPoint[]): Injection[] {
+function parseInjections(enrichedOutput: string, dataPoints: DataPoint[]): { enriched: string; injections: Injection[] } {
   const injections: Injection[] = [];
-  const regex = /\[IG\s+src="([^"]*)"\]([\s\S]*?)\[\/IG\]/g;
-  let match: RegExpExecArray | null;
 
-  // Pre-compute fact prefixes for matching
+  // Split on [FACTS] section
+  const articleSplit = enrichedOutput.split("[FACTS]");
+  let enriched = articleSplit[0]
+    .replace("[ARTICLE]", "")
+    .trim();
+  const factsSection = articleSplit[1]
+    ? articleSplit[1].replace("[END]", "").trim()
+    : "";
+
+  if (!factsSection) return { enriched, injections };
+
+  // Parse each fact line (one per line, non-empty)
+  const factLines = factsSection
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0);
+
   const prefixes = dataPoints.map((dp) => dp.fact.substring(0, 30));
   const usedDataPoints = new Set<string>();
 
-  while ((match = regex.exec(enriched)) !== null) {
-    const sourceFile = match[1];
-    const injectedText = match[2].trim();
+  for (const factText of factLines) {
+    const position = enriched.indexOf(factText);
+    if (position === -1) continue;
 
-    // Best-effort: match back to data point for fact/source details
     let matched: DataPoint | undefined;
     let matchedIndex = -1;
     for (let i = 0; i < dataPoints.length; i++) {
-      if (injectedText.includes(prefixes[i])) {
+      if (factText.includes(prefixes[i]) || dataPoints[i].fact.includes(factText.substring(0, 30))) {
         matched = dataPoints[i];
         matchedIndex = i;
         break;
       }
     }
 
-    // Deduplicate: skip if this data point was already used
-    const dedupKey = matched ? `${matched.sourceFile}::${matchedIndex}` : sourceFile;
+    const dedupKey = matched ? `${matched.sourceFile}::${matchedIndex}` : factText;
     if (usedDataPoints.has(dedupKey)) continue;
     usedDataPoints.add(dedupKey);
 
+    const sourceFile = matched?.sourceFile ?? "";
     injections.push({
-      fact: matched?.fact ?? injectedText,
+      fact: factText,
       source: sourceFile.replace(/^\/reports\//, "").replace(/\.(pdf|md)$/, ""),
       sourceFile: sourceFile,
       reportTitle: resolveReportTitle(sourceFile),
       category: matched?.category ?? "data",
-      position: match.index,
+      position,
     });
   }
 
-  return injections;
+  return { enriched, injections };
 }
 
 type Env = {
@@ -441,21 +462,21 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   }
 
   // 7. Enrich via LLM
-  let enrichedText: string;
+  let llmOutput: string;
   try {
-    enrichedText = await enrichWithLLM(articleText, matchedPoints, context.env.DEEPSEEK_API_KEY);
+    llmOutput = await enrichWithLLM(articleText, matchedPoints, context.env.DEEPSEEK_API_KEY);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     return buildError(502, { error: "ENRICH_FAILED", detail: msg });
   }
 
-  // 8. Parse injections from enriched text
-  const injections = parseInjections(enrichedText, matchedPoints);
+  // 8. Parse enriched text and injections from LLM output
+  const { enriched, injections } = parseInjections(llmOutput, matchedPoints);
 
-  // 9. Return response
+  // 9. Return response (original is trimmed to what LLM saw, for display alignment)
   const responseBody: EnrichResponse = {
-    original: articleText,
-    enriched: enrichedText,
+    original: articleText.substring(0, enriched.length > articleText.length ? articleText.length : enriched.length),
+    enriched,
     injections,
   };
 

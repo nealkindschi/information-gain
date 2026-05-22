@@ -21,21 +21,21 @@ interface DataPoint {
   context: string;
 }
 
-const SYSTEM_PROMPT = `You are a data extraction assistant. Given a research report, extract every discrete, citable fact, statistic, case study result, and named insight.
+const SYSTEM_PROMPT = `You are a data extraction assistant. Given a research report, extract every discrete, citable statistic, case study result, benchmark figure, and named insight.
 
 First, identify the report's full title from the document text.
 
 Return a JSON object with:
 - "report_title": The full title of the report/document
-- "data_points": An array of data point objects, each with these fields:
-  - fact: The exact fact or data point as a quoted statement (e.g. "Only 12% of content achieves an IGS above 0.7")
+- "data_points": An array of data point objects, each with:
+  - fact: A bare statistic or finding stripped of grammar (e.g. "67% limited visibility into AI usage" not "67% of CISOs report limited visibility into AI usage"). The fact should be an atom — just the core number or claim. Do NOT write complete sentences.
   - source: The domain or publication name where this fact originated (e.g. "searchbloom.com")
   - sourceFile: The relative path to the source report (e.g. "/reports/nist-ai-100.pdf")
   - reportTitle: The full title of the report (e.g. "NIST AI Risk Management Framework")
   - category: One of "statistic", "case_study", "definition", "framework", "expert_quote", "benchmark"
   - context: A short phrase describing what topic/section this fact relates to
 
-Only include specific, citable facts. Do NOT extract narrative prose, opinion without data, or vague generalities. Each fact must be verifiable and attributable.`;
+Only include specific, citable data. Do NOT extract narrative prose, opinion without data, or vague generalities. Each fact must be verifiable and attributable.`;
 
 async function extractTextFromPDF(filePath: string): Promise<string> {
   const buffer = fs.readFileSync(filePath);

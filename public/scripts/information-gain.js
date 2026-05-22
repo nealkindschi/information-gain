@@ -65,9 +65,11 @@
     for (var i = 0; i < injections.length; i++) {
       var inj = injections[i];
 
-      // Locate the injection in enriched text by position
+      // Find actual marker boundaries in enriched text
       var start = inj.position;
-      var end = start + ('[IG src="' + inj.sourceFile + '"]' + inj.fact + '[/IG]').length;
+      var closingTag = enrichedText.indexOf("[/IG]", start + 10);
+      if (closingTag === -1) closingTag = enrichedText.length;
+      var end = closingTag + 5; // +5 for "[/IG]"
 
       var ctxStart = Math.max(0, start - CONTEXT);
       var ctxEnd = Math.min(enrichedText.length, end + CONTEXT);
